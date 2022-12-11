@@ -15,8 +15,8 @@
   "homepage": "https://github.com/Michal99Zajac/next-app#readme",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
+    "dev": "concurrently \"next dev --turbo\" \"tailwindcss --input ./styles/globals.css --output ./styles/app.css --watch\"",
+    "build": "tailwindcss ./styles/globals.css --output ./styles/app.css && next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-tailwindcss": "^3.7.1",
     "husky": "^8.0.2",
