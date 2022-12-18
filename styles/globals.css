@@ -32,3 +32,40 @@ body {
     rgba(255, 255, 255, 0) 100%
   );
 }
+
+.skill-info {
+  @apply w-[6px] h-[6px] rounded-full block relative;
+}
+
+.skill-info:hover > .skill-info-tooltip {
+  @apply block;
+}
+
+.skill-info--basic {
+  @apply bg-gray-400;
+}
+
+.skill-info--basic > .skill-info-tooltip {
+  @apply bg-gray-400 text-white;
+}
+
+.skill-info--intermediate {
+  @apply bg-yellow-400;
+}
+
+.skill-info--intermediate > .skill-info-tooltip {
+  @apply bg-yellow-400 text-black;
+}
+
+.skill-info--advanced {
+  @apply bg-blue-400 text-white;
+}
+
+.skill-info--advanced > .skill-info-tooltip {
+  @apply bg-blue-400;
+}
+
+.skill-info-tooltip {
+  @apply py-1 px-4 bg-white absolute bottom-3 hidden rounded-md left-1/2;
+  transform: translate(-50%, 0);
+}
