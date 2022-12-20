@@ -1,6 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import type { NextPageWithLayout } from '@/types/global'
 
@@ -55,7 +56,7 @@ const Home: NextPageWithLayout = () => {
           </p>
         </div>
       </section> */}
-      <section id="skill" className="flex flex-col bg-black py-20 px-4 sm:items-center">
+      <section id="skills" className="flex flex-col bg-black py-20 px-4 sm:items-center">
         <h1 className="mb-16 font-gloria text-5xl text-white sm:text-6xl">My skills!</h1>
         <div className="grid grid-cols-1 gap-12 sm:w-[500px] sm:grid-cols-2 sm:gap-4 md:w-[1000px] md:grid-cols-4">
           <div>
@@ -427,7 +428,7 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
-      <section id="skill" className="flex flex-col items-center bg-white py-20 px-4">
+      <section id="projects" className="flex flex-col items-center bg-white py-20 px-4">
         <h1 className="mb-16 font-gloria text-5xl sm:text-6xl">My projects!</h1>
         <div className="grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
@@ -546,6 +547,44 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+      <footer className="flex justify-center bg-black py-20 px-4">
+        <div className="w-full max-w-[1000px]">
+          <h1 className="font-gloria text-2xl text-white">Contact</h1>
+          <h2 className="font-gloria text-lg text-white">michal.99.zajac@gmail.com</h2>
+          <hr className="my-4" />
+          <div className="mb-4 grid max-w-[400px] grid-cols-2 gap-4">
+            <Link href="#intro" className="font-gloria text-white">
+              Start
+            </Link>
+            <Link href="#skills" className="font-gloria text-white">
+              My skills
+            </Link>
+            <Link href="#projects" className="font-gloria text-white">
+              My projects
+            </Link>
+          </div>
+          <div className="flex justify-end gap-2">
+            <a href="https://www.linkedin.com/in/michal-zajac-ba2373211/">
+              <Image
+                width={24}
+                height={24}
+                className="object-contain"
+                src="/common/linkedin.png"
+                alt="github"
+              />
+            </a>
+            <a href="https://github.com/Michal99Zajac">
+              <Image
+                width={24}
+                height={24}
+                className="object-contain"
+                src="/common/gh-white.png"
+                alt="github"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }
