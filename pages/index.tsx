@@ -14,12 +14,12 @@ const Home: NextPageWithLayout = () => {
         id="intro"
         className="flex max-h-[1080px] items-center justify-center bg-white py-10 px-4 sm:h-screen"
       >
-        <div className="h-min w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg sm:w-min">
-          <div className="image-card w-full sm:h-[400px] sm:w-[400px]">
+        <div className="border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
+          <div className="image-card aspect-square w-full max-w-[400px]">
             <Image
               src="/photo/me.jpg"
               alt="me"
-              width={200}
+              width={300}
               height={300}
               className="h-full w-full object-cover"
             />
@@ -429,22 +429,75 @@ const Home: NextPageWithLayout = () => {
       </section>
       <section id="skill" className="flex flex-col items-center bg-white py-20 px-4">
         <h1 className="mb-16 font-gloria text-5xl sm:text-6xl">My projects!</h1>
-        <div className="grid-col-2 grid">
-          <div className="h-min w-full max-w-[332px] border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg sm:w-min">
-            <div className="image-card w-full sm:h-[300px] sm:w-[300px]">
+        <div className="grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
+            <div className="image-card aspect-square w-full">
               <Image
-                src="/photo/me.jpg"
+                src="/projects/memory.png"
                 alt="me"
-                width={200}
-                height={200}
-                className="h-full w-full object-cover"
+                width={300}
+                height={300}
+                className="h-full w-full bg-white object-contain"
               />
             </div>
             <div className="pt-4">
-              <h1 className="mb-2 font-gloria text-xl">Workspace</h1>
+              <div className="flex items-center justify-between">
+                <h1 className="mb-2 font-gloria text-xl">Memory Game</h1>
+                <Image
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                  src="/skill/languages/js.png"
+                  alt="javascript"
+                />
+              </div>
+              <p className="mb-2 font-gloria text-base">First project!</p>
+              <div className="flex gap-2">
+                <a href="https://github.com/Michal99Zajac/memory-game.git">
+                  <Image
+                    src="/common/gh.png"
+                    alt="github"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </a>
+                <a href="https://michal99zajac.github.io/memory-game/">
+                  <Image
+                    src="/common/web.png"
+                    alt="web backend"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
+            <div className="image-card aspect-square w-full">
+              <Image
+                src="/projects/workcode.png"
+                alt="me"
+                width={300}
+                height={300}
+                className="h-full w-full bg-white object-contain p-4"
+              />
+            </div>
+            <div className="pt-4">
+              <div className="flex items-center justify-between">
+                <h1 className="mb-2 font-gloria text-xl">Workcode</h1>
+                <Image
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                  src="/skill/languages/typescript.png"
+                  alt="typescript"
+                />
+              </div>
               <p className="mb-2 font-gloria text-base">Online editor</p>
               <div className="flex gap-2">
-                <a href="https://github.com">
+                <a href="https://github.com/Michal99Zajac/workcode.git">
                   <Image
                     src="/common/gh.png"
                     alt="github backend"
@@ -453,10 +506,36 @@ const Home: NextPageWithLayout = () => {
                     className="object-contain"
                   />
                 </a>
-                <a href="https://github.com">
+              </div>
+            </div>
+          </div>
+          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
+            <div className="image-card aspect-square w-full">
+              <Image
+                src="/projects/evolution.png"
+                alt="me"
+                width={300}
+                height={300}
+                className="h-full w-full bg-white object-contain p-4"
+              />
+            </div>
+            <div className="pt-4">
+              <div className="flex items-center justify-between">
+                <h1 className="mb-2 font-gloria text-xl">Evolution Algorithm</h1>
+                <Image
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                  src="/skill/languages/python.png"
+                  alt="typescript"
+                />
+              </div>
+              <p className="mb-2 font-gloria text-base">Evolution algorithm from scratch</p>
+              <div className="flex gap-2">
+                <a href="https://github.com/Michal99Zajac/evolution-algorithm.git">
                   <Image
-                    src="/common/web.png"
-                    alt="web backend"
+                    src="/common/gh.png"
+                    alt="github backend"
                     width={24}
                     height={24}
                     className="object-contain"
