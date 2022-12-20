@@ -15,8 +15,8 @@ const Home: NextPageWithLayout = () => {
         id="intro"
         className="flex max-h-[1080px] items-center justify-center bg-white py-10 px-4 sm:h-screen"
       >
-        <div className="border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
-          <div className="image-card aspect-square w-full max-w-[400px]">
+        <div className="max-w-[400px] border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
+          <div className="image-card aspect-square w-full">
             <Image
               src="/photo/me.jpg"
               alt="me"
