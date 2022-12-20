@@ -30,7 +30,7 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
-      <section id="about" className="flex justify-center bg-white py-20 px-4">
+      {/* <section id="about" className="flex justify-center bg-white py-20 px-4">
         <div className="sm:w-[400px]">
           <h1 className="mb-4 font-gloria text-3xl">About me</h1>
           <p className="text-justify">
@@ -54,7 +54,7 @@ const Home: NextPageWithLayout = () => {
             ullam aperiam pariatur. Alias quod iusto enim!
           </p>
         </div>
-      </section>
+      </section> */}
       <section id="skill" className="flex flex-col bg-black py-20 px-4 sm:items-center">
         <h1 className="mb-16 font-gloria text-5xl text-white sm:text-6xl">My skills!</h1>
         <div className="grid grid-cols-1 gap-12 sm:w-[500px] sm:grid-cols-2 sm:gap-4 md:w-[1000px] md:grid-cols-4">
