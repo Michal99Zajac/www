@@ -30,6 +30,13 @@ const Home: NextPageWithLayout = () => {
               alt: 'my photo with website url',
               type: 'image/png',
             },
+            {
+              width: 390,
+              height: 240,
+              url: 'https://michalzajac.dev/seo/og_390x240.png',
+              alt: 'my photo with website url',
+              type: 'image/png',
+            },
           ],
         }}
       />
