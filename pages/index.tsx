@@ -24,13 +24,6 @@ const Home: NextPageWithLayout = () => {
           siteName: 'michalzajac.dev',
           images: [
             {
-              width: 260,
-              height: 160,
-              url: 'https://michalzajac.dev/seo/og_260x160.png',
-              alt: 'my photo with website url',
-              type: 'image/png',
-            },
-            {
               width: 390,
               height: 240,
               url: 'https://michalzajac.dev/seo/og_390x240.png',
