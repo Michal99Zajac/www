@@ -1,7 +1,6 @@
-/* eslint-disable tailwindcss/no-custom-classname */
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
 import ProjectPhoto from '@/components/ProjectPhoto'
 import SkillItem from '@/components/SkillItem'
@@ -12,9 +11,29 @@ import type { NextPageWithLayout } from '@/types/global'
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <Head>
-        <title>Michal Zajac - Home</title>
-      </Head>
+      <NextSeo
+        titleTemplate="Michal Zajac | %s"
+        title="Home"
+        description="My name is Michal and I am a software engineer"
+        openGraph={{
+          title: 'Michal Zajac | Home',
+          description: 'My name is Michal and I am a software engineer',
+          type: 'website',
+          locale: 'en_US',
+          url: 'https://michalzajac.dev',
+          siteName: 'michalzajac.dev',
+          images: [
+            {
+              width: 260,
+              height: 160,
+              url: 'https://michalzajac.dev/seo/og_260x160.png',
+              alt: 'my photo with website url',
+              type: 'image/png',
+            },
+          ],
+        }}
+      />
+      <NextSeo />
       <main>
         <section
           id="intro"
