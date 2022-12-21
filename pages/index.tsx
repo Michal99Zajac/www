@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import SkillItem from '@/components/SkillItem'
+import { skill } from '@/data/skills'
 import type { NextPageWithLayout } from '@/types/global'
 
 const Home: NextPageWithLayout = () => {
@@ -63,367 +65,73 @@ const Home: NextPageWithLayout = () => {
             <h1 className="mb-8 font-gloria text-4xl text-white">Technologies</h1>
             <h2 className="mb-6 font-gloria text-2xl text-white">Languages</h2>
             <ul>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/python.png"
-                  alt="python icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['programmingLanguages'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">Python</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/js.png"
-                  alt="javascript icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">JavaScript</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/typescript.png"
-                  alt="typescript icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">TypeScript</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/html.svg"
-                  alt="html icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">HTML</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/css.svg"
-                  alt="css icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">CSS</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/php.png"
-                  alt="php icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">PHP</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/languages/cplusplus.png"
-                  alt="c++ icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">C++</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
+              ))}
             </ul>
             <h2 className="mt-8 mb-6 font-gloria text-2xl text-white">Databases</h2>
             <ul>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/databases/mongodb.png"
-                  alt="mongodb icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['databases'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">MongoDB</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/databases/postgresql.svg"
-                  alt="postgres icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Postgres</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/databases/sqlite.svg"
-                  alt="sqlite icon"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Sqlite</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
+              ))}
             </ul>
           </div>
           <div>
             <h1 className="mb-8 font-gloria text-4xl text-white">Frameworks</h1>
             <ul>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/nextjs.svg"
-                  alt="nextjs logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['frameworks'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">Next.js</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/react.svg"
-                  alt="react logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">React</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/express-js.png"
-                  alt="express js logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Express.js</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/fastapi.svg"
-                  alt="fastapi logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">FastApi</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/django.svg"
-                  alt="django logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Django</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/frameworks/angular.svg"
-                  alt="angular logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Angular</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
+              ))}
             </ul>
           </div>
           <div>
             <h1 className="mb-8 font-gloria text-4xl text-white">Tools</h1>
             <ul>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/git.png"
-                  alt="git logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['tools'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">Git</p>
-                <i className="skill-info skill-info--advanced">
-                  <span className="skill-info-tooltip">Advanced</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/aws.png"
-                  alt="aws logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">AWS</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/google-cloud.png"
-                  alt="google cloud logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Google Cloud</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/travis-ci.png"
-                  alt="travis logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Travis CI</p>
-                <i className="skill-info skill-info--basic">
-                  <span className="skill-info-tooltip">Basic</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/circleci.png"
-                  alt="circleci logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">CircleCI</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/gh-actions.png"
-                  alt="github actions logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">GitHub Actions</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/tools/docker.png"
-                  alt="docker logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Docker</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
+              ))}
             </ul>
           </div>
           <div>
             <h1 className="mb-8 font-gloria text-4xl text-white">Other</h1>
             <ul>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/other/jira.png"
-                  alt="jira logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['other'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">Jira</p>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/other/slack.png"
-                  alt="slack logo"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Slack</p>
-              </li>
+              ))}
               <h2 className="mt-8 mb-6 font-gloria text-2xl text-white">Languages</h2>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/other/usa-flag.png"
-                  alt="usa flag"
-                  width={24}
-                  height={24}
-                  className="object-contain"
+              {skill['languages'].map((skill) => (
+                <SkillItem
+                  key={skill.skill}
+                  level={skill.level}
+                  skill={skill.skill}
+                  img={skill.img}
                 />
-                <p className="text-white">English</p>
-                <i className="skill-info skill-info--intermediate">
-                  <span className="skill-info-tooltip">Intermediate</span>
-                </i>
-              </li>
-              <li className="mb-4 flex items-center gap-4">
-                <Image
-                  src="/skill/other/poland-flag.png"
-                  alt="poland flag"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-                <p className="text-white">Polish</p>
-              </li>
+              ))}
             </ul>
           </div>
         </div>

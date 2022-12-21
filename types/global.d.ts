@@ -9,3 +9,5 @@ export declare type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export declare type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
+
+export declare type SkillLevel = 'advanced' | 'intermediate' | 'basic'
