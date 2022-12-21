@@ -34,6 +34,26 @@ const Home: NextPageWithLayout = () => {
               <h1 className="font-gloria text-xl">Hi!</h1>
               <h2 className="font-gloria">My name is Michal and I am a software engineer.</h2>
             </div>
+            <div className="flex flex-row-reverse gap-2 p-2">
+              <a href="https://www.linkedin.com/in/michal-zajac-ba2373211/">
+                <Image
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  src="/common/linkedin.png"
+                  alt="github"
+                />
+              </a>
+              <a href="https://github.com/Michal99Zajac">
+                <Image
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  src="/common/gh.png"
+                  alt="github"
+                />
+              </a>
+            </div>
           </div>
         </section>
         {/* <section id="about" className="flex justify-center bg-white py-20 px-4">
