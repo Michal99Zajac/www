@@ -27,7 +27,7 @@ const Home: NextPageWithLayout = () => {
           </div>
           <div className="pt-4">
             <h1 className="font-gloria text-xl">Hi!</h1>
-            <h2 className="font-gloria">My name is Michal and I am a software engineer.</h2>
+            <h2 className="font-gloria">My name is Michał and I am a software engineer.</h2>
           </div>
         </div>
       </section>
@@ -537,6 +537,15 @@ const Home: NextPageWithLayout = () => {
                   <Image
                     src="/common/gh.png"
                     alt="github backend"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </a>
+                <a href="https://ea-app.vercel.app/">
+                  <Image
+                    src="/common/web.png"
+                    alt="web backend"
                     width={24}
                     height={24}
                     className="object-contain"
