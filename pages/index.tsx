@@ -3,7 +3,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import ProjectPhoto from '@/components/ProjectPhoto'
 import SkillItem from '@/components/SkillItem'
+import { projects } from '@/data/projects'
 import { skill } from '@/data/skills'
 import type { NextPageWithLayout } from '@/types/global'
 
@@ -21,7 +23,7 @@ const Home: NextPageWithLayout = () => {
           <div className="image-card aspect-square w-full">
             <Image
               src="/photo/me.jpg"
-              alt="me"
+              alt="my photo"
               width={300}
               height={300}
               className="h-full w-full object-cover"
@@ -139,129 +141,17 @@ const Home: NextPageWithLayout = () => {
       <section id="projects" className="flex flex-col items-center bg-white py-20 px-4">
         <h1 className="mb-16 font-gloria text-5xl sm:text-6xl">My projects!</h1>
         <div className="grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
-            <div className="image-card aspect-square w-full">
-              <Image
-                src="/projects/memory.png"
-                alt="me"
-                width={300}
-                height={300}
-                className="h-full w-full bg-white object-contain"
-              />
-            </div>
-            <div className="pt-4">
-              <div className="flex items-center justify-between">
-                <h1 className="mb-2 font-gloria text-xl">Memory Game</h1>
-                <Image
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                  src="/skill/languages/js.png"
-                  alt="javascript"
-                />
-              </div>
-              <p className="mb-2 font-gloria text-base">First project!</p>
-              <div className="flex gap-2">
-                <a href="https://github.com/Michal99Zajac/memory-game.git">
-                  <Image
-                    src="/common/gh.png"
-                    alt="github"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </a>
-                <a href="https://michal99zajac.github.io/memory-game/">
-                  <Image
-                    src="/common/web.png"
-                    alt="web backend"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
-            <div className="image-card aspect-square w-full">
-              <Image
-                src="/projects/workcode.png"
-                alt="me"
-                width={300}
-                height={300}
-                className="h-full w-full bg-white object-contain p-4"
-              />
-            </div>
-            <div className="pt-4">
-              <div className="flex items-center justify-between">
-                <h1 className="mb-2 font-gloria text-xl">Workcode</h1>
-                <Image
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                  src="/skill/languages/typescript.png"
-                  alt="typescript"
-                />
-              </div>
-              <p className="mb-2 font-gloria text-base">Online editor</p>
-              <div className="flex gap-2">
-                <a href="https://github.com/Michal99Zajac/workcode.git">
-                  <Image
-                    src="/common/gh.png"
-                    alt="github backend"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="w-full border-[1px] border-gray-200 bg-gray-50 p-4 drop-shadow-lg">
-            <div className="image-card aspect-square w-full">
-              <Image
-                src="/projects/evolution.png"
-                alt="me"
-                width={300}
-                height={300}
-                className="h-full w-full bg-white object-contain p-4"
-              />
-            </div>
-            <div className="pt-4">
-              <div className="flex items-center justify-between">
-                <h1 className="mb-2 font-gloria text-xl">Evolution Algorithm</h1>
-                <Image
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                  src="/skill/languages/python.png"
-                  alt="typescript"
-                />
-              </div>
-              <p className="mb-2 font-gloria text-base">Evolution algorithm from scratch</p>
-              <div className="flex gap-2">
-                <a href="https://github.com/Michal99Zajac/evolution-algorithm.git">
-                  <Image
-                    src="/common/gh.png"
-                    alt="github backend"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </a>
-                <a href="https://ea-app.vercel.app/">
-                  <Image
-                    src="/common/web.png"
-                    alt="web backend"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
+          {projects.map((project) => (
+            <ProjectPhoto
+              key={project.title}
+              img={project.img}
+              title={project.title}
+              description={project.description}
+              language={project.language}
+              ghUrl={project.ghUrl}
+              url={project.url}
+            />
+          ))}
         </div>
       </section>
       <footer className="flex justify-center bg-black py-20 px-4">
