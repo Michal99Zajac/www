@@ -75,31 +75,29 @@ const Home: NextPageWithLayout = () => {
             </div>
           </div>
         </section>
-        {/* <section id="about" className="flex justify-center bg-white py-20 px-4">
-        <div className="sm:w-[400px]">
-          <h1 className="mb-4 font-gloria text-3xl">About me</h1>
-          <p className="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia in atque sequi, laboriosam
-            minus distinctio velit aliquid maxime beatae! Illum blanditiis laudantium dolore
-            voluptate aperiam praesentium nesciunt tenetur in laborum.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi corporis iste minima
-            quae obcaecati cum voluptatem iusto, distinctio non maiores quisquam temporibus sunt sit
-            voluptatibus, et quasi qui magni rerum!
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi corporis iste minima
-            quae obcaecati cum voluptatem iusto, distinctio non maiores quisquam temporibus sunt sit
-            voluptatibus, et quasi qui magni rerum! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Quaerat nihil praesentium adipisci saepe perferendis eos placeat, aut
-            officiis dolor, laborum hic veritatis modi eum ea quo repellendus repellat ipsa culpa.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque rerum iste vel.
-            Totam deleniti provident asperiores, architecto itaque cumque ut rem possimus nulla
-            ullam aperiam pariatur. Alias quod iusto enim!
-          </p>
-        </div>
-      </section> */}
+        <section id="about" className="flex justify-center bg-white py-20 px-4">
+          <div className="sm:w-[400px]">
+            <h1 className="mb-4 font-gloria text-3xl">About me</h1>
+            <p className="text-justify">
+              Hi, my name is Michal and I am a graduate of Cracow University of Technology, where I
+              earned a degree in Computer Science. I am currently continuing my studies in the
+              &ldquo;data science&ldquo; specialization to earn a Master&apos;s degree.
+              <br />
+              <br />I have been working as a frontend developer since 2021, but my interests are not
+              limited to this field. I am open to developing my skills in any area of computer
+              science and I am always looking for new challenges that will help me grow
+              professionally.
+              <br />
+              <br />
+              Outside of work, I enjoy spending time with friends and learning new things. I believe
+              that my curiosity and desire for continuous development are my greatest assets.
+              <br />
+              <br />
+              If you have any questions or would like to get to know me better, please do not
+              hesitate to contact me.
+            </p>
+          </div>
+        </section>
         <section id="skills" className="flex flex-col bg-black py-20 px-4 sm:items-center">
           <h1 className="mb-16 font-gloria text-5xl text-white sm:text-6xl">My skills!</h1>
           <div className="grid grid-cols-1 gap-12 sm:w-[500px] sm:grid-cols-2 sm:gap-4 md:w-[1000px] md:grid-cols-4">
@@ -203,6 +201,9 @@ const Home: NextPageWithLayout = () => {
           <div className="mb-4 grid max-w-[400px] grid-cols-2 gap-4">
             <Link href="#intro" className="font-gloria text-white">
               Start
+            </Link>
+            <Link href="#about" className="font-gloria text-white">
+              About
             </Link>
             <Link href="#skills" className="font-gloria text-white">
               My skills

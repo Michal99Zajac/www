@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        gloria: ['var(--font-gloria-hallelujah)'],
+        gloria: ["'Gloria Hallelujah', cursive"],
       },
     },
   },
