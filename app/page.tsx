@@ -23,7 +23,7 @@ export default function Home() {
                     />
                   </a>
                 </div>
-                <div className="flex h-full w-24 items-center justify-center">
+                <div className="flex h-full w-24 items-center justify-center border-r-2 border-dashed border-white">
                   <a
                     href="https://github.com/Michal99Zajac"
                     className="border-b-2 border-solid border-white py-1 hover:border-dashed"
@@ -37,14 +37,24 @@ export default function Home() {
                     />
                   </a>
                 </div>
+                <div className="flex h-full w-24 items-center justify-center">
+                  <a
+                    href="https://github.com/Michal99Zajac"
+                    className="border-b-2 border-solid border-white py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/email/white.svg"
+                      alt="@"
+                      width={24}
+                      height={24}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
               </div>
-              <div className="flex h-24 w-24 items-center justify-center border-r-2 border-t-2 border-dashed border-white p-2">
-                <p className="font-hermeneus text-xl text-white">@</p>
-              </div>
-              <div className=" -mt-8 mr-[-600px] grow"></div>
             </div>
-            <div className="flex w-full border-2 border-dashed border-white">
-              <div className="grow p-8">
+            <div className="flex w-full min-w-min border-2 border-dashed border-white">
+              <div className="h-[420px] grow overflow-hidden p-8">
                 <p className="mb-2 font-hermeneus text-lg text-white">Hi There, My name is</p>
                 <h1 className="mb-2 font-hermeneus text-5xl text-white">MICHAL ZAJAC</h1>
                 <h2 className="mb-2 font-hermeneus text-3xl text-white">WEB DEVELOPER</h2>
@@ -58,12 +68,13 @@ export default function Home() {
                 <Image
                   src="/img/main.jpeg"
                   alt="me"
+                  priority={true}
                   width={300}
                   height={420}
                   style={{ objectFit: 'cover', height: '420px' }}
                 />
               </div>
-              <nav className="flex w-[422px] min-w-[422px] flex-wrap border-l-2 border-dashed border-white">
+              <nav className="flex h-[420px] w-[422px] min-w-[422px] flex-wrap border-l-2 border-dashed border-white">
                 <div className="h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2">
                   <Link
                     href="#"
