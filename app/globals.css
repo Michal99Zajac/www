@@ -10,3 +10,14 @@
 :root {}
 
 body {}
+
+.crossbox {
+  position: relative;
+  background-image: repeating-linear-gradient(
+    45deg,
+    white,
+    white 2px,
+    transparent 2px,
+    transparent 10px /* Długość przerwy */
+  );
+}
