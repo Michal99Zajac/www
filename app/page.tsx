@@ -4,9 +4,12 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      <main className="w-screen overflow-x-hidden">
-        <section id="preambula" className="border-b-2 border-dashed border-white bg-blue-500">
-          <div className="container mx-auto w-full p-8 pb-0">
+      <main>
+        <section
+          id="preambula"
+          className="w-full overflow-hidden border-b-2 border-dashed border-white bg-blue-500"
+        >
+          <div className="container mx-auto p-8 pb-0">
             <div className="flex">
               <div className="flex h-24 flex-nowrap border-2 border-b-0 border-dashed border-white">
                 <div className="flex h-full w-24 items-center justify-center border-r-2 border-dashed border-white">
@@ -64,7 +67,7 @@ export default function Home() {
                   Donec pharetra dui in pharetra dapibus.
                 </p>
               </div>
-              <div className="crossbox h-[420px] min-w-[300px] border-t-2 border-dashed border-white text-center lg:border-l-2 lg:border-t-0">
+              <div className="crossbox h-[420px] border-t-2 border-dashed border-white text-center lg:min-w-[300px] lg:border-l-2 lg:border-t-0">
                 <Image
                   src="/img/main.jpeg"
                   alt="me"
@@ -73,7 +76,7 @@ export default function Home() {
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <nav className="flex flex-wrap border-t-2 border-dashed border-white lg:h-[420px] lg:w-[422px] lg:min-w-[422px] lg:border-l-2 lg:border-t-2">
+              <nav className="flex flex-wrap border-t-2 border-dashed border-white lg:h-[420px] lg:w-[422px] lg:min-w-[422px] lg:border-l-2 lg:border-t-0">
                 <div className="h-[140px] w-1/2 border-b-2 border-r-2 border-dashed border-white p-2 lg:w-[140px]">
                   <Link
                     href="#"
@@ -113,7 +116,7 @@ export default function Home() {
                 <div className="hidden h-[140px] w-[140px] p-2"></div>
               </nav>
             </div>
-            <div className="crossbox relative ml-[-50%] h-[120px] w-screen border-x-2 border-dashed border-white lg:ml-[-600px] lg:h-[272px] lg:w-[calc(100%-300px+600px)]">
+            <div className="crossbox relative h-[135px] w-screen -translate-x-1/3 lg:h-[240px]">
               <p className="absolute right-[-260px] font-hermeneus text-[90px] text-white lg:right-[-400px] lg:text-[160px]">
                 PORTFOLIO
               </p>
