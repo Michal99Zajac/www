@@ -21,3 +21,15 @@ body {}
     transparent 10px /* Długość przerwy */
   );
 }
+
+.closed-border-box {
+  @apply border-dashed border-black border-b-2 border-r-2;
+}
+
+.closed-border-box:nth-child(3n) {
+  @apply border-r-0;
+}
+
+.closed-border-box:nth-last-child(-n + 3) {
+  @apply border-b-0;
+}
