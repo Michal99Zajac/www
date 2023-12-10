@@ -53,8 +53,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex w-full min-w-min border-2 border-dashed border-white">
-              <div className="h-[420px] grow overflow-hidden p-8">
+            <div className="flex w-full flex-col border-2 border-dashed border-white lg:min-w-min lg:flex-row">
+              <div className="grow p-8 md:h-[420px] md:overflow-hidden">
                 <p className="mb-2 font-hermeneus text-lg text-white">Hi There, My name is</p>
                 <h1 className="mb-2 font-hermeneus text-5xl text-white">MICHAL ZAJAC</h1>
                 <h2 className="mb-2 font-hermeneus text-3xl text-white">WEB DEVELOPER</h2>
@@ -64,18 +64,17 @@ export default function Home() {
                   Donec pharetra dui in pharetra dapibus.
                 </p>
               </div>
-              <div className="min-w-[300px] border-l-2 border-dashed border-white">
+              <div className="crossbox h-[420px] min-w-[300px] border-t-2 border-dashed border-white text-center lg:border-l-2 lg:border-t-0">
                 <Image
                   src="/img/main.jpeg"
                   alt="me"
                   priority={true}
-                  width={300}
-                  height={420}
-                  style={{ objectFit: 'cover', height: '420px' }}
+                  fill
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
-              <nav className="flex h-[420px] w-[422px] min-w-[422px] flex-wrap border-l-2 border-dashed border-white">
-                <div className="h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2">
+              <nav className="flex flex-wrap border-t-2 border-dashed border-white lg:h-[420px] lg:w-[422px] lg:min-w-[422px] lg:border-l-2 lg:border-t-2">
+                <div className="h-[140px] w-1/2 border-b-2 border-r-2 border-dashed border-white p-2 lg:w-[140px]">
                   <Link
                     href="#"
                     className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
@@ -83,7 +82,7 @@ export default function Home() {
                     RESUME.
                   </Link>
                 </div>
-                <div className="h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2">
+                <div className="h-[140px] w-1/2 border-b-2 border-dashed border-white p-2 lg:w-[140px] lg:border-r-2">
                   <Link
                     href="#"
                     className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
@@ -91,7 +90,7 @@ export default function Home() {
                     EXPERIENCE.
                   </Link>
                 </div>
-                <div className="h-[140px] w-[140px] border-b-2 border-dashed border-white p-2">
+                <div className="h-[140px] w-1/2 border-r-2 border-dashed border-white p-2 lg:w-[140px] lg:border-b-2 lg:border-r-0">
                   <Link
                     href="#"
                     className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
@@ -99,7 +98,7 @@ export default function Home() {
                     SKILLS.
                   </Link>
                 </div>
-                <div className="h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2">
+                <div className="h-[140px] w-1/2 border-dashed border-white p-2 lg:w-[140px] lg:border-b-2 lg:border-r-2">
                   <Link
                     href="#"
                     className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
@@ -107,15 +106,15 @@ export default function Home() {
                     PROJECTS.
                   </Link>
                 </div>
-                <div className="h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2"></div>
-                <div className="h-[140px] w-[140px] border-b-2 border-dashed border-white p-2"></div>
-                <div className="h-[140px] w-[140px] border-r-2 border-dashed border-white p-2"></div>
-                <div className="h-[140px] w-[140px] border-r-2 border-dashed border-white p-2"></div>
-                <div className="h-[140px] w-[140px] p-2"></div>
+                <div className="hidden h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2 lg:block"></div>
+                <div className="hidden h-[140px] w-[140px] border-b-2 border-dashed border-white p-2 lg:block"></div>
+                <div className="hidden h-[140px] w-[140px] border-r-2 border-dashed border-white p-2 lg:block"></div>
+                <div className="hidden h-[140px] w-[140px] border-r-2 border-dashed border-white p-2 lg:block"></div>
+                <div className="hidden h-[140px] w-[140px] p-2"></div>
               </nav>
             </div>
-            <div className="crossbox relative ml-[-600px] h-[272px] w-[calc(100%-300px+600px)] border-x-2 border-dashed border-white">
-              <p className="absolute right-[-400px] font-hermeneus text-[160px] text-white">
+            <div className="crossbox relative ml-[-50%] h-[120px] w-screen border-x-2 border-dashed border-white lg:ml-[-600px] lg:h-[272px] lg:w-[calc(100%-300px+600px)]">
+              <p className="absolute right-[-260px] font-hermeneus text-[90px] text-white lg:right-[-400px] lg:text-[160px]">
                 PORTFOLIO
               </p>
             </div>
