@@ -9,7 +9,7 @@ export default function Home() {
       <main>
         <section
           id="preambula"
-          className="w-full overflow-x-hidden border-b-2 border-dashed border-white bg-blue-500"
+          className="w-full overflow-hidden border-b-2 border-dashed border-white bg-blue-500"
         >
           <div className="container mx-auto px-5 pt-8">
             <div className="flex">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="resume" className="relative overflow-x-hidden">
+        <section id="resume" className="relative overflow-hidden">
           <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
@@ -412,7 +412,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="experience" className="overflow-x-hidden">
+        <section id="experience" className="overflow-hidden">
           <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
