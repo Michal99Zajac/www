@@ -418,16 +418,19 @@ export default function Home() {
               EXPERIENCE
             </h1>
             <div className="companies flex gap-6 px-5">
-              <div className="relative w-full grow after:absolute after:left-[calc(80px+1rem+9px)] after:top-5 after:z-[-1] after:h-[calc(100%-1.25rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)]">
+              <div className="relative w-full grow after:absolute after:left-[9px] after:top-5 after:z-[-1] after:h-[calc(100%-1.25rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)]">
                 <div className="mb-10 flex items-start gap-4">
-                  <div className="min-w-[80px] md:min-w-[108px]">
-                    <p className="mb-1 text-right font-hermeneus text-base md:text-xl">2 Years</p>
-                    <p className="text-right text-sm md:text-lg">2014 - 2016</p>
+                  <div className="hidden min-w-[108px] md:block">
+                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
+                    <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 h-[20px] w-[20px] min-w-[20px] rounded-full bg-blue-500" />
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
-                    <p className="text-lg">
+                    <p className="mb-1 block text-sm text-gray-500 md:hidden">
+                      2 Years · 2014 - 2016
+                    </p>
+                    <p className="text-base">
                       In the realm of technology and innovation, my professional journey took a
                       significant turn when I joined Tango Agency. As a programmer within this
                       dynamic and forward-thinking company, I was not just coding; I was crafting
@@ -445,14 +448,17 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mb-10 flex items-start gap-4">
-                  <div className="min-w-[80px] md:min-w-[108px]">
-                    <p className="mb-1 text-right font-hermeneus text-base md:text-xl">2 Years</p>
-                    <p className="text-right text-sm md:text-lg">2014 - 2016</p>
+                  <div className="hidden min-w-[108px] md:block">
+                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
+                    <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 h-[20px] w-[20px] min-w-[20px] rounded-full bg-blue-500" />
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
-                    <p className="text-lg">
+                    <p className="mb-1 block text-sm text-gray-500 md:hidden">
+                      2 Years · 2014 - 2016
+                    </p>
+                    <p className="text-base">
                       In the realm of technology and innovation, my professional journey took a
                       significant turn when I joined Tango Agency. As a programmer within this
                       dynamic and forward-thinking company, I was not just coding; I was crafting
