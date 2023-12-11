@@ -11,7 +11,7 @@ export default function Home() {
           id="preambula"
           className="w-full overflow-hidden border-b-2 border-dashed border-white bg-blue-500"
         >
-          <div className="container mx-auto p-8 pb-0">
+          <div className="container mx-auto px-5 pt-8">
             <div className="flex">
               <div className="flex h-24 flex-nowrap border-2 border-b-0 border-dashed border-white">
                 <div className="flex h-full w-24 items-center justify-center border-r-2 border-dashed border-white">
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </section>
         <section id="resume" className="relative mb-16 overflow-hidden">
-          <div className="x-8 container mx-auto">
+          <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
