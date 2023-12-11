@@ -9,7 +9,7 @@ export default function Home() {
       <main>
         <section
           id="preambula"
-          className="w-full overflow-hidden border-b-2 border-dashed border-white bg-blue-500"
+          className="w-full overflow-x-hidden border-b-2 border-dashed border-white bg-blue-500"
         >
           <div className="container mx-auto px-5 pt-8">
             <div className="flex">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="resume" className="relative mb-16 overflow-hidden">
+        <section id="resume" className="relative overflow-x-hidden">
           <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
@@ -412,7 +412,69 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="experience"></section>
+        <section id="experience" className="overflow-x-hidden">
+          <div className="container mx-auto">
+            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:translate-x-40 lg:text-[200px]">
+              EXPERIENCE
+            </h1>
+            <div className="companies flex gap-6 px-5">
+              <div className="relative w-full grow after:absolute after:left-[calc(108px+1rem+9px)] after:top-5 after:z-[-1] after:h-[calc(100%-1.25rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-['']">
+                <div className="mb-10 flex items-start gap-4">
+                  <div className="w-[108px] min-w-[108px]">
+                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
+                    <p className="text-right text-lg">2014 - 2016</p>
+                  </div>
+                  <div className="mt-5 h-[20px] w-[20px] min-w-[20px] rounded-full bg-blue-500" />
+                  <div className="grow">
+                    <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
+                    <p className="text-lg">
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new opportunity to solve complex problems,
+                      to turn lines of code into functional masterpieces. Tango Agency was not just
+                      a workplace; it was a hub of creativity and technical prowess, where ideas
+                      were nurtured, and visions were turned into reality. My role as a programmer
+                      here was challenging yet immensely rewarding, allowing me to delve deep into
+                      the intricacies of software development. The projects I worked on were
+                      diverse, pushing the boundaries of what was possible and constantly evolving
+                      with the technological landscape. This experience at Tango Agency honed my
+                      skills, expanded my knowledge, and solidified my passion for programming,
+                      leaving an indelible mark on my professional journey.
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-10 flex items-start gap-4">
+                  <div className="w-[108px] min-w-[108px]">
+                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
+                    <p className="text-right text-lg">2014 - 2016</p>
+                  </div>
+                  <div className="mt-5 h-[20px] w-[20px] min-w-[20px] rounded-full bg-blue-500" />
+                  <div className="grow">
+                    <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
+                    <p className="text-lg">
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new opportunity to solve complex problems,
+                      to turn lines of code into functional masterpieces. Tango Agency was not just
+                      a workplace; it was a hub of creativity and technical prowess, where ideas
+                      were nurtured, and visions were turned into reality. My role as a programmer
+                      here was challenging yet immensely rewarding, allowing me to delve deep into
+                      the intricacies of software development. The projects I worked on were
+                      diverse, pushing the boundaries of what was possible and constantly evolving
+                      with the technological landscape. This experience at Tango Agency honed my
+                      skills, expanded my knowledge, and solidified my passion for programming,
+                      leaving an indelible mark on my professional journey.
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blue-500 after:content-['']" />
+              </div>
+              <div className="hidden h-[400px] w-full grow bg-red-500 lg:block"></div>
+            </div>
+          </div>
+        </section>
         <section id="skills"></section>
         <section id="projects"></section>
       </main>
