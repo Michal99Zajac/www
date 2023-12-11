@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import ResumeWireIcon from '@/icons/ResumeWire'
+
 export default function Home() {
   return (
     <>
@@ -116,36 +118,21 @@ export default function Home() {
                 <div className="hidden h-[140px] w-[140px] p-2"></div>
               </nav>
             </div>
-            <div className="crossbox relative h-[135px] w-screen -translate-x-1/3 lg:h-[240px]">
-              <p className="absolute right-[-260px] font-hermeneus text-[90px] text-white lg:right-[-400px] lg:text-[160px]">
+            <div className="crossbox translate-x-[-20%]">
+              <p className="translate-x-[20%] font-hermeneus text-[150px] text-white lg:translate-x-[50%] lg:text-[200px]">
                 PORTFOLIO
               </p>
             </div>
           </div>
         </section>
-        <section id="resume" className="relative mb-16 overflow-hidden pt-16">
+        <section id="resume" className="relative mb-16 overflow-hidden">
           <div className="x-8 container mx-auto">
-            <h1 className="mb-14 -translate-x-40 font-hermeneus text-[200px] text-blue-500">
+            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
-            <Image
-              src="/components/resume-wire.svg"
-              alt="resume wire"
-              width={1024}
-              height={422}
-              style={{
-                position: 'absolute',
-                top: '0',
-                right: '120px',
-                zIndex: '-1',
-                minHeight: '428px',
-                height: '428px',
-                minWidth: '1024px',
-                width: '1024px',
-              }}
-            />
-            <div className="grid lg:grid-cols-[360px_1fr_360px]">
-              <div className="grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
+            <ResumeWireIcon className="absolute right-[40px] top-0 z-[-1] min-h-[255px] w-auto lg:min-h-[460px]" />
+            <div className="grid items-start lg:grid-cols-[360px_1fr_360px]">
+              <div className="resume-img-grid grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
@@ -165,7 +152,7 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
@@ -186,7 +173,7 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
@@ -207,7 +194,7 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
@@ -228,7 +215,7 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
@@ -270,10 +257,10 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full object-cover"
+                  className="closed-border-box aspect-square w-full object-cover"
                 />
               </div>
-              <div className="px-5">
+              <div className="p-5 lg:py-0">
                 <h2 className="mb-4 text-2xl">Lorem ipsum dolor</h2>
                 <p className="text-base">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et sapien quis
@@ -294,7 +281,7 @@ export default function Home() {
                   sed lacus id quam euismod pellentesque sit amet eu augue.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
+              <div className="resume-img-grid grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
@@ -419,7 +406,7 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="aspect-square w-full object-cover"
+                  className="closed-border-box aspect-square w-full object-cover"
                 />
               </div>
             </div>
