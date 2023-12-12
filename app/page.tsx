@@ -6,10 +6,10 @@ import ResumeWireIcon from '@/icons/ResumeWire'
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="overflow-x-hidden">
         <section
           id="preambula"
-          className="w-full overflow-hidden border-b-2 border-dashed border-white bg-blue-500"
+          className="w-full border-b-2 border-dashed border-white bg-blue-500"
         >
           <div className="container mx-auto px-5 pt-8">
             <div className="flex">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="resume" className="relative overflow-hidden">
+        <section id="resume" className="relative">
           <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
@@ -412,7 +412,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="experience" className="overflow-hidden">
+        <section id="experience">
           <div className="container mx-auto">
             <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
@@ -559,7 +559,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="skills"></section>
+        <section id="skills">
+          <div className="container mx-auto">
+            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-[150px] text-blue-500 lg:translate-x-96 lg:text-[200px]">
+              SKILLS
+            </h1>
+            <div className="relative after:absolute after:bottom-0 after:left-[50%] after:block after:h-[2px] after:w-screen after:translate-x-[-50%] after:border-b-2 after:border-dashed after:border-black after:content-['']">
+              <p>random text</p>
+            </div>
+          </div>
+        </section>
         <section id="projects"></section>
       </main>
       <footer></footer>
