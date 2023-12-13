@@ -70,6 +70,24 @@ body {}
   @apply hidden;
 }
 
+.level-beginner > .level-block:nth-last-child(-n + 4) {
+  @apply bg-gray-200;
+}
+
+.level-elementary > .level-block:nth-last-child(-n + 3) {
+  @apply bg-gray-200;
+}
+
+.level-intermediate > .level-block:nth-last-child(-n + 2) {
+  @apply bg-gray-200;
+}
+
+.level-advanced > .level-block:nth-last-child(-n + 1) {
+  @apply bg-gray-200;
+}
+
+.level-expert > .level-block:nth-last-child(-n + 0) {}
+
 @media (min-width: 1024px) { /* Tailwind breakpoint - lg */
   .resume-img-box:nth-child(n + 10) {
     display: block;
