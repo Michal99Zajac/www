@@ -3,6 +3,37 @@ import Link from 'next/link'
 
 import ResumeWireIcon from '@/icons/ResumeWire'
 
+const skills = [
+  {
+    id: 'a',
+    icon: '/icons/typescript/typescript.svg',
+    name: 'Typescript',
+    isFavorite: true,
+    level: 5,
+  },
+  {
+    id: 'b',
+    icon: '/icons/typescript/typescript.svg',
+    name: 'Typescript',
+    isFavorite: true,
+    level: 5,
+  },
+  {
+    id: 'c',
+    icon: '/icons/typescript/typescript.svg',
+    name: 'Typescript',
+    isFavorite: true,
+    level: 5,
+  },
+  {
+    id: 'd',
+    icon: '/icons/typescript/typescript.svg',
+    name: 'Typescript',
+    isFavorite: true,
+    level: 5,
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -138,126 +169,126 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
+                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
               </div>
               <div className="p-5 lg:py-0">
@@ -287,126 +318,126 @@ export default function Home() {
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
                 <Image
                   src="/img/main.jpeg"
                   alt="me!"
                   width={768}
                   height={1024}
-                  className="closed-border-box aspect-square w-full object-cover"
+                  className="resume-img-box aspect-square w-full object-cover"
                 />
               </div>
             </div>
@@ -564,8 +595,95 @@ export default function Home() {
             <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-[150px] text-blue-500 lg:translate-x-96 lg:text-[200px]">
               SKILLS
             </h1>
-            <div className="relative after:absolute after:bottom-0 after:left-[50%] after:block after:h-[2px] after:w-screen after:translate-x-[-50%] after:border-b-2 after:border-dashed after:border-black after:content-['']">
-              <p>random text</p>
+            <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
+              <div className="no-scrollbar flex w-full justify-between gap-8 overflow-x-auto px-6">
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/icons/rocket/rocket.svg"
+                    alt="technologies icon (rocket)"
+                    width={32}
+                    height={32}
+                    className="mb-2 object-contain"
+                  />
+                  <p className="mb-2 font-hermeneus text-base">Technologies</p>
+                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
+                    <div className="flex h-[20px] w-[20px] items-center justify-center">
+                      <button className="pulsar h-[20px] min-w-[20px] rounded-full bg-blue-500" />
+                    </div>
+                    <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/icons/framework/framework.svg"
+                    alt="technologies icon (rocket)"
+                    width={32}
+                    height={32}
+                    className="mb-2 object-contain"
+                  />
+                  <p className="mb-2 font-hermeneus text-base">Frameworks</p>
+                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
+                    <div className="flex h-[20px] w-[20px] items-center justify-center">
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/icons/tool/tool.svg"
+                    alt="technologies icon (rocket)"
+                    width={32}
+                    height={32}
+                    className="mb-2 object-contain"
+                  />
+                  <p className="mb-2 font-hermeneus text-base">Tools</p>
+                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
+                    <div className="flex h-[20px] w-[20px] items-center justify-center">
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/icons/language/language.svg"
+                    alt="technologies icon (rocket)"
+                    width={32}
+                    height={32}
+                    className="mb-2 object-contain"
+                  />
+                  <p className="mb-2 font-hermeneus text-base">Languages</p>
+                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
+                    <div className="flex h-[20px] w-[20px] items-center justify-center">
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/icons/other/other.svg"
+                    alt="technologies icon (rocket)"
+                    width={32}
+                    height={32}
+                    className="mb-2 object-contain"
+                  />
+                  <p className="mb-2 font-hermeneus text-base">Others</p>
+                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
+                    <div className="flex h-[20px] w-[20px] items-center justify-center">
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 border-2 border-dashed border-black lg:grid-cols-3">
+              {skills.map((skill) => (
+                <div key={skill.id} className="skill-box h-[118px] p-4"></div>
+              ))}
+              {Array((3 - (skills.length % 3)) % 3)
+                .fill(0)
+                .map((_, i) => (
+                  <div key={i} className="skill-box empty-skill-box"></div>
+                ))}
             </div>
           </div>
         </section>

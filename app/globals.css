@@ -39,43 +39,47 @@ body {}
 }
 
 .skill-box {
-  @apply border-dashed border-black border-b-2 border-r-2;
+  @apply border-dashed border-black border-t-2 border-r-2;
 }
 
 .skill-box:nth-child(2n) {
   @apply border-r-0;
 }
 
-.skill-box:nth-last-child(-n + 2) {
-  @apply border-b-0;
+.skill-box:nth-child(-n + 2) {
+  @apply border-t-0;
 }
 
-.closed-border-box {
+.resume-img-box {
   @apply border-dashed border-black border-b-2 border-r-2;
 }
 
-.closed-border-box:nth-child(3n) {
+.resume-img-box:nth-child(3n) {
   @apply border-r-0;
 }
 
-.closed-border-box:nth-child(n + 7) {
+.resume-img-box:nth-child(n + 7) {
   @apply border-b-0;
 }
 
-.closed-border-box:nth-child(n + 10) {
+.resume-img-box:nth-child(n + 10) {
   display: none;
 }
 
+.empty-skill-box:nth-child(n + 1) {
+  @apply hidden;
+}
+
 @media (min-width: 1024px) { /* Tailwind breakpoint - lg */
-  .closed-border-box:nth-child(n + 10) {
+  .resume-img-box:nth-child(n + 10) {
     display: block;
   }
 
-  .closed-border-box:nth-child(n + 7) {
+  .resume-img-box:nth-child(n + 7) {
     @apply border-b-2;
   }
 
-  .closed-border-box:nth-child(n + 16) {
+  .resume-img-box:nth-child(n + 16) {
     @apply border-b-0;
   }
 
@@ -83,16 +87,16 @@ body {}
     @apply border-r-2;
   }
 
-  .skill-box:nth-last-child(-n + 2) {
-    @apply border-b-2;
+  .skill-box:nth-child(-n + 3) {
+    @apply border-t-0;
   }
 
   .skill-box:nth-child(3n) {
     @apply border-r-0;
   }
 
-  .skill-box:nth-last-child(-n + 3) {
-    @apply border-b-0;
+  .empty-skill-box:nth-child(n + 1) {
+    @apply block;
   }
 }
 
