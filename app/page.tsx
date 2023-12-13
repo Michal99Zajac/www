@@ -22,7 +22,7 @@ const skills = [
     id: 'c',
     icon: '/icons/typescript/typescript.svg',
     name: 'Typescript',
-    isFavorite: true,
+    isFavorite: false,
     level: 5,
   },
   {
@@ -677,12 +677,40 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 border-2 border-dashed border-black lg:grid-cols-3">
               {skills.map((skill) => (
-                <div key={skill.id} className="skill-box h-[118px] p-4"></div>
+                <div key={skill.id} className="skill-box flex h-[118px] flex-col p-4">
+                  <div className="flex items-start gap-4">
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
+                    <p className="font-hermeneus text-base">{skill.name}</p>
+                    <div className="grow" />
+                    <Image
+                      src={skill.isFavorite ? '/icons/crown/gold.svg' : '/icons/crown/black.svg'}
+                      alt="crown icon"
+                      width={16}
+                      height={16}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="grow" />
+                  <div className="level-expert flex items-center justify-end gap-2">
+                    <p className="font-hermeneus text-sm">Expert</p>
+                    <div className="level-block h-[16px] w-[16px] bg-blue-200" />
+                    <div className="level-block h-[16px] w-[16px] bg-blue-300" />
+                    <div className="level-block h-[16px] w-[16px] bg-blue-400" />
+                    <div className="level-block h-[16px] w-[16px] bg-blue-500" />
+                    <div className="level-block h-[16px] w-[16px] bg-blue-600" />
+                  </div>
+                </div>
               ))}
               {Array((3 - (skills.length % 3)) % 3)
                 .fill(0)
                 .map((_, i) => (
-                  <div key={i} className="skill-box empty-skill-box"></div>
+                  <div key={i} className="skill-box empty-skill-box" />
                 ))}
             </div>
           </div>
