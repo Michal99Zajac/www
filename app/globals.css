@@ -2,140 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
- /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-}
-
 @font-face {
-  font-family: "HermeneusOne";
+  font-family: 'HermeneusOne';
   src: url('/fonts/hermeneusOne-regular.ttf');
 }
 
-:root {}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
 
-body {}
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 
-.crossbox {
-  position: relative;
-  background-image: repeating-linear-gradient(
-    45deg,
-    white,
-    white 2px,
-    transparent 2px,
-    transparent 10px /* Długość przerwy */
-  );
-}
+  .crossbox {
+    @apply relative;
+    background-image: repeating-linear-gradient(
+      45deg,
+      white,
+      white 2px,
+      transparent 2px,
+      transparent 10px /* Długość przerwy */
+    );
+  }
 
-.pulsar {
-  animation: pulse 2s infinite ease-in-out;
-}
+  .pulsar {
+    animation: pulse 2s infinite ease-in-out;
+  }
 
-.skill-box {
-  @apply border-dashed border-black border-t-2 border-r-2;
-}
+  .skill-box {
+    @apply border-dashed border-black border-t-2 border-r-2;
+  }
 
-.skill-box:nth-child(2n) {
-  @apply border-r-0;
-}
-
-.skill-box:nth-child(-n + 2) {
-  @apply border-t-0;
-}
-
-.resume-img-box {
-  @apply border-dashed border-black border-b-2 border-r-2;
-}
-
-.resume-img-box:nth-child(3n) {
-  @apply border-r-0;
-}
-
-.resume-img-box:nth-child(n + 7) {
-  @apply border-b-0;
-}
-
-.resume-img-box:nth-child(n + 10) {
-  display: none;
-}
-
-.empty-skill-box:nth-child(n + 1) {
-  @apply hidden;
-}
-
-.level-beginner > .level-block:nth-last-child(-n + 4) {
-  @apply bg-gray-200;
-}
-
-.level-elementary > .level-block:nth-last-child(-n + 3) {
-  @apply bg-gray-200;
-}
-
-.level-intermediate > .level-block:nth-last-child(-n + 2) {
-  @apply bg-gray-200;
-}
-
-.level-advanced > .level-block:nth-last-child(-n + 1) {
-  @apply bg-gray-200;
-}
-
-.level-expert > .level-block:nth-last-child(-n + 0) {}
-
-/* Tailwind breakpoint - sm */
-@media (min-width: 640px) {}
-
-/* Tailwind breakpoint - md */
-@media (min-width: 768px) {
   .skill-box:nth-child(2n) {
-    @apply border-r-2;
+    @apply border-r-0;
   }
 
-  .empty-skill-box:nth-child(n + 1) {
-    @apply block;
-  }
-
-  .skill-box:nth-child(-n + 3) {
+  .skill-box:nth-child(-n + 2) {
     @apply border-t-0;
   }
 
-  .skill-box:nth-child(3n) {
-    @apply border-r-0;
+  .empty-skill-box:nth-child(n + 1) {
+    @apply hidden;
   }
-}
 
-/* Tailwind breakpoint - lg */
-@media (min-width: 1024px) {
-  .resume-img-box:nth-child(n + 10) {
-    display: block;
+  .resume-img-box {
+    @apply border-dashed border-black border-b-2 border-r-2;
+  }
+
+  .resume-img-box:nth-child(3n) {
+    @apply border-r-0;
   }
 
   .resume-img-box:nth-child(n + 7) {
-    @apply border-b-2;
-  }
-
-  .resume-img-box:nth-child(n + 16) {
     @apply border-b-0;
   }
-}
 
-/* Tailwind breakpoint - xl */
-@media (min-width: 1280px) {}
-
-/* Tailwind breakpoint - 2xl */
-@media (min-width: 1536px) {}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 4px rgb(0, 78, 152, 0.25)
+  .resume-img-box:nth-child(n + 10) {
+    display: none;
   }
-  50% {
-    box-shadow: 0 0 0 6px rgb(0, 78, 152, 0.25)
+
+  .level-beginner > .level-block:nth-last-child(-n + 4) {
+    @apply bg-gray-200;
+  }
+
+  .level-elementary > .level-block:nth-last-child(-n + 3) {
+    @apply bg-gray-200;
+  }
+
+  .level-intermediate > .level-block:nth-last-child(-n + 2) {
+    @apply bg-gray-200;
+  }
+
+  .level-advanced > .level-block:nth-last-child(-n + 1) {
+    @apply bg-gray-200;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                Media Queries                               */
+  /* -------------------------------------------------------------------------- */
+
+  @media screen(md) {
+    .skill-box:nth-child(2n) {
+      @apply border-r-2;
+    }
+
+    .empty-skill-box:nth-child(n + 1) {
+      @apply block;
+    }
+
+    .skill-box:nth-child(-n + 3) {
+      @apply border-t-0;
+    }
+
+    .skill-box:nth-child(3n) {
+      @apply border-r-0;
+    }
+  }
+
+  @media screen(lg) {
+    .resume-img-box:nth-child(n + 10) {
+      display: block;
+    }
+
+    .resume-img-box:nth-child(n + 7) {
+      @apply border-b-2;
+    }
+
+    .resume-img-box:nth-child(n + 16) {
+      @apply border-b-0;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Animations                                 */
+  /* -------------------------------------------------------------------------- */
+
+  @keyframes pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 4px rgb(0, 78, 152, 0.25);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgb(0, 78, 152, 0.25);
+    }
   }
 }

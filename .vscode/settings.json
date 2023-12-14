@@ -12,5 +12,11 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     }
+  },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   }
 }
