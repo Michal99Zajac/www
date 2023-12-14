@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "lint-format": "eslint --fix './**/*.{ts,tsx}'",
-    "prettier-format": "prettier --write './**/*.{ts,tsx}'",
-    "css-format": "stylelint --fix './**/*.css'",
-    "format": "npm run lint-format && npm run prettier-format && npm run css-format"
+    "format:lint": "eslint --fix './**/*.{ts,tsx}'",
+    "format:prettier": "prettier --write './**/*.{ts,tsx}'",
+    "format:css": "stylelint --fix './**/*.css'",
+    "format": "npm run format:lint && npm run format:prettier && npm run format:css",
+    "release": "release-it"
   },
   "dependencies": {
     "@types/node": "^20.10.3",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@release-it/conventional-changelog": "^8.0.1",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
@@ -36,6 +38,7 @@
     "lint-staged": "^15.2.0",
     "postcss": "^8",
     "prettier": "^3.1.0",
+    "release-it": "^17.0.1",
     "stylelint": "^16.0.2",
     "stylelint-config-standard": "^35.0.0",
     "stylelint-config-tailwindcss": "^0.0.7",
