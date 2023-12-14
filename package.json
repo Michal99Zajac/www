@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "lint-format": "eslint --fix './**/*.{ts,tsx}'",
     "prettier-format": "prettier --write './**/*.{ts,tsx}'",
-    "format": "npm run lint-format && npm run prettier-format"
+    "css-format": "stylelint --fix './**/*.css'",
+    "format": "npm run lint-format && npm run prettier-format && npm run css-format"
   },
   "dependencies": {
     "@types/node": "^20.10.3",
@@ -33,13 +34,19 @@
     "lint-staged": "^15.2.0",
     "postcss": "^8",
     "prettier": "^3.1.0",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard": "^35.0.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
   "lint-staged": {
-    "./**/*.ts": [
+    "./**/*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
+    ],
+    "./**/*.css": [
+      "stylelint --fix"
     ]
   }
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'HermeneusOne';
+  font-family: HermeneusOne;
   src: url('/fonts/hermeneusOne-regular.ttf');
 }
 
@@ -21,6 +21,7 @@
 
   .crossbox {
     @apply relative;
+
     background-image: repeating-linear-gradient(
       45deg,
       white,
@@ -82,9 +83,7 @@
     @apply bg-gray-200;
   }
 
-  /* -------------------------------------------------------------------------- */
-  /*                                Media Queries                               */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------ Media Queries ----------------------------- */
 
   @media screen(md) {
     .skill-box:nth-child(2n) {
@@ -118,17 +117,16 @@
     }
   }
 
-  /* -------------------------------------------------------------------------- */
   /*                                 Animations                                 */
-  /* -------------------------------------------------------------------------- */
 
   @keyframes pulse {
     0%,
     100% {
-      box-shadow: 0 0 0 4px rgb(0, 78, 152, 0.25);
+      box-shadow: 0 0 0 4px rgb(0 78 152 / 25%);
     }
+
     50% {
-      box-shadow: 0 0 0 6px rgb(0, 78, 152, 0.25);
+      box-shadow: 0 0 0 6px rgb(0 78 152 / 25%);
     }
   }
 }
