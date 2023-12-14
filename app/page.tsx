@@ -456,7 +456,10 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="pulsar h-[20px] w-[20px] rounded-full bg-blueprint-500"></button>
+                    <button
+                      aria-label="Check Tango Agency projects"
+                      className="pulsar h-[20px] w-[20px] rounded-full bg-blueprint-500"
+                    ></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
@@ -486,7 +489,10 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
+                    <button
+                      aria-label="Check tango agency projects"
+                      className="h-[12px] w-[12px] rounded-full bg-blueprint-500"
+                    ></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
@@ -519,7 +525,7 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
+                    <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Beans</h2>
@@ -549,7 +555,7 @@ export default function Home() {
                     <p className="text-right text-lg">from 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
+                    <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Saleor</h2>
@@ -570,7 +576,7 @@ export default function Home() {
                     <p className="text-right text-lg">from 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
+                    <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Panelfox</h2>
@@ -608,7 +614,10 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Technologies</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="pulsar h-[20px] min-w-[20px] rounded-full bg-blueprint-500" />
+                      <button
+                        aria-label="Check technologies skills"
+                        className="pulsar h-[20px] min-w-[20px] rounded-full bg-blueprint-500"
+                      />
                     </div>
                     <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
                   </div>
@@ -624,7 +633,10 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Frameworks</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
+                      <button
+                        aria-label="Check frameworks skills"
+                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
+                      />
                     </div>
                   </div>
                 </div>
@@ -639,7 +651,10 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Tools</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
+                      <button
+                        aria-label="Check tools skills"
+                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
+                      />
                     </div>
                   </div>
                 </div>
@@ -654,7 +669,10 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Languages</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
+                      <button
+                        aria-label="Check languages skills"
+                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
+                      />
                     </div>
                   </div>
                 </div>
@@ -669,7 +687,10 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Others</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
+                      <button
+                        aria-label="Check others skills"
+                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
+                      />
                     </div>
                   </div>
                 </div>
