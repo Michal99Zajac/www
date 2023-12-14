@@ -40,7 +40,7 @@ export default function Home() {
       <main className="overflow-x-hidden">
         <section
           id="preambula"
-          className="w-full border-b-2 border-dashed border-white bg-blue-500"
+          className="w-full border-b-2 border-dashed border-white bg-blueprint-500"
         >
           <div className="container mx-auto px-5 pt-8">
             <div className="flex">
@@ -158,7 +158,7 @@ export default function Home() {
         </section>
         <section id="resume" className="relative">
           <div className="container mx-auto">
-            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:-translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blueprint-500 lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
             <ResumeWireIcon className="absolute right-[40px] top-0 z-[-1] min-h-[255px] w-auto lg:min-h-[460px]" />
@@ -445,7 +445,7 @@ export default function Home() {
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blue-500 lg:translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blueprint-500 lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
             <div className="companies flex items-start gap-6 px-5">
@@ -456,7 +456,7 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="pulsar h-[20px] w-[20px] rounded-full bg-blue-500"></button>
+                    <button className="pulsar h-[20px] w-[20px] rounded-full bg-blueprint-500"></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
@@ -486,7 +486,7 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blue-500"></button>
+                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
@@ -510,7 +510,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blue-500 after:content-['']" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
               </div>
               <div className="relative hidden w-full grow after:absolute after:left-[9px] after:top-7 after:z-[-1] after:h-[calc(100%-1.75rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)] lg:block">
                 <div className="mb-10 flex items-start gap-4">
@@ -519,7 +519,7 @@ export default function Home() {
                     <p className="text-right text-lg">2014 - 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blue-500"></button>
+                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Beans</h2>
@@ -549,7 +549,7 @@ export default function Home() {
                     <p className="text-right text-lg">from 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blue-500"></button>
+                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Saleor</h2>
@@ -570,7 +570,7 @@ export default function Home() {
                     <p className="text-right text-lg">from 2016</p>
                   </div>
                   <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button className="h-[12px] w-[12px] rounded-full bg-blue-500"></button>
+                    <button className="h-[12px] w-[12px] rounded-full bg-blueprint-500"></button>
                   </div>
                   <div className="grow">
                     <h2 className="mb-1 font-hermeneus text-xl">Panelfox</h2>
@@ -585,14 +585,14 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 h-[2px] w-screen border-b-2 border-dashed border-black after:absolute after:left-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blue-500 after:content-['']" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-screen border-b-2 border-dashed border-black after:absolute after:left-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
               </div>
             </div>
           </div>
         </section>
         <section id="skills">
           <div className="container mx-auto">
-            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-[150px] text-blue-500 lg:translate-x-96 lg:text-[200px]">
+            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-[150px] text-blueprint-500 lg:translate-x-96 lg:text-[200px]">
               SKILLS
             </h1>
             <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
@@ -608,7 +608,7 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Technologies</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="pulsar h-[20px] min-w-[20px] rounded-full bg-blue-500" />
+                      <button className="pulsar h-[20px] min-w-[20px] rounded-full bg-blueprint-500" />
                     </div>
                     <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
                   </div>
@@ -624,7 +624,7 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Frameworks</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
                     </div>
                   </div>
                 </div>
@@ -639,7 +639,7 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Tools</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
                     </div>
                   </div>
                 </div>
@@ -654,7 +654,7 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Languages</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
                     </div>
                   </div>
                 </div>
@@ -669,7 +669,7 @@ export default function Home() {
                   <p className="mb-2 font-hermeneus text-base">Others</p>
                   <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                     <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button className="h-[12px] min-w-[12px] rounded-full bg-blue-500" />
+                      <button className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500" />
                     </div>
                   </div>
                 </div>
@@ -699,11 +699,11 @@ export default function Home() {
                   <div className="grow" />
                   <div className="level-expert flex items-center justify-end gap-2">
                     <p className="font-hermeneus text-sm">Expert</p>
-                    <div className="level-block h-[12px] w-[12px] bg-blue-200 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blue-300 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blue-400 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blue-500 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blue-600 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blueprint-200 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blueprint-300 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blueprint-400 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blueprint-500 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blueprint-600 md:h-[16px] md:w-[16px]" />
                   </div>
                 </div>
               ))}

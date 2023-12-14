@@ -133,9 +133,9 @@ body {}
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 0 4px rgb(60, 131, 246, 0.25)
+    box-shadow: 0 0 0 4px rgb(0, 78, 152, 0.25)
   }
   50% {
-    box-shadow: 0 0 0 6px rgb(60, 131, 246, 0.25)
+    box-shadow: 0 0 0 6px rgb(0, 78, 152, 0.25)
   }
 }
