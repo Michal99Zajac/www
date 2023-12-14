@@ -675,10 +675,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 border-2 border-dashed border-black lg:grid-cols-3">
+            <div className="grid grid-cols-2 border-2 border-dashed border-black md:grid-cols-3">
               {skills.map((skill) => (
                 <div key={skill.id} className="skill-box flex h-[118px] flex-col p-4">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-2 md:gap-4">
                     <Image
                       src={skill.icon}
                       alt={skill.name}
@@ -699,11 +699,11 @@ export default function Home() {
                   <div className="grow" />
                   <div className="level-expert flex items-center justify-end gap-2">
                     <p className="font-hermeneus text-sm">Expert</p>
-                    <div className="level-block h-[16px] w-[16px] bg-blue-200" />
-                    <div className="level-block h-[16px] w-[16px] bg-blue-300" />
-                    <div className="level-block h-[16px] w-[16px] bg-blue-400" />
-                    <div className="level-block h-[16px] w-[16px] bg-blue-500" />
-                    <div className="level-block h-[16px] w-[16px] bg-blue-600" />
+                    <div className="level-block h-[12px] w-[12px] bg-blue-200 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blue-300 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blue-400 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blue-500 md:h-[16px] md:w-[16px]" />
+                    <div className="level-block h-[12px] w-[12px] bg-blue-600 md:h-[16px] md:w-[16px]" />
                   </div>
                 </div>
               ))}
