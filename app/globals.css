@@ -88,7 +88,30 @@ body {}
 
 .level-expert > .level-block:nth-last-child(-n + 0) {}
 
-@media (min-width: 1024px) { /* Tailwind breakpoint - lg */
+/* Tailwind breakpoint - sm */
+@media (min-width: 640px) {}
+
+/* Tailwind breakpoint - md */
+@media (min-width: 768px) {
+  .skill-box:nth-child(2n) {
+    @apply border-r-2;
+  }
+
+  .empty-skill-box:nth-child(n + 1) {
+    @apply block;
+  }
+
+  .skill-box:nth-child(-n + 3) {
+    @apply border-t-0;
+  }
+
+  .skill-box:nth-child(3n) {
+    @apply border-r-0;
+  }
+}
+
+/* Tailwind breakpoint - lg */
+@media (min-width: 1024px) {
   .resume-img-box:nth-child(n + 10) {
     display: block;
   }
@@ -100,23 +123,13 @@ body {}
   .resume-img-box:nth-child(n + 16) {
     @apply border-b-0;
   }
-
-  .skill-box:nth-child(2n) {
-    @apply border-r-2;
-  }
-
-  .skill-box:nth-child(-n + 3) {
-    @apply border-t-0;
-  }
-
-  .skill-box:nth-child(3n) {
-    @apply border-r-0;
-  }
-
-  .empty-skill-box:nth-child(n + 1) {
-    @apply block;
-  }
 }
+
+/* Tailwind breakpoint - xl */
+@media (min-width: 1280px) {}
+
+/* Tailwind breakpoint - 2xl */
+@media (min-width: 1536px) {}
 
 @keyframes pulse {
   0%, 100% {
