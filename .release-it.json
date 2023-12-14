@@ -13,5 +13,8 @@
       "header": "# Changelog",
       "infile": "CHANGELOG.md"
     }
+  },
+  "hooks": {
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
   }
 }

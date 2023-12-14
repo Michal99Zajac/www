@@ -12,7 +12,10 @@
     "format:prettier": "prettier --write './**/*.{ts,tsx}'",
     "format:css": "stylelint --fix './**/*.css'",
     "format": "npm run format:lint && npm run format:prettier && npm run format:css",
-    "release": "release-it"
+    "release": "release-it",
+    "release:major": "release-it major",
+    "release:minor": "release-it minor",
+    "release:patch": "release-it patch"
   },
   "dependencies": {
     "@types/node": "^20.10.3",
