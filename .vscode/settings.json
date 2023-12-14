@@ -1,22 +1,26 @@
 {
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
-  "editor.formatOnSave": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    }
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    }
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[tailwindcss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "editor.formatOnSave": true,
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "stylelint.validate": ["css", "tailwindcss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
   }
 }
