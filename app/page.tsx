@@ -37,11 +37,8 @@ const skills = [
 export default function Home() {
   return (
     <>
-      <main className="overflow-x-hidden">
-        <section
-          id="preambula"
-          className="w-full border-b-2 border-dashed border-white bg-blueprint-500"
-        >
+      <main>
+        <section id="preambula" className="border-b-2 border-dashed border-white bg-blueprint-500">
           <div className="container mx-auto px-5 pt-8">
             <div className="flex">
               <div className="flex h-24 flex-nowrap border-2 border-b-0 border-dashed border-white">
