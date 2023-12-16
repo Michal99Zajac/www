@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import ResumeWireIcon from '@/icons/ResumeWire'
-
 const skills = [
   {
     id: 'a',
@@ -38,127 +36,114 @@ export default function Home() {
   return (
     <>
       <main>
-        <section id="preambula" className="border-b-2 border-dashed border-white bg-blueprint-500">
-          <div className="container mx-auto px-5 pt-8">
-            <div className="flex">
-              <div className="flex h-24 flex-nowrap border-2 border-b-0 border-dashed border-white">
-                <div className="flex h-full w-24 items-center justify-center border-r-2 border-dashed border-white">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    className="border-b-2 border-solid border-white py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/github/white.svg"
-                      alt="github logo"
-                      width={24}
-                      height={24}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-                <div className="flex h-full w-24 items-center justify-center border-r-2 border-dashed border-white">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    className="border-b-2 border-solid border-white py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/linkedin/white.svg"
-                      alt="linkedin logo"
-                      width={24}
-                      height={24}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-                <div className="flex h-full w-24 items-center justify-center">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    className="border-b-2 border-solid border-white py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/email/white.svg"
-                      alt="@"
-                      width={24}
-                      height={24}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="flex w-full flex-col border-2 border-dashed border-white lg:min-w-min lg:flex-row">
-              <div className="grow p-8 md:h-[420px] md:overflow-hidden">
-                <p className="mb-2 font-hermeneus text-lg text-white">Hi There, My name is</p>
-                <h1 className="mb-2 font-hermeneus text-5xl text-white">MICHAL ZAJAC</h1>
-                <h2 className="mb-2 font-hermeneus text-3xl text-white">WEB DEVELOPER</h2>
-                <p className="text-base text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper at eros
-                  sed gravida. Sed neque magna, laoreet ultrices mattis sit amet, bibendum et dui.
-                  Donec pharetra dui in pharetra dapibus.
-                </p>
-              </div>
-              <div className="crossbox h-[420px] border-t-2 border-dashed border-white text-center lg:min-w-[300px] lg:border-l-2 lg:border-t-0">
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me"
-                  priority={true}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <nav className="flex flex-wrap border-t-2 border-dashed border-white lg:h-[420px] lg:w-[422px] lg:min-w-[422px] lg:border-l-2 lg:border-t-0">
-                <div className="h-[140px] w-1/2 border-b-2 border-r-2 border-dashed border-white p-2 lg:w-[140px]">
-                  <Link
-                    href="#"
-                    className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
-                  >
-                    RESUME.
-                  </Link>
-                </div>
-                <div className="h-[140px] w-1/2 border-b-2 border-dashed border-white p-2 lg:w-[140px] lg:border-r-2">
-                  <Link
-                    href="#"
-                    className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
-                  >
-                    EXPERIENCE.
-                  </Link>
-                </div>
-                <div className="h-[140px] w-1/2 border-r-2 border-dashed border-white p-2 lg:w-[140px] lg:border-b-2 lg:border-r-0">
-                  <Link
-                    href="#"
-                    className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
-                  >
-                    SKILLS.
-                  </Link>
-                </div>
-                <div className="h-[140px] w-1/2 border-dashed border-white p-2 lg:w-[140px] lg:border-b-2 lg:border-r-2">
-                  <Link
-                    href="#"
-                    className="font-hermeneus text-xl text-white underline underline-offset-4 hover:decoration-dashed"
-                  >
-                    PROJECTS.
-                  </Link>
-                </div>
-                <div className="hidden h-[140px] w-[140px] border-b-2 border-r-2 border-dashed border-white p-2 lg:block"></div>
-                <div className="hidden h-[140px] w-[140px] border-b-2 border-dashed border-white p-2 lg:block"></div>
-                <div className="hidden h-[140px] w-[140px] border-r-2 border-dashed border-white p-2 lg:block"></div>
-                <div className="hidden h-[140px] w-[140px] border-r-2 border-dashed border-white p-2 lg:block"></div>
-                <div className="hidden h-[140px] w-[140px] p-2"></div>
+        <section id="preambula" className="pt-8">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2px_1fr]">
+              <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-1 md:block" />
+              <nav className="inline-block w-min border-2 border-dashed border-black p-2 md:col-start-3 md:row-start-1 md:border-l-0">
+                <Link
+                  href="#resume"
+                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+                >
+                  Resume
+                </Link>
+                <Link
+                  href="#experience"
+                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+                >
+                  Experience
+                </Link>
+                <Link
+                  href="#skills"
+                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+                >
+                  Skills
+                </Link>
+                <Link
+                  href="#projects"
+                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+                >
+                  Projects
+                </Link>
               </nav>
-            </div>
-            <div className="crossbox translate-x-[-20%]">
-              <p className="translate-x-[20%] font-hermeneus text-[150px] text-white lg:translate-x-[50%] lg:text-[200px]">
-                PORTFOLIO
+              <div className="border-dashed border-white bg-blueprint-500 px-5 pt-8 md:col-start-1 md:row-start-2 md:border-2 md:border-r-0 md:py-8 md:text-right">
+                <h1 className="font-hermeneus text-7xl text-white md:text-9xl">MICHAL</h1>
+                <h1 className="mb-2 font-hermeneus text-7xl text-white md:text-9xl">ZAJAC</h1>
+                <h2 className="mb-2 font-hermeneus text-3xl text-white">WEB DEVELOPER</h2>
+              </div>
+              <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-2 md:block" />
+              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-3" />
+              <p className="border-dashed border-black bg-blueprint-500 px-5 py-8 text-white md:col-start-3 md:row-start-3 md:border-2 md:border-l-0 md:bg-transparent md:text-black">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper at eros
+                sed gravida. Sed neque magna, laoreet ultrices mattis sit amet, bibendum et dui.
+                Donec pharetra dui in pharetra dapibus.
               </p>
+              <Image
+                src="/img/main.jpeg"
+                alt="me!"
+                width={768}
+                height={1024}
+                className="aspect-square justify-self-end border-2 border-dashed border-black object-cover sm:aspect-video md:col-start-1 md:row-start-4 md:aspect-square md:w-[420px] md:border-r-0"
+              />
+              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-4" />
+              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-5" />
+              <div className="relative mx-auto h-[60px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6 md:hidden" />
+              <div className="mx-auto flex w-min border-2 border-dashed border-black md:col-start-3 md:row-start-5 md:mx-0 md:flex-col md:border-l-0">
+                <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed border-black md:border-b-2 md:border-r-0">
+                  <a
+                    href="https://github.com/Michal99Zajac"
+                    aria-label="github profile"
+                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/github/black.svg"
+                      alt="github logo"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed border-black md:border-b-2 md:border-r-0">
+                  <a
+                    href="https://github.com/Michal99Zajac"
+                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/linkedin/black.svg"
+                      alt="linkedin logo"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center">
+                  <a
+                    href="https://github.com/Michal99Zajac"
+                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/email/black.svg"
+                      alt="@"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
+                <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
+              </div>
             </div>
           </div>
         </section>
         <section id="resume" className="relative">
           <div className="container mx-auto">
-            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blueprint-500 lg:-translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 translate-x-8 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
-            <ResumeWireIcon className="absolute right-[40px] top-0 z-[-1] min-h-[255px] w-auto lg:min-h-[460px]" />
             <div className="grid items-start lg:grid-cols-[360px_1fr_360px]">
               <div className="resume-img-grid grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
                 <Image
@@ -442,7 +427,7 @@ export default function Home() {
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="my-16 -translate-x-0 font-hermeneus text-[150px] text-blueprint-500 lg:translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 translate-x-0 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
             <div className="companies flex items-start gap-6 px-5">
@@ -595,7 +580,7 @@ export default function Home() {
         </section>
         <section id="skills">
           <div className="container mx-auto">
-            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-[150px] text-blueprint-500 lg:translate-x-96 lg:text-[200px]">
+            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:translate-x-96 lg:text-[200px]">
               SKILLS
             </h1>
             <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
