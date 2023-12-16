@@ -35,7 +35,7 @@ const skills = [
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="overflow-x-hidden">
         <section id="preambula" className="pt-8">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_2px_1fr]">

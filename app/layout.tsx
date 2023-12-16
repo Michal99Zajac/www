@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="w-screen overflow-x-hidden">
+      <body>
         {children}
         <SpeedInsights />
       </body>
