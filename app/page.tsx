@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { resumeImages } from './resumeImages'
+
 const skills = [
   {
     id: 'a',
@@ -40,7 +42,7 @@ export default function Home() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_2px_1fr]">
               <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-1 md:block" />
-              <nav className="inline-block w-min border-2 border-dashed border-black p-2 md:col-start-3 md:row-start-1 md:border-l-0">
+              <nav className="inline-block w-min max-w-full border-2 border-dashed border-black p-2 md:col-start-3 md:row-start-1 md:border-l-0">
                 <Link
                   href="#resume"
                   className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
@@ -73,7 +75,7 @@ export default function Home() {
               </div>
               <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-2 md:block" />
               <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-3" />
-              <p className="border-dashed border-black bg-blueprint-500 px-5 py-8 text-white md:col-start-3 md:row-start-3 md:border-2 md:border-l-0 md:bg-transparent md:text-black">
+              <p className="max-w-full border-dashed border-black bg-blueprint-500 px-5 py-8 text-white md:col-start-3 md:row-start-3 md:border-2 md:border-l-0 md:bg-transparent md:text-black">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper at eros
                 sed gravida. Sed neque magna, laoreet ultrices mattis sit amet, bibendum et dui.
                 Donec pharetra dui in pharetra dapibus.
@@ -140,7 +142,7 @@ export default function Home() {
                     src="/components/resume-wire.svg"
                     alt="wires"
                     fill
-                    className="absolute bottom-0 left-0 object-contain"
+                    className="absolute bottom-0 left-0 hidden object-contain lg:block"
                   />
                 </div>
               </div>
@@ -152,136 +154,8 @@ export default function Home() {
             <h1 className="my-16 translate-x-8 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
-            <div className="grid items-start lg:grid-cols-[360px_1fr_360px]">
-              <div className="resume-img-grid grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full border-b-2 border-dashed border-black object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-              </div>
-              <div className="p-5 lg:py-0">
+            <div className="grid items-start gap-4 px-5 lg:grid-cols-[1fr_auto]">
+              <div>
                 <h2 className="mb-4 text-2xl">Lorem ipsum dolor</h2>
                 <p className="text-base">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et sapien quis
@@ -302,133 +176,17 @@ export default function Home() {
                   sed lacus id quam euismod pellentesque sit amet eu augue.
                 </p>
               </div>
-              <div className="resume-img-grid grid grid-cols-3 gap-0 border-2 border-dashed border-black bg-white">
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="resume-img-box aspect-square w-full object-cover"
-                />
+              <div className="resume-img-grid grid grid-cols-4 gap-0 border-2 border-dashed border-black bg-white lg:grid-cols-5">
+                {resumeImages.map((image, id) => (
+                  <Image
+                    key={id}
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="resume-img-box aspect-square w-full object-cover lg:w-28"
+                  />
+                ))}
               </div>
             </div>
           </div>
