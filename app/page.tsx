@@ -680,7 +680,81 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer></footer>
+      <footer className="container mx-auto mt-16">
+        <div className="flex flex-wrap items-start justify-between gap-8 border-2 border-b-0 border-dashed border-white bg-blueprint-500 p-5 text-white">
+          <nav className="flex gap-2">
+            <Link
+              href="#resume"
+              className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+            >
+              Resume
+            </Link>
+            <Link
+              href="#experience"
+              className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+            >
+              Experience
+            </Link>
+            <Link
+              href="#skills"
+              className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+            >
+              Skills
+            </Link>
+            <Link
+              href="#projects"
+              className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+            >
+              Projects
+            </Link>
+          </nav>
+          <div className="inline-flex border-2 border-dashed">
+            <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+              <a
+                href="https://github.com/Michal99Zajac"
+                aria-label="github profile"
+                className="border-b-2 border-solid py-1 hover:border-dashed"
+              >
+                <Image
+                  src="/icons/github/white.svg"
+                  alt="github logo"
+                  width={16}
+                  height={16}
+                  style={{ objectFit: 'contain' }}
+                />
+              </a>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+              <a
+                href="https://github.com/Michal99Zajac"
+                className="border-b-2 border-solid py-1 hover:border-dashed"
+              >
+                <Image
+                  src="/icons/linkedin/white.svg"
+                  alt="linkedin logo"
+                  width={16}
+                  height={16}
+                  style={{ objectFit: 'contain' }}
+                />
+              </a>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center">
+              <a
+                href="https://github.com/Michal99Zajac"
+                className="border-b-2 border-solid py-1 hover:border-dashed"
+              >
+                <Image
+                  src="/icons/email/white.svg"
+                  alt="@"
+                  width={16}
+                  height={16}
+                  style={{ objectFit: 'contain' }}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }
