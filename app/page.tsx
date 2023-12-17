@@ -38,11 +38,72 @@ export default function Home() {
   return (
     <>
       <main className="overflow-x-hidden">
-        <section id="preambula" className="pt-8">
+        <section id="preambula">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2px_1fr]">
-              <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-1 md:block" />
-              <nav className="inline-block w-min max-w-full border-2 border-dashed border-black p-2 md:col-start-3 md:row-start-1 md:border-l-0">
+            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] md:grid-rows-1 lg:grid-cols-[540px_1fr_auto]">
+              <div>
+                <h1 className="mb-2 font-hermeneus text-6xl leading-normal">Hello World!</h1>
+                <h2 className="mb-4 font-hermeneus text-6xl leading-normal">I&apos;m Michal</h2>
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisl in ex
+                  ultricies tincidunt. Ut dignissim finibus lectus vel rhoncus. Mauris non enim
+                  consequat, mollis massa sed, condimentum lacus. Aliquam non pretium urna, et
+                  interdum urna. Nunc vitae erat feugiat, scelerisque magna non, lobortis quam.
+                </p>
+                <div className="inline-flex border-2 border-dashed">
+                  <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="border-b-2 border-solid py-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/github/white.svg"
+                        alt="github logo"
+                        width={16}
+                        height={16}
+                        style={{ objectFit: 'contain' }}
+                      />
+                    </a>
+                  </div>
+                  <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      className="border-b-2 border-solid py-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/linkedin/white.svg"
+                        alt="linkedin logo"
+                        width={16}
+                        height={16}
+                        style={{ objectFit: 'contain' }}
+                      />
+                    </a>
+                  </div>
+                  <div className="flex h-12 w-12 items-center justify-center">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      className="border-b-2 border-solid py-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/email/white.svg"
+                        alt="@"
+                        width={16}
+                        height={16}
+                        style={{ objectFit: 'contain' }}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <Image
+                src="/img/me-1.png"
+                alt="me"
+                width={400}
+                height={600}
+                className="crossbox -mb-5 w-screen self-stretch object-cover md:-my-5 md:mx-0 md:w-full"
+              />
+              <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
                 <Link
                   href="#resume"
                   className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
@@ -68,84 +129,16 @@ export default function Home() {
                   Projects
                 </Link>
               </nav>
-              <div className="border-dashed border-white bg-blueprint-500 px-5 pt-8 md:col-start-1 md:row-start-2 md:border-2 md:border-r-0 md:py-8 md:text-right">
-                <h1 className="font-hermeneus text-7xl text-white md:text-9xl">MICHAL</h1>
-                <h1 className="mb-2 font-hermeneus text-7xl text-white md:text-9xl">ZAJAC</h1>
-                <h2 className="mb-2 font-hermeneus text-3xl text-white">WEB DEVELOPER</h2>
-              </div>
-              <div className="hidden w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-2 md:block" />
-              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-3" />
-              <p className="max-w-full border-dashed border-black bg-blueprint-500 px-5 py-8 text-white md:col-start-3 md:row-start-3 md:border-2 md:border-l-0 md:bg-transparent md:text-black">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper at eros
-                sed gravida. Sed neque magna, laoreet ultrices mattis sit amet, bibendum et dui.
-                Donec pharetra dui in pharetra dapibus.
-              </p>
-              <Image
-                src="/img/main.jpeg"
-                alt="me!"
-                priority
-                width={768}
-                height={1024}
-                className="aspect-square justify-self-end border-2 border-dashed border-black object-cover sm:aspect-video md:col-start-1 md:row-start-4 md:aspect-square md:w-[420px] md:border-r-0"
-              />
-              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-4" />
-              <div className="w-[2px] border-r-2 border-dashed border-black md:col-start-2 md:row-start-5" />
-              <div className="relative mx-auto h-[60px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6 md:hidden" />
-              <div className="mx-auto flex w-min border-2 border-dashed border-black md:col-start-3 md:row-start-5 md:mx-0 md:flex-col md:border-l-0">
-                <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed border-black md:border-b-2 md:border-r-0">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    aria-label="github profile"
-                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/github/black.svg"
-                      alt="github logo"
-                      width={16}
-                      height={16}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed border-black md:border-b-2 md:border-r-0">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/linkedin/black.svg"
-                      alt="linkedin logo"
-                      width={16}
-                      height={16}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center">
-                  <a
-                    href="https://github.com/Michal99Zajac"
-                    className="border-b-2 border-solid border-black py-1 hover:border-dashed"
-                  >
-                    <Image
-                      src="/icons/email/black.svg"
-                      alt="@"
-                      width={16}
-                      height={16}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
-                <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
-                <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
-                  <Image
-                    src="/components/resume-wire.svg"
-                    alt="wires"
-                    fill
-                    className="absolute bottom-0 left-0 hidden object-contain lg:block"
-                  />
-                </div>
+            </div>
+            <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
+              <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
+              <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
+                <Image
+                  src="/components/resume-wire.svg"
+                  alt="wires"
+                  fill
+                  className="absolute bottom-0 left-0 hidden object-contain lg:block"
+                />
               </div>
             </div>
           </div>
