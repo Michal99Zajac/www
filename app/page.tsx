@@ -42,7 +42,7 @@ export default function Home() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] md:grid-rows-1 lg:grid-cols-[540px_1fr_auto]">
               <div>
-                <h1 className="mb-2 font-hermeneus text-6xl leading-normal">Hello World!</h1>
+                <h1 className="mb-2 font-hermeneus text-7xl leading-normal">Hello World!</h1>
                 <h2 className="mb-4 font-hermeneus text-6xl leading-normal">I&apos;m Michal</h2>
                 <p className="mb-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisl in ex
@@ -96,13 +96,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Image
-                src="/img/me-1.png"
-                alt="me"
-                width={400}
-                height={600}
-                className="crossbox -mb-5 w-screen self-stretch object-cover md:-my-5 md:mx-0 md:w-full"
-              />
+              <div className="crossbox -mb-5 w-full self-stretch object-cover md:-my-5 md:mx-0">
+                <Image
+                  src="/img/me-1.png"
+                  alt="me"
+                  width={400}
+                  height={600}
+                  className="w-full object-cover"
+                />
+              </div>
               <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
                 <Link
                   href="#resume"
