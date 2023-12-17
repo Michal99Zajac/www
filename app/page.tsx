@@ -135,6 +135,14 @@ export default function Home() {
               </div>
               <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
                 <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
+                <div className="absolute left-[calc(50%-2px)] top-full h-[360px] w-[460px] overflow-visible">
+                  <Image
+                    src="/components/resume-wire.svg"
+                    alt="wires"
+                    fill
+                    className="absolute bottom-0 left-0 object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
