@@ -83,6 +83,7 @@ export default function Home() {
               <Image
                 src="/img/main.jpeg"
                 alt="me!"
+                priority
                 width={768}
                 height={1024}
                 className="aspect-square justify-self-end border-2 border-dashed border-black object-cover sm:aspect-video md:col-start-1 md:row-start-4 md:aspect-square md:w-[420px] md:border-r-0"
