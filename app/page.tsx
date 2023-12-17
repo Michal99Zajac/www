@@ -485,7 +485,207 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects"></section>
+        <section id="projects">
+          <div className="container mx-auto">
+            <h1 className="my-16 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:-translate-x-32 lg:text-[200px]">
+              PROJECTS
+            </h1>
+            <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">
+              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:w-[calc(50%+1px)]">
+                <div className="flex gap-4 p-4">
+                  <div className="grow">
+                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
+                    <p>
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/external-link/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/github/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <Image
+                  src="/img/main.jpeg"
+                  alt="me!"
+                  width={768}
+                  height={1024}
+                  className="aspect-video h-48 object-cover"
+                />
+              </div>
+              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:ml-auto sm:w-[calc(50%+1px)]">
+                <div className="flex gap-4 p-4">
+                  <div className="grow">
+                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
+                    <p>
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/external-link/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/github/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <Image
+                  src="/img/main.jpeg"
+                  alt="me!"
+                  width={768}
+                  height={1024}
+                  className="aspect-video h-48 object-cover"
+                />
+              </div>
+              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:w-[calc(50%+1px)]">
+                <div className="flex gap-4 p-4">
+                  <div className="grow">
+                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
+                    <p>
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/external-link/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/github/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <Image
+                  src="/img/main.jpeg"
+                  alt="me!"
+                  width={768}
+                  height={1024}
+                  className="aspect-video h-48 object-cover"
+                />
+              </div>
+              <div className="border-2 border-dashed border-black bg-white sm:ml-auto sm:w-[calc(50%+1px)]">
+                <div className="flex gap-4 p-4">
+                  <div className="grow">
+                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
+                    <p>
+                      In the realm of technology and innovation, my professional journey took a
+                      significant turn when I joined Tango Agency. As a programmer within this
+                      dynamic and forward-thinking company, I was not just coding; I was crafting
+                      the digital future. Every day was a new
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/external-link/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                    <a
+                      href="https://github.com/Michal99Zajac"
+                      aria-label="github profile"
+                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                    >
+                      <Image
+                        src="/icons/github/black.svg"
+                        alt="github logo"
+                        width={20}
+                        height={20}
+                        className="aspect-square object-contain"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <Image
+                  src="/img/main.jpeg"
+                  alt="me!"
+                  width={768}
+                  height={1024}
+                  className="aspect-video h-48 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <footer></footer>
     </>
