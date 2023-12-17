@@ -138,7 +138,7 @@ export default function Home() {
               </div>
               <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
                 <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
-                <div className="absolute left-[calc(50%-2px)] top-full h-[360px] w-[460px] overflow-visible">
+                <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
                   <Image
                     src="/components/resume-wire.svg"
                     alt="wires"
@@ -152,7 +152,7 @@ export default function Home() {
         </section>
         <section id="resume" className="relative">
           <div className="container mx-auto">
-            <h1 className="my-16 translate-x-8 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:-translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 translate-x-8 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
             <div className="grid items-start gap-4 px-5 lg:grid-cols-[1fr_auto]">
@@ -194,7 +194,7 @@ export default function Home() {
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="my-16 translate-x-0 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
+            <h1 className="my-16 translate-x-0 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
             <div className="companies flex items-start gap-6 px-5">
@@ -347,7 +347,7 @@ export default function Home() {
         </section>
         <section id="skills">
           <div className="container mx-auto">
-            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:translate-x-96 lg:text-[200px]">
+            <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-96 lg:text-[200px]">
               SKILLS
             </h1>
             <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
@@ -487,7 +487,7 @@ export default function Home() {
         </section>
         <section id="projects">
           <div className="container mx-auto">
-            <h1 className="my-16 font-hermeneus text-8xl text-blueprint-500 sm:text-[160px] lg:-translate-x-32 lg:text-[200px]">
+            <h1 className="my-16 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:-translate-x-32 lg:text-[200px]">
               PROJECTS
             </h1>
             <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">
