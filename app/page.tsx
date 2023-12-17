@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { env } from '@/config/env'
+
 import { resumeImages } from './resumeImages'
 
 const skills = [
@@ -34,7 +36,14 @@ const skills = [
   },
 ]
 
-export default function Home() {
+export default async function Home() {
+  const preambula = await fetch(`${env.API_URL}/preambula?populate=*`, {
+    headers: {
+      authorization: `Bearer ${env.API_TOKEN}`,
+    },
+  })
+  const preambulaJson = await preambula.json()
+
   return (
     <>
       <main className="overflow-x-hidden">
