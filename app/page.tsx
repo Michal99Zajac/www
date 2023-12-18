@@ -5,9 +5,8 @@ import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
 import PreambulaImage from '@/landing/components/PreambulaImage'
+import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
 import shuffle from '@/utils/shuffle'
-
-import { resumeImages } from './resumeImages'
 
 const skills = [
   {
@@ -150,20 +149,17 @@ export default async function Home() {
             <h1 className="my-16 translate-x-8 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:-translate-x-40 lg:text-[200px]">
               RESUME
             </h1>
-            <div className="grid items-start gap-4 px-5 lg:grid-cols-[1fr_auto]">
+            <div className="grid items-start gap-8 px-5 lg:grid-cols-[1fr_auto]">
               <Article content={resume.data.attributes.about} />
-              <div className="resume-img-grid grid grid-cols-4 gap-0 border-2 border-dashed border-black bg-white lg:grid-cols-5">
-                {resumeImages.map((image, id) => (
-                  <Image
-                    key={id}
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="resume-img-box aspect-square w-full object-cover lg:w-28"
-                  />
-                ))}
-              </div>
+              <ResumeImageGrid
+                images={resume.data.attributes.images.data.map((image) => ({
+                  id: image.id,
+                  url: image.attributes.url,
+                  alternativeText: image.attributes.alternativeText,
+                  width: image.attributes.width,
+                  height: image.attributes.height,
+                }))}
+              />
             </div>
           </div>
         </section>
