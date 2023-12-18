@@ -4,7 +4,7 @@ import Link from 'next/link'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
-import PreambulaImage from '@/landingPage/components/PreambulaImage'
+import PreambulaImage from '@/landing/components/PreambulaImage'
 import shuffle from '@/utils/shuffle'
 
 import { resumeImages } from './resumeImages'
