@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import preambulaAPI from '@/api/preambula'
+import Article from '@/components/Article'
 import PreambulaImage from '@/landingPage/components/PreambulaImage'
 import shuffle from '@/utils/shuffle'
 
@@ -48,14 +49,7 @@ export default async function Home() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] lg:grid-cols-[540px_1fr_auto]">
               <div>
-                <h1 className="mb-2 font-hermeneus text-7xl leading-normal">Hello World!</h1>
-                <h2 className="mb-4 font-hermeneus text-6xl leading-normal">I&apos;m Michal</h2>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisl in ex
-                  ultricies tincidunt. Ut dignissim finibus lectus vel rhoncus. Mauris non enim
-                  consequat, mollis massa sed, condimentum lacus. Aliquam non pretium urna, et
-                  interdum urna. Nunc vitae erat feugiat, scelerisque magna non, lobortis quam.
-                </p>
+                <Article content={preambula.data.attributes.intro} />
                 <div className="inline-flex border-2 border-dashed">
                   <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
                     <a
