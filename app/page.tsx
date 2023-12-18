@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import API from '@/api'
-import { env } from '@/config/env'
+import preambulaAPI from '@/api/preambula'
 
 import { resumeImages } from './resumeImages'
 
@@ -38,10 +37,7 @@ const skills = [
 ]
 
 export default async function Home() {
-  const api = new API()
-  const preambula = await api.get('/preambula?populate=*')
-
-  console.log(preambula)
+  const preambula = await preambulaAPI.get()
 
   return (
     <>
@@ -61,7 +57,7 @@ export default async function Home() {
                 <div className="inline-flex border-2 border-dashed">
                   <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
                     <a
-                      href="https://github.com/Michal99Zajac"
+                      href={preambula.data.attributes.contact.githubUrl}
                       aria-label="github profile"
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
@@ -76,7 +72,7 @@ export default async function Home() {
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
                     <a
-                      href="https://github.com/Michal99Zajac"
+                      href={preambula.data.attributes.contact.linkedinUrl}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
                       <Image
@@ -90,7 +86,7 @@ export default async function Home() {
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center">
                     <a
-                      href="https://github.com/Michal99Zajac"
+                      href={`mailto:${preambula.data.attributes.contact.email}`}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
                       <Image
