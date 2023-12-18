@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import preambulaAPI from '@/api/preambula'
+import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
 import PreambulaImage from '@/landingPage/components/PreambulaImage'
 import shuffle from '@/utils/shuffle'
@@ -41,6 +42,7 @@ const skills = [
 
 export default async function Home() {
   const preambula = await preambulaAPI.get()
+  const resume = await resumeAPI.get()
 
   return (
     <>
@@ -149,27 +151,7 @@ export default async function Home() {
               RESUME
             </h1>
             <div className="grid items-start gap-4 px-5 lg:grid-cols-[1fr_auto]">
-              <div>
-                <h2 className="mb-4 text-2xl">Lorem ipsum dolor</h2>
-                <p className="text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et sapien quis
-                  tortor interdum volutpat. Nullam leo urna, blandit id pharetra a, efficitur quis
-                  sem. Quisque interdum arcu a magna consequat, ac porttitor dolor laoreet.
-                  Phasellus erat orci, blandit ac risus vitae, lobortis ultricies metus. Proin nec
-                  suscipit elit. Aenean porttitor nec odio vitae efficitur. Mauris sit amet odio sit
-                  amet nulla tristique vehicula non ut quam. Fusce vitae velit quis sem molestie
-                  dapibus. Fusce finibus leo urna. Nulla malesuada a ipsum ac mollis. Integer cursus
-                  felis sed nisl accumsan, quis accumsan nulla rhoncus. Nunc orci elit, faucibus sed
-                  rutrum a, sollicitudin vel felis. Donec tincidunt sit amet orci quis rutrum. Nunc
-                  lacinia massa malesuada tincidunt tincidunt. Suspendisse est risus, dapibus at
-                  suscipit bibendum, rhoncus a quam. Duis lacinia lobortis sapien, sed cursus ex
-                  ornare sed. Ut volutpat purus sed nulla sollicitudin posuere. Sed faucibus lorem
-                  in libero iaculis lacinia. Pellentesque habitant morbi tristique senectus et netus
-                  et malesuada fames ac turpis egestas. Vivamus dignissim justo eget dapibus
-                  faucibus. Morbi malesuada turpis vel eros. Suspendisse vel tellus nulla. Quisque
-                  sed lacus id quam euismod pellentesque sit amet eu augue.
-                </p>
-              </div>
+              <Article content={resume.data.attributes.about} />
               <div className="resume-img-grid grid grid-cols-4 gap-0 border-2 border-dashed border-black bg-white lg:grid-cols-5">
                 {resumeImages.map((image, id) => (
                   <Image
