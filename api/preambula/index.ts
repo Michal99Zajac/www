@@ -13,8 +13,8 @@ export async function get() {
   return preambulaGETSecham.parse(data)
 }
 
-const preambula = {
+const preambulaAPI = {
   get,
 }
 
-export default preambula
+export default preambulaAPI
