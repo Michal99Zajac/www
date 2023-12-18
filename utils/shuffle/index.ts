@@ -7,6 +7,7 @@ export function shuffle<T>(array: T[]): T[] {
   let currentIndex = array.length,
     temporaryValue,
     randomIndex
+  const copiedArray = [...array]
 
   // While there remain elements to shuffle...
   while (currentIndex !== 0) {
@@ -14,12 +15,12 @@ export function shuffle<T>(array: T[]): T[] {
     currentIndex -= 1
 
     // swap current element with random one
-    temporaryValue = array[currentIndex]
-    array[currentIndex] = array[randomIndex]
-    array[randomIndex] = temporaryValue
+    temporaryValue = copiedArray[currentIndex]
+    copiedArray[currentIndex] = copiedArray[randomIndex]
+    copiedArray[randomIndex] = temporaryValue
   }
 
-  return array
+  return copiedArray
 }
 
 export default shuffle
