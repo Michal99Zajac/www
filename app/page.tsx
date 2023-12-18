@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import preambulaAPI from '@/api/preambula'
+import PreambulaImage from '@/landingPage/components/PreambulaImage'
+import shuffle from '@/utils/shuffle'
 
 import { resumeImages } from './resumeImages'
 
@@ -100,13 +102,11 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-              <div className="crossbox -mb-5 w-full self-stretch object-cover md:-my-5 md:mx-0">
-                <Image
-                  src="/img/me-1.png"
-                  alt="me"
-                  width={400}
-                  height={600}
-                  className="w-full object-cover"
+              <div className="crossbox -mb-5 h-[600px] w-full self-stretch object-cover sm:h-[800px] md:-my-5 md:mx-0">
+                <PreambulaImage
+                  images={shuffle(
+                    preambula.data.attributes.images.data.map((image) => image.attributes),
+                  )}
                 />
               </div>
               <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
