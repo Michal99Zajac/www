@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import API from '@/api'
 import { env } from '@/config/env'
 
 import { resumeImages } from './resumeImages'
@@ -37,12 +38,10 @@ const skills = [
 ]
 
 export default async function Home() {
-  const preambula = await fetch(`${env.API_URL}/preambula?populate=*`, {
-    headers: {
-      authorization: `Bearer ${env.API_TOKEN}`,
-    },
-  })
-  const preambulaJson = await preambula.json()
+  const api = new API()
+  const preambula = await api.get('/preambula?populate=*')
+
+  console.log(preambula)
 
   return (
     <>
