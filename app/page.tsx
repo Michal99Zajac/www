@@ -46,7 +46,7 @@ export default async function Home() {
       <main className="overflow-x-hidden">
         <section id="preambula">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] md:grid-rows-1 lg:grid-cols-[540px_1fr_auto]">
+            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] lg:grid-cols-[540px_1fr_auto]">
               <div>
                 <h1 className="mb-2 font-hermeneus text-7xl leading-normal">Hello World!</h1>
                 <h2 className="mb-4 font-hermeneus text-6xl leading-normal">I&apos;m Michal</h2>
@@ -102,7 +102,7 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-              <div className="crossbox -mb-5 h-[600px] w-full self-stretch object-cover sm:h-[800px] md:-my-5 md:mx-0">
+              <div className="crossbox relative -mb-5 h-[600px] sm:min-h-[800px] md:-my-5">
                 <PreambulaImage
                   images={shuffle(
                     preambula.data.attributes.images.data.map((image) => image.attributes),
