@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import jobsAPI from '@/api/jobs'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
@@ -42,6 +43,7 @@ const skills = [
 export default async function Home() {
   const preambula = await preambulaAPI.get()
   const resume = await resumeAPI.get()
+  const jobs = await jobsAPI.get()
 
   return (
     <>
