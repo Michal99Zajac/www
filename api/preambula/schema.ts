@@ -3,7 +3,7 @@ import { z } from 'zod'
 /**
  * Preambula schema
  */
-export const preambulaGETSecham = z.object({
+export const preambulaGETSchema = z.object({
   data: z.object({
     id: z.number(),
     attributes: z.object({

@@ -1,6 +1,6 @@
 import API from '@/api'
 
-import { preambulaGETSecham } from './schema'
+import { preambulaGETSchema } from './schema'
 
 /**
  * Get the preambula.
@@ -10,7 +10,7 @@ export async function get() {
   const api = new API()
   const data = await api.get('/preambula?populate=*')
 
-  return preambulaGETSecham.parse(data)
+  return preambulaGETSchema.parse(data)
 }
 
 const preambulaAPI = {
