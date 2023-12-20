@@ -1,7 +1,8 @@
 'use client'
 
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import useInterval from 'react-use/lib/useInterval'
 
 import type { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
@@ -15,6 +16,8 @@ interface ExperienceGridProps {
   jobs: JobsGETSchema
 }
 
+const DELAY = 1000 * 60 // 1 minute
+
 /**
  * ExperienceGrid component. Displays jobs and projects in grid.
  *
@@ -24,23 +27,16 @@ export function ExperienceGrid({ jobs }: ExperienceGridProps) {
   const [jobIndex, setJobIndex] = useState(jobs.data.length ? 0 : null)
 
   // change job id every minute
-  useEffect(() => {
+  useInterval(() => {
     // if there is only one job, do not change job id
     if (jobs.data.length <= 1) return
 
-    const ONE_MINUTE = 1000 * 60
+    setJobIndex((prevIndex) => {
+      if (prevIndex === null) return null
 
-    // change job id every minute
-    const interval = setInterval(() => {
-      setJobIndex((prevIndex) => {
-        if (prevIndex === null) return null
-
-        return (prevIndex + 1) % jobs.data.length
-      })
-    }, ONE_MINUTE)
-
-    return () => clearInterval(interval)
-  }, [jobs.data.length])
+      return (prevIndex + 1) % jobs.data.length
+    })
+  }, DELAY)
 
   return (
     <div className="flex items-start gap-6 px-5">
