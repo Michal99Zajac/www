@@ -5,8 +5,10 @@ import jobsAPI from '@/api/jobs'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
+import dayjs from '@/config/dayjs'
 import PreambulaImage from '@/landing/components/PreambulaImage'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
+import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
 import shuffle from '@/utils/shuffle'
 
 const skills = [
@@ -170,74 +172,43 @@ export default async function Home() {
             <h1 className="my-16 translate-x-0 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
-            <div className="companies flex items-start gap-6 px-5">
+            <div className="flex items-start gap-6 px-5">
               <div className="relative w-full grow after:absolute after:left-[9px] after:top-7 after:z-[-1] after:h-[calc(100%-1.75rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)]">
-                <div className="mb-10 flex items-start gap-4">
-                  <div className="hidden min-w-[108px] md:block">
-                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
-                    <p className="text-right text-lg">2014 - 2016</p>
+                {jobs.data.map((job) => (
+                  <div key={job.id} className="mb-10 flex items-start gap-4">
+                    <div className="hidden min-w-[108px] md:block">
+                      <p className="mb-1 text-right font-hermeneus text-xl">
+                        {dayjs(job.attributes.endDate || undefined).from(
+                          job.attributes.startDate,
+                          true,
+                        )}
+                      </p>
+                      <p className="text-right text-lg">
+                        {job.attributes.endDate
+                          ? `${dayjs(job.attributes.startDate).format('YYYY')} - ${dayjs(
+                              job.attributes.endDate,
+                            ).format('YYYY')}`
+                          : `from ${dayjs(job.attributes.startDate).format('YYYY')}`}
+                      </p>
+                    </div>
+                    <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
+                      <button
+                        aria-label="Check Tango Agency projects"
+                        className="pulsar h-[20px] w-[20px] rounded-full bg-blueprint-500"
+                      />
+                    </div>
+                    <div className="grow">
+                      <h2 className="mb-1 font-hermeneus text-xl">{job.attributes.companyName}</h2>
+                      <p className="mb-1 block text-sm text-gray-500 md:hidden">
+                        {getComplexRelativeTimeString(
+                          job.attributes.startDate,
+                          job.attributes.endDate,
+                        )}
+                      </p>
+                      <Article content={job.attributes.content} />
+                    </div>
                   </div>
-                  <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button
-                      aria-label="Check Tango Agency projects"
-                      className="pulsar h-[20px] w-[20px] rounded-full bg-blueprint-500"
-                    ></button>
-                  </div>
-                  <div className="grow">
-                    <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
-                    <p className="mb-1 block text-sm text-gray-500 md:hidden">
-                      2 Years · 2014 - 2016
-                    </p>
-                    <p className="text-base">
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new opportunity to solve complex problems,
-                      to turn lines of code into functional masterpieces. Tango Agency was not just
-                      a workplace; it was a hub of creativity and technical prowess, where ideas
-                      were nurtured, and visions were turned into reality. My role as a programmer
-                      here was challenging yet immensely rewarding, allowing me to delve deep into
-                      the intricacies of software development. The projects I worked on were
-                      diverse, pushing the boundaries of what was possible and constantly evolving
-                      with the technological landscape. This experience at Tango Agency honed my
-                      skills, expanded my knowledge, and solidified my passion for programming,
-                      leaving an indelible mark on my professional journey.
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-10 flex items-start gap-4">
-                  <div className="hidden min-w-[108px] md:block">
-                    <p className="mb-1 text-right font-hermeneus text-xl">2 Years</p>
-                    <p className="text-right text-lg">2014 - 2016</p>
-                  </div>
-                  <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-                    <button
-                      aria-label="Check tango agency projects"
-                      className="h-[12px] w-[12px] rounded-full bg-blueprint-500"
-                    ></button>
-                  </div>
-                  <div className="grow">
-                    <h2 className="mb-1 font-hermeneus text-xl">Tango Agency</h2>
-                    <p className="mb-1 block text-sm text-gray-500 md:hidden">
-                      2 Years · 2014 - 2016
-                    </p>
-                    <p className="text-base">
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new opportunity to solve complex problems,
-                      to turn lines of code into functional masterpieces. Tango Agency was not just
-                      a workplace; it was a hub of creativity and technical prowess, where ideas
-                      were nurtured, and visions were turned into reality. My role as a programmer
-                      here was challenging yet immensely rewarding, allowing me to delve deep into
-                      the intricacies of software development. The projects I worked on were
-                      diverse, pushing the boundaries of what was possible and constantly evolving
-                      with the technological landscape. This experience at Tango Agency honed my
-                      skills, expanded my knowledge, and solidified my passion for programming,
-                      leaving an indelible mark on my professional journey.
-                    </p>
-                  </div>
-                </div>
+                ))}
                 <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
               </div>
               <div className="relative hidden w-full grow after:absolute after:left-[9px] after:top-7 after:z-[-1] after:h-[calc(100%-1.75rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)] lg:block">
