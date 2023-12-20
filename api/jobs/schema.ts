@@ -49,3 +49,5 @@ export const jobsGETSchema = z.object({
     }),
   }),
 })
+
+export type JobsGETSchema = z.infer<typeof jobsGETSchema>

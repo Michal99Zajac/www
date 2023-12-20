@@ -101,3 +101,5 @@ export const preambulaGETSchema = z.object({
   }),
   meta: z.object({}),
 })
+
+export type PreambulaGETSchema = z.infer<typeof preambulaGETSchema>

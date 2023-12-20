@@ -85,3 +85,5 @@ export const resumeGETSchema = z.object({
   }),
   meta: z.object({}),
 })
+
+export type ResumeGETSchema = z.infer<typeof resumeGETSchema>
