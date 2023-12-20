@@ -98,7 +98,10 @@ export function Article({ content, className }: ArticleProps) {
               width={Number(width) || 1600}
               height={Number(height) || 900}
               {...props}
-              className={clsx('my-4 aspect-video border-2 object-cover', className)}
+              className={clsx(
+                'my-4 aspect-[21/9] border-2 border-dashed border-black object-cover',
+                className,
+              )}
             />
           ),
         }}
