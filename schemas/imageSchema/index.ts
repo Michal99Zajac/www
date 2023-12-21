@@ -12,39 +12,45 @@ export const imageSchema = z.object({
     width: z.number(),
     height: z.number(),
     formats: z.object({
-      large: z.object({
-        ext: z.string(),
-        url: z.string(),
-        hash: z.string(),
-        mime: z.string(),
-        name: z.string(),
-        path: z.string().nullable(),
-        size: z.number(),
-        width: z.number(),
-        height: z.number(),
-      }),
-      medium: z.object({
-        ext: z.string(),
-        url: z.string(),
-        hash: z.string(),
-        mime: z.string(),
-        name: z.string(),
-        path: z.string().nullable(),
-        size: z.number(),
-        width: z.number(),
-        height: z.number(),
-      }),
-      small: z.object({
-        ext: z.string(),
-        url: z.string(),
-        hash: z.string(),
-        mime: z.string(),
-        name: z.string(),
-        path: z.string().nullable(),
-        size: z.number(),
-        width: z.number(),
-        height: z.number(),
-      }),
+      large: z
+        .object({
+          ext: z.string(),
+          url: z.string(),
+          hash: z.string(),
+          mime: z.string(),
+          name: z.string(),
+          path: z.string().nullable(),
+          size: z.number(),
+          width: z.number(),
+          height: z.number(),
+        })
+        .nullish(),
+      medium: z
+        .object({
+          ext: z.string(),
+          url: z.string(),
+          hash: z.string(),
+          mime: z.string(),
+          name: z.string(),
+          path: z.string().nullable(),
+          size: z.number(),
+          width: z.number(),
+          height: z.number(),
+        })
+        .nullish(),
+      small: z
+        .object({
+          ext: z.string(),
+          url: z.string(),
+          hash: z.string(),
+          mime: z.string(),
+          name: z.string(),
+          path: z.string().nullable(),
+          size: z.number(),
+          width: z.number(),
+          height: z.number(),
+        })
+        .nullish(),
       thumbnail: z.object({
         ext: z.string(),
         url: z.string(),
