@@ -5,7 +5,7 @@ import jobsAPI from '@/api/jobs'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
-import ExperienceGrid from '@/landing/components/ExperienceGrid'
+import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
 
 const skills = [
@@ -170,7 +170,7 @@ export default async function Home() {
             <h1 className="my-16 translate-x-0 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
-            <ExperienceGrid jobs={jobs} />
+            <ExperienceTimeline jobs={jobs} />
           </div>
         </section>
         <section id="skills">

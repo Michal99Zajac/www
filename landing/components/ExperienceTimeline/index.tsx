@@ -13,7 +13,7 @@ import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTime
 
 import Projects from './components/Projects'
 
-interface ExperienceGridProps {
+interface ExperienceTimelineProps {
   /**
    * Jobs data.
    */
@@ -23,9 +23,9 @@ interface ExperienceGridProps {
 const DELAY = 1000 * 60 // 1 minute
 
 /**
- * ExperienceGrid component. Displays jobs and projects in grid.
+ * ExperienceTimeline component. Displays jobs and projects in timeline.
  */
-export function ExperienceGrid({ jobs }: ExperienceGridProps) {
+export function ExperienceTimeline({ jobs }: ExperienceTimelineProps) {
   const isLarge = useMedia(`(min-width: ${LG_SCREEN}px)`, false)
   const [jobIndex, setJobIndex] = useState<number | null>(null)
 
@@ -94,4 +94,4 @@ export function ExperienceGrid({ jobs }: ExperienceGridProps) {
   )
 }
 
-export default ExperienceGrid
+export default ExperienceTimeline
