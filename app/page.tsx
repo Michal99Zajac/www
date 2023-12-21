@@ -6,9 +6,7 @@ import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
 import ExperienceGrid from '@/landing/components/ExperienceGrid'
-import PreambulaImage from '@/landing/components/PreambulaImage'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
-import shuffle from '@/utils/shuffle'
 
 const skills = [
   {
@@ -51,7 +49,7 @@ export default async function Home() {
       <main className="overflow-x-hidden">
         <section id="preambula">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[340px_1fr_auto] lg:grid-cols-[540px_1fr_auto]">
+            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[1fr_340px_auto] lg:grid-cols-[1fr_480px_auto] 2xl:grid-cols-[1fr_640px_auto]">
               <div>
                 <Article content={preambula.data.attributes.intro} />
                 <div className="inline-flex border-2 border-dashed">
@@ -100,13 +98,14 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-              <div className="crossbox relative -mb-5 h-[600px] sm:min-h-[800px] md:-my-5">
-                <PreambulaImage
-                  images={shuffle(
-                    preambula.data.attributes.images.data.map((image) => image.attributes),
-                  )}
-                />
-              </div>
+              <Image
+                priority
+                src={preambula.data.attributes.image.data.attributes.url}
+                alt={preambula.data.attributes.image.data.attributes.alternativeText || 'me'}
+                width={preambula.data.attributes.image.data.attributes.width}
+                height={preambula.data.attributes.image.data.attributes.height}
+                className="crossbox -mb-5 w-full object-cover md:-my-5 md:h-[calc(100%+2.5rem)]"
+              />
               <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
                 <Link
                   href="#resume"
