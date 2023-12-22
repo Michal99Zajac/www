@@ -7,6 +7,7 @@ import resumeAPI from '@/api/resume'
 import Article from '@/components/Article'
 import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
+import isMobileDevice from '@/utils/isMobileDevice'
 
 const skills = [
   {
@@ -40,6 +41,7 @@ const skills = [
 ]
 
 export default async function Home() {
+  const isMobile = isMobileDevice()
   const preambula = await preambulaAPI.get()
   const resume = await resumeAPI.get()
   const jobs = await jobsAPI.get()
@@ -170,7 +172,7 @@ export default async function Home() {
             <h1 className="my-16 translate-x-0 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
-            <ExperienceTimeline jobs={jobs} />
+            <ExperienceTimeline jobs={jobs} modal={isMobile} />
           </div>
         </section>
         <section id="skills">

@@ -1,55 +1,32 @@
 'use client'
 
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
-import useInterval from 'react-use/lib/useInterval'
-import useMedia from 'react-use/lib/useMedia'
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
 
 import type { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
 import dayjs from '@/config/dayjs'
-import { LG_SCREEN } from '@/config/tailwind'
 import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
 
-import Projects from './components/Projects'
+const Projects = dynamic(() => import('./components/Projects'))
 
 interface ExperienceTimelineProps {
   /**
    * Jobs data.
    */
   jobs: JobsGETSchema
+  /**
+   * Whether to display modal.
+   */
+  modal?: boolean
 }
-
-const DELAY = 1000 * 60 // 1 minute
 
 /**
  * ExperienceTimeline component. Displays jobs and projects in timeline.
  */
-export function ExperienceTimeline({ jobs }: ExperienceTimelineProps) {
-  const isLarge = useMedia(`(min-width: ${LG_SCREEN}px)`, false)
-  const [jobIndex, setJobIndex] = useState<number | null>(null)
-
-  // if screen is large and there are more than 1 job, enable interval
-  const isIntervalEnabled = isLarge && jobs.data.length > 1
-
-  // change job id every minute
-  useInterval(
-    () => {
-      setJobIndex((prevIndex) => {
-        if (prevIndex === null) return 0
-
-        return (prevIndex + 1) % jobs.data.length
-      })
-    },
-    isIntervalEnabled ? DELAY : null,
-  )
-
-  // if screen is large, set job index to 0 or null if there are no jobs
-  useEffect(() => {
-    if (isLarge) return setJobIndex(jobs.data.length > 0 ? 0 : null)
-
-    setJobIndex(null)
-  }, [isLarge, jobs.data.length])
+export function ExperienceTimeline({ jobs, modal }: ExperienceTimelineProps) {
+  const [jobIndex, setJobIndex] = useState<number | null>(modal ? null : 0)
 
   return (
     <div className="flex items-start gap-6 px-5">
@@ -89,7 +66,7 @@ export function ExperienceTimeline({ jobs }: ExperienceTimelineProps) {
         ))}
         <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
       </div>
-      <Projects jobIndex={jobIndex} jobs={jobs} />
+      {modal ? null : <Projects jobIndex={jobIndex} jobs={jobs} />}
     </div>
   )
 }
