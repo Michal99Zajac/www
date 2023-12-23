@@ -172,7 +172,7 @@ export default async function Home() {
             <h1 className="my-16 translate-x-0 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-40 lg:text-[200px]">
               EXPERIENCE
             </h1>
-            <ExperienceTimeline jobs={jobs} modal={isMobile} />
+            <ExperienceTimeline jobs={jobs} isMobile={isMobile} />
           </div>
         </section>
         <section id="skills">

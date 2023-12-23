@@ -10,6 +10,7 @@ import dayjs from '@/config/dayjs'
 import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
 
 const Projects = dynamic(() => import('./components/Projects'))
+const ProjectsDrawer = dynamic(() => import('./components/ProjectsDrawer'))
 
 interface ExperienceTimelineProps {
   /**
@@ -19,14 +20,14 @@ interface ExperienceTimelineProps {
   /**
    * Whether to display modal.
    */
-  modal?: boolean
+  isMobile?: boolean
 }
 
 /**
  * ExperienceTimeline component. Displays jobs and projects in timeline.
  */
-export function ExperienceTimeline({ jobs, modal }: ExperienceTimelineProps) {
-  const [jobIndex, setJobIndex] = useState<number | null>(modal ? null : 0)
+export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) {
+  const [jobIndex, setJobIndex] = useState<number | null>(isMobile ? null : 0)
 
   return (
     <div className="flex items-start gap-6 px-5">
@@ -66,7 +67,11 @@ export function ExperienceTimeline({ jobs, modal }: ExperienceTimelineProps) {
         ))}
         <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
       </div>
-      {modal ? null : <Projects jobIndex={jobIndex} jobs={jobs} />}
+      {isMobile ? (
+        <ProjectsDrawer jobIndex={jobIndex} jobs={jobs} onClose={() => setJobIndex(null)} />
+      ) : (
+        <Projects jobIndex={jobIndex} jobs={jobs} />
+      )}
     </div>
   )
 }
