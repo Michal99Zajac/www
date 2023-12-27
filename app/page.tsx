@@ -4,47 +4,19 @@ import Link from 'next/link'
 import jobsAPI from '@/api/jobs'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
+import skillCategoriesApi from '@/api/skill-categories'
 import Article from '@/components/Article'
 import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
+import SkillGrid from '@/landing/components/SkillGrid'
 import isMobileDevice from '@/utils/isMobileDevice'
-
-const skills = [
-  {
-    id: 'a',
-    icon: '/icons/typescript/typescript.svg',
-    name: 'Typescript',
-    isFavorite: true,
-    level: 5,
-  },
-  {
-    id: 'b',
-    icon: '/icons/typescript/typescript.svg',
-    name: 'Typescript',
-    isFavorite: true,
-    level: 5,
-  },
-  {
-    id: 'c',
-    icon: '/icons/typescript/typescript.svg',
-    name: 'Typescript',
-    isFavorite: false,
-    level: 5,
-  },
-  {
-    id: 'd',
-    icon: '/icons/typescript/typescript.svg',
-    name: 'Typescript',
-    isFavorite: true,
-    level: 5,
-  },
-]
 
 export default async function Home() {
   const isMobile = isMobileDevice()
   const preambula = await preambulaAPI.get()
   const resume = await resumeAPI.get()
   const jobs = await jobsAPI.get()
+  const skillCategories = await skillCategoriesApi.get()
 
   return (
     <>
@@ -180,139 +152,7 @@ export default async function Home() {
             <h1 className="my-16 inline-block border-2 border-dashed border-black px-6 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:translate-x-96 lg:text-[200px]">
               SKILLS
             </h1>
-            <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
-              <div className="no-scrollbar flex w-full justify-between gap-8 overflow-x-auto px-6">
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/icons/rocket/rocket.svg"
-                    alt="technologies icon (rocket)"
-                    width={32}
-                    height={32}
-                    className="mb-2 object-contain"
-                  />
-                  <p className="mb-2 font-hermeneus text-base">Technologies</p>
-                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button
-                        aria-label="Check technologies skills"
-                        className="pulsar h-[20px] min-w-[20px] rounded-full bg-blueprint-500"
-                      />
-                    </div>
-                    <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/icons/framework/framework.svg"
-                    alt="technologies icon (rocket)"
-                    width={32}
-                    height={32}
-                    className="mb-2 object-contain"
-                  />
-                  <p className="mb-2 font-hermeneus text-base">Frameworks</p>
-                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button
-                        aria-label="Check frameworks skills"
-                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/icons/tool/tool.svg"
-                    alt="technologies icon (rocket)"
-                    width={32}
-                    height={32}
-                    className="mb-2 object-contain"
-                  />
-                  <p className="mb-2 font-hermeneus text-base">Tools</p>
-                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button
-                        aria-label="Check tools skills"
-                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/icons/language/language.svg"
-                    alt="technologies icon (rocket)"
-                    width={32}
-                    height={32}
-                    className="mb-2 object-contain"
-                  />
-                  <p className="mb-2 font-hermeneus text-base">Languages</p>
-                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button
-                        aria-label="Check languages skills"
-                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/icons/other/other.svg"
-                    alt="technologies icon (rocket)"
-                    width={32}
-                    height={32}
-                    className="mb-2 object-contain"
-                  />
-                  <p className="mb-2 font-hermeneus text-base">Others</p>
-                  <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center">
-                      <button
-                        aria-label="Check others skills"
-                        className="h-[12px] min-w-[12px] rounded-full bg-blueprint-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 border-2 border-dashed border-black md:grid-cols-3">
-              {skills.map((skill) => (
-                <div key={skill.id} className="skill-box flex h-[118px] flex-col p-4">
-                  <div className="flex items-start gap-2 md:gap-4">
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
-                    <p className="font-hermeneus text-base">{skill.name}</p>
-                    <div className="grow" />
-                    <Image
-                      src={skill.isFavorite ? '/icons/crown/gold.svg' : '/icons/crown/black.svg'}
-                      alt="crown icon"
-                      width={16}
-                      height={16}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="grow" />
-                  <div className="level-expert flex items-center justify-end gap-2">
-                    <p className="font-hermeneus text-sm">Expert</p>
-                    <div className="level-block h-[12px] w-[12px] bg-blueprint-200 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blueprint-300 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blueprint-400 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blueprint-500 md:h-[16px] md:w-[16px]" />
-                    <div className="level-block h-[12px] w-[12px] bg-blueprint-600 md:h-[16px] md:w-[16px]" />
-                  </div>
-                </div>
-              ))}
-              {Array((3 - (skills.length % 3)) % 3)
-                .fill(0)
-                .map((_, i) => (
-                  <div key={i} className="skill-box empty-skill-box" />
-                ))}
-            </div>
+            <SkillGrid skillCategories={skillCategories} />
           </div>
         </section>
         <section id="projects">
