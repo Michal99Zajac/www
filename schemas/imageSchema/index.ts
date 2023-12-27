@@ -11,9 +11,48 @@ export const imageSchema = z.object({
     caption: z.string().nullable(),
     width: z.number(),
     height: z.number(),
-    formats: z.object({
-      large: z
-        .object({
+    formats: z
+      .object({
+        large: z
+          .object({
+            ext: z.string(),
+            url: z.string(),
+            hash: z.string(),
+            mime: z.string(),
+            name: z.string(),
+            path: z.string().nullable(),
+            size: z.number(),
+            width: z.number(),
+            height: z.number(),
+          })
+          .nullish(),
+        medium: z
+          .object({
+            ext: z.string(),
+            url: z.string(),
+            hash: z.string(),
+            mime: z.string(),
+            name: z.string(),
+            path: z.string().nullable(),
+            size: z.number(),
+            width: z.number(),
+            height: z.number(),
+          })
+          .nullish(),
+        small: z
+          .object({
+            ext: z.string(),
+            url: z.string(),
+            hash: z.string(),
+            mime: z.string(),
+            name: z.string(),
+            path: z.string().nullable(),
+            size: z.number(),
+            width: z.number(),
+            height: z.number(),
+          })
+          .nullish(),
+        thumbnail: z.object({
           ext: z.string(),
           url: z.string(),
           hash: z.string(),
@@ -23,46 +62,9 @@ export const imageSchema = z.object({
           size: z.number(),
           width: z.number(),
           height: z.number(),
-        })
-        .nullish(),
-      medium: z
-        .object({
-          ext: z.string(),
-          url: z.string(),
-          hash: z.string(),
-          mime: z.string(),
-          name: z.string(),
-          path: z.string().nullable(),
-          size: z.number(),
-          width: z.number(),
-          height: z.number(),
-        })
-        .nullish(),
-      small: z
-        .object({
-          ext: z.string(),
-          url: z.string(),
-          hash: z.string(),
-          mime: z.string(),
-          name: z.string(),
-          path: z.string().nullable(),
-          size: z.number(),
-          width: z.number(),
-          height: z.number(),
-        })
-        .nullish(),
-      thumbnail: z.object({
-        ext: z.string(),
-        url: z.string(),
-        hash: z.string(),
-        mime: z.string(),
-        name: z.string(),
-        path: z.string().nullable(),
-        size: z.number(),
-        width: z.number(),
-        height: z.number(),
-      }),
-    }),
+        }),
+      })
+      .nullable(),
     hash: z.string(),
     ext: z.string(),
     mime: z.string(),
