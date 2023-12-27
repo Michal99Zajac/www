@@ -1,10 +1,12 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import jobsAPI from '@/api/jobs'
 import preambulaAPI from '@/api/preambula'
 import resumeAPI from '@/api/resume'
-import skillCategoriesApi from '@/api/skill-categories'
+import selfProjectsAPI from '@/api/self-projects'
+import skillCategoriesAPI from '@/api/skill-categories'
 import Article from '@/components/Article'
 import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
@@ -16,7 +18,8 @@ export default async function Home() {
   const preambula = await preambulaAPI.get()
   const resume = await resumeAPI.get()
   const jobs = await jobsAPI.get()
-  const skillCategories = await skillCategoriesApi.get()
+  const skillCategories = await skillCategoriesAPI.get()
+  const selfProjects = await selfProjectsAPI.get()
 
   return (
     <>
@@ -161,198 +164,64 @@ export default async function Home() {
               PROJECTS
             </h1>
             <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">
-              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:w-[calc(50%+1px)]">
-                <div className="flex gap-4 p-4">
-                  <div className="grow">
-                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
-                    <p>
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new
-                    </p>
+              {selfProjects.data.map((selfProject, index) => (
+                <div
+                  key={selfProject.id}
+                  className={clsx(
+                    'mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:w-[calc(50%+1px)]',
+                    index % 2 === 1 && 'sm:ml-auto',
+                  )}
+                >
+                  <div className="flex gap-4 p-4">
+                    <div className="grow">
+                      <h2 className="mb-4 font-hermeneus text-lg">{selfProject.attributes.name}</h2>
+                      <p>{selfProject.attributes.description}</p>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      {selfProject.attributes.githubUrl && (
+                        <a
+                          href={selfProject.attributes.githubUrl}
+                          aria-label="github profile"
+                          className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                        >
+                          <Image
+                            src="/icons/github/black.svg"
+                            alt="github logo"
+                            width={20}
+                            height={20}
+                            className="aspect-square object-contain"
+                          />
+                        </a>
+                      )}
+                      {selfProject.attributes.websiteUrl && (
+                        <a
+                          href={selfProject.attributes.websiteUrl}
+                          aria-label="website url"
+                          className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
+                        >
+                          <Image
+                            src="/icons/external-link/black.svg"
+                            alt="external link"
+                            width={20}
+                            height={20}
+                            className="aspect-square object-contain"
+                          />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/external-link/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/github/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                  </div>
+                  <Image
+                    src={selfProject.attributes.image.data.attributes.url}
+                    alt={
+                      selfProject.attributes.image.data.attributes.alternativeText ||
+                      'Self project image'
+                    }
+                    width={selfProject.attributes.image.data.attributes.width}
+                    height={selfProject.attributes.image.data.attributes.height}
+                    className="aspect-[21/9] w-full object-cover"
+                  />
                 </div>
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="aspect-video h-48 object-cover"
-                />
-              </div>
-              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:ml-auto sm:w-[calc(50%+1px)]">
-                <div className="flex gap-4 p-4">
-                  <div className="grow">
-                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
-                    <p>
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/external-link/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/github/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="aspect-video h-48 object-cover"
-                />
-              </div>
-              <div className="mb-4 border-2 border-dashed border-black bg-white sm:mb-0 sm:w-[calc(50%+1px)]">
-                <div className="flex gap-4 p-4">
-                  <div className="grow">
-                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
-                    <p>
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/external-link/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/github/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="aspect-video h-48 object-cover"
-                />
-              </div>
-              <div className="border-2 border-dashed border-black bg-white sm:ml-auto sm:w-[calc(50%+1px)]">
-                <div className="flex gap-4 p-4">
-                  <div className="grow">
-                    <h2 className="mb-4 font-hermeneus text-lg">Saleor</h2>
-                    <p>
-                      In the realm of technology and innovation, my professional journey took a
-                      significant turn when I joined Tango Agency. As a programmer within this
-                      dynamic and forward-thinking company, I was not just coding; I was crafting
-                      the digital future. Every day was a new
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/external-link/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                    <a
-                      href="https://github.com/Michal99Zajac"
-                      aria-label="github profile"
-                      className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/github/black.svg"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                        className="aspect-square object-contain"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <Image
-                  src="/img/main.jpeg"
-                  alt="me!"
-                  width={768}
-                  height={1024}
-                  className="aspect-video h-48 object-cover"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </section>
