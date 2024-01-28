@@ -48,6 +48,7 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
             </div>
             <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
               <button
+                id={job.attributes.companyName}
                 onClick={() => setJobIndex(index)}
                 aria-label="Check Tango Agency projects"
                 className={clsx(
@@ -57,7 +58,9 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
               />
             </div>
             <div className="grow">
-              <h2 className="mb-1 font-hermeneus text-xl">{job.attributes.companyName}</h2>
+              <label htmlFor={job.attributes.companyName} className="cursor-pointer">
+                <h2 className="mb-1 font-hermeneus text-xl">{job.attributes.companyName}</h2>
+              </label>
               <p className="mb-1 block text-sm text-gray-500 md:hidden">
                 {getComplexRelativeTimeString(job.attributes.startDate, job.attributes.endDate)}
               </p>
