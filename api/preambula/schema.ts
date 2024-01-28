@@ -23,7 +23,7 @@ export const preambulaGETSchema = z.object({
         id: z.number(),
         metaTitle: z.string(),
         metaDescription: z.string(),
-        keywords: z.array(z.string()).nullable(),
+        keywords: z.string().nullable(),
         metaRobots: z.string().nullable(),
         structuredData: z.record(z.string()).nullable(),
         metaViewport: z.string().nullable(),

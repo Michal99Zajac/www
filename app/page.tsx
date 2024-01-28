@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,6 +13,19 @@ import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
 import SkillGrid from '@/landing/components/SkillGrid'
 import isMobileDevice from '@/utils/isMobileDevice'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const preambula = await preambulaAPI.get()
+
+  return {
+    title: preambula.data.attributes.seo.metaTitle,
+    description: preambula.data.attributes.seo.metaDescription,
+    openGraph: {
+      title: preambula.data.attributes.seo.metaTitle,
+      description: preambula.data.attributes.seo.metaDescription,
+    },
+  }
+}
 
 export default async function Home() {
   const isMobile = isMobileDevice()
