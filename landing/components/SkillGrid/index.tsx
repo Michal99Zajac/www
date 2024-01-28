@@ -35,7 +35,11 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
       <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
         <div className="no-scrollbar flex w-full justify-between gap-8 overflow-x-auto px-6">
           {categories.map((category) => (
-            <div key={category.id} className="flex flex-col items-center">
+            <label
+              htmlFor={category.attributes.name}
+              key={category.id}
+              className="flex cursor-pointer flex-col items-center"
+            >
               <Image
                 src={category.attributes.icon.data[0].attributes.url}
                 alt={
@@ -46,12 +50,20 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
                 height={32}
                 className="mb-2 object-contain"
               />
-              <p className="mb-2 font-hermeneus text-base">{category.attributes.name}</p>
+              <p
+                className={clsx(
+                  'mb-2 font-hermeneus text-base',
+                  category.attributes.name === categoryName && 'text-blueprint-500',
+                )}
+              >
+                {category.attributes.name}
+              </p>
               <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                 <div className="flex h-[20px] w-[20px] items-center justify-center">
                   <button
+                    id={category.attributes.name}
                     onClick={() => setCategoryName(category.attributes.name)}
-                    aria-label="Check technologies skills"
+                    aria-label={`Select ${category.attributes.name} category`}
                     className={clsx(
                       'rounded-full bg-blueprint-500',
                       category.attributes.name === categoryName
@@ -64,7 +76,7 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
                   <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
                 )}
               </div>
-            </div>
+            </label>
           ))}
         </div>
       </div>
@@ -102,7 +114,9 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
                 skill.attributes.experienceLevel.numericLevel === 5 && 'level-expert',
               )}
             >
-              <p className="font-hermeneus text-sm">{skill.attributes.experienceLevel.level}</p>
+              <p className="hidden font-hermeneus text-sm sm:block">
+                {skill.attributes.experienceLevel.level}
+              </p>
               <div className="level-block h-[12px] w-[12px] bg-blueprint-200 md:h-[16px] md:w-[16px]" />
               <div className="level-block h-[12px] w-[12px] bg-blueprint-300 md:h-[16px] md:w-[16px]" />
               <div className="level-block h-[12px] w-[12px] bg-blueprint-400 md:h-[16px] md:w-[16px]" />
