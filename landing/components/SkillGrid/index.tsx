@@ -35,21 +35,19 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
       <div className="relative after:absolute after:bottom-[calc(4rem+9px)] after:left-1/2 after:z-[-1] after:block after:h-[2px] after:w-screen after:-translate-x-1/2 after:border-b-2 after:border-dashed after:border-black after:content-[''] md:overflow-visible">
         <div className="no-scrollbar flex w-full justify-between gap-8 overflow-x-auto px-6">
           {categories.map((category) => (
-            <label
-              htmlFor={category.attributes.name}
-              key={category.id}
-              className="flex cursor-pointer flex-col items-center"
-            >
-              <Image
-                src={category.attributes.icon.data[0].attributes.url}
-                alt={
-                  category.attributes.icon.data[0].attributes.alternativeText ||
-                  'Skill category icon'
-                }
-                width={32}
-                height={32}
-                className="mb-2 object-contain"
-              />
+            <div key={category.id} className="flex flex-col items-center">
+              <label htmlFor={category.attributes.name} className="cursor-pointer">
+                <Image
+                  src={category.attributes.icon.data[0].attributes.url}
+                  alt={
+                    category.attributes.icon.data[0].attributes.alternativeText ||
+                    'Skill category icon'
+                  }
+                  width={32}
+                  height={32}
+                  className="mb-2 object-contain"
+                />
+              </label>
               <p
                 className={clsx(
                   'mb-2 font-hermeneus text-base',
@@ -76,7 +74,7 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
                   <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
                 )}
               </div>
-            </label>
+            </div>
           ))}
         </div>
       </div>
