@@ -5,8 +5,8 @@ import { useState } from 'react'
 
 import { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
+import getComplexRelativeTimeString from '@/homepage/utils/getComplexRelativeTimeString'
 import useDisableScrollEffect from '@/hooks/useDisableScrollEffect'
-import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
 
 export interface ProjectsDrawerProps {
   /**

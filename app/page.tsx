@@ -11,9 +11,9 @@ import skillCategoriesAPI from '@/api/skill-categories'
 import Article from '@/components/Article'
 import { SeoDocument, SeoQuery } from '@/graphql/generated'
 import getClient from '@/graphql/server'
-import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
-import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
-import SkillGrid from '@/landing/components/SkillGrid'
+import ExperienceTimeline from '@/homepage/components/ExperienceTimeline'
+import ResumeImageGrid from '@/homepage/components/ResumeImageGrid'
+import SkillGrid from '@/homepage/components/SkillGrid'
 import isMobileDevice from '@/utils/isMobileDevice'
 
 export async function generateMetadata(): Promise<Metadata> {

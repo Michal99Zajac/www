@@ -1,7 +1,7 @@
 import type { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
 import dayjs from '@/config/dayjs'
-import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
+import getComplexRelativeTimeString from '@/homepage/utils/getComplexRelativeTimeString'
 
 export interface ProjectsProps {
   /**

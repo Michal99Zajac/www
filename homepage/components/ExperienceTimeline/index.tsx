@@ -7,7 +7,7 @@ import { useState } from 'react'
 import type { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
 import dayjs from '@/config/dayjs'
-import getComplexRelativeTimeString from '@/landing/utils/getComplexRelativeTimeString'
+import getComplexRelativeTimeString from '@/homepage/utils/getComplexRelativeTimeString'
 
 const Projects = dynamic(() => import('./components/Projects'))
 const ProjectsDrawer = dynamic(() => import('./components/ProjectsDrawer'))
