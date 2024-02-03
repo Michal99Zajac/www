@@ -8,6 +8,10 @@ export const env = cleanEnv(process.env, {
     desc: 'The URL of the API',
     example: 'https://api.example.com/api',
   }),
+  API_GRAPHQL_URL: url({
+    desc: 'The URL of the GraphQL API',
+    example: 'https://api.example.com/graphql',
+  }),
   NODE_ENV: str({ choices: ['development', 'test', 'production'] }),
 })
 
