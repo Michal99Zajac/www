@@ -3,8 +3,8 @@
 import clsx from 'clsx'
 import { useState } from 'react'
 
-import { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
+import { JobsQuery } from '@/graphql/generated'
 import getComplexRelativeTimeString from '@/homepage/utils/getComplexRelativeTimeString'
 import useDisableScrollEffect from '@/hooks/useDisableScrollEffect'
 
@@ -12,7 +12,7 @@ export interface ProjectsDrawerProps {
   /**
    * Jobs data.
    */
-  jobs: JobsGETSchema
+  jobs: JobsQuery['jobs']
   /**
    * Index of job to display projects of.
    */
@@ -58,20 +58,20 @@ export function ProjectsDrawer({ jobIndex, jobs, onClose }: ProjectsDrawerProps)
         </button>
       </div>
       <div className="relative p-5 after:absolute after:left-[calc(1.25rem+9px)] after:top-0 after:z-[-1] after:h-full after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-['']">
-        {jobs.data[jobIndex].attributes.projects.data.map((project) => (
+        {jobs?.data?.[jobIndex]?.attributes?.projects?.data.map((project) => (
           <div key={project.id} className="mb-10 flex items-start gap-4">
             <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
               <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
             </div>
             <div className="grow">
-              <h2 className="mb-1 font-hermeneus text-xl">{project.attributes.name}</h2>
+              <h2 className="mb-1 font-hermeneus text-xl">{project.attributes?.name}</h2>
               <p className="mb-1 text-sm text-gray-500">
                 {getComplexRelativeTimeString(
-                  project.attributes.startDate,
-                  project.attributes.endDate,
+                  project.attributes?.startDate || new Date(),
+                  project.attributes?.endDate,
                 )}
               </p>
-              <Article content={project.attributes.content} />
+              <Article content={project.attributes?.content || ''} />
             </div>
           </div>
         ))}

@@ -4,9 +4,9 @@ import clsx from 'clsx'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
-import type { JobsGETSchema } from '@/api/jobs/schema'
 import Article from '@/components/Article'
 import dayjs from '@/config/dayjs'
+import { JobsQuery } from '@/graphql/generated'
 import getComplexRelativeTimeString from '@/homepage/utils/getComplexRelativeTimeString'
 
 const Projects = dynamic(() => import('./components/Projects'))
@@ -16,7 +16,7 @@ interface ExperienceTimelineProps {
   /**
    * Jobs data.
    */
-  jobs: JobsGETSchema
+  jobs: JobsQuery['jobs']
   /**
    * Whether to display modal.
    */
@@ -32,23 +32,23 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
   return (
     <div className="flex items-start gap-6 px-5">
       <div className="relative w-full grow after:absolute after:left-[9px] after:top-7 after:z-[-1] after:h-[calc(100%-1.75rem)] after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-[''] md:after:left-[calc(108px+1rem+9px)]">
-        {jobs.data.map((job, index) => (
+        {jobs?.data.map((job, index) => (
           <div key={job.id} className="mb-10 flex items-start gap-4">
             <div className="hidden min-w-[108px] md:block">
               <p className="mb-1 text-right font-hermeneus text-xl">
-                {dayjs(job.attributes.endDate || undefined).from(job.attributes.startDate, true)}
+                {dayjs(job.attributes?.endDate || undefined).from(job.attributes?.startDate, true)}
               </p>
               <p className="text-right text-lg">
-                {job.attributes.endDate
+                {job.attributes?.endDate
                   ? `${dayjs(job.attributes.startDate).format('YYYY')} - ${dayjs(
                       job.attributes.endDate,
                     ).format('YYYY')}`
-                  : `from ${dayjs(job.attributes.startDate).format('YYYY')}`}
+                  : `from ${dayjs(job.attributes?.startDate).format('YYYY')}`}
               </p>
             </div>
             <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
               <button
-                id={job.attributes.companyName}
+                id={job.attributes?.companyName}
                 onClick={() => setJobIndex(index)}
                 aria-label="Check Tango Agency projects"
                 className={clsx(
@@ -58,13 +58,16 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
               />
             </div>
             <div className="grow">
-              <label htmlFor={job.attributes.companyName} className="cursor-pointer">
-                <h2 className="mb-1 font-hermeneus text-xl">{job.attributes.companyName}</h2>
+              <label htmlFor={job.attributes?.companyName} className="cursor-pointer">
+                <h2 className="mb-1 font-hermeneus text-xl">{job.attributes?.companyName}</h2>
               </label>
               <p className="mb-1 block text-sm text-gray-500 md:hidden">
-                {getComplexRelativeTimeString(job.attributes.startDate, job.attributes.endDate)}
+                {getComplexRelativeTimeString(
+                  job.attributes?.startDate || new Date(),
+                  job.attributes?.endDate,
+                )}
               </p>
-              <Article content={job.attributes.content} />
+              <Article content={job.attributes?.content || ''} />
             </div>
           </div>
         ))}

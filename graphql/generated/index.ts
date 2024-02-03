@@ -1889,14 +1889,372 @@ export type SeoQueryHookResult = ReturnType<typeof useSeoQuery>;
 export type SeoLazyQueryHookResult = ReturnType<typeof useSeoLazyQuery>;
 export type SeoSuspenseQueryHookResult = ReturnType<typeof useSeoSuspenseQuery>;
 export type SeoQueryResult = Apollo.QueryResult<SeoQuery, SeoQueryVariables>;
+export const HomePageDocument = gql`
+    query HomePage {
+  homePage {
+    data {
+      attributes {
+        contact {
+          id
+          email
+          githubUrl
+          linkedinUrl
+        }
+        profilePicture {
+          data {
+            id
+            attributes {
+              name
+              alternativeText
+              caption
+              width
+              height
+              formats
+              hash
+              ext
+              mime
+              size
+              url
+              previewUrl
+              provider
+              provider_metadata
+            }
+          }
+        }
+        introduction
+        about
+        profilePictures {
+          data {
+            id
+            attributes {
+              name
+              alternativeText
+              caption
+              width
+              height
+              formats
+              hash
+              ext
+              mime
+              size
+              url
+              previewUrl
+              provider
+              provider_metadata
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useHomePageQuery__
+ *
+ * To run a query within a React component, call `useHomePageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useHomePageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useHomePageQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useHomePageQuery(baseOptions?: Apollo.QueryHookOptions<HomePageQuery, HomePageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<HomePageQuery, HomePageQueryVariables>(HomePageDocument, options);
+      }
+export function useHomePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<HomePageQuery, HomePageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<HomePageQuery, HomePageQueryVariables>(HomePageDocument, options);
+        }
+export function useHomePageSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<HomePageQuery, HomePageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<HomePageQuery, HomePageQueryVariables>(HomePageDocument, options);
+        }
+export type HomePageQueryHookResult = ReturnType<typeof useHomePageQuery>;
+export type HomePageLazyQueryHookResult = ReturnType<typeof useHomePageLazyQuery>;
+export type HomePageSuspenseQueryHookResult = ReturnType<typeof useHomePageSuspenseQuery>;
+export type HomePageQueryResult = Apollo.QueryResult<HomePageQuery, HomePageQueryVariables>;
+export const JobsDocument = gql`
+    query Jobs {
+  jobs(pagination: {pageSize: 20}, sort: ["startDate:asc"]) {
+    data {
+      id
+      attributes {
+        companyName
+        startDate
+        endDate
+        projects {
+          data {
+            id
+            attributes {
+              name
+              startDate
+              endDate
+              content
+            }
+          }
+        }
+        content
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useJobsQuery__
+ *
+ * To run a query within a React component, call `useJobsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useJobsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useJobsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useJobsQuery(baseOptions?: Apollo.QueryHookOptions<JobsQuery, JobsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<JobsQuery, JobsQueryVariables>(JobsDocument, options);
+      }
+export function useJobsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<JobsQuery, JobsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<JobsQuery, JobsQueryVariables>(JobsDocument, options);
+        }
+export function useJobsSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<JobsQuery, JobsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<JobsQuery, JobsQueryVariables>(JobsDocument, options);
+        }
+export type JobsQueryHookResult = ReturnType<typeof useJobsQuery>;
+export type JobsLazyQueryHookResult = ReturnType<typeof useJobsLazyQuery>;
+export type JobsSuspenseQueryHookResult = ReturnType<typeof useJobsSuspenseQuery>;
+export type JobsQueryResult = Apollo.QueryResult<JobsQuery, JobsQueryVariables>;
+export const SkillCategoriesDocument = gql`
+    query skillCategories {
+  skillCategories(pagination: {pageSize: 10}) {
+    data {
+      id
+      attributes {
+        icon {
+          data {
+            id
+            attributes {
+              name
+              alternativeText
+              caption
+              width
+              height
+              formats
+              hash
+              ext
+              mime
+              size
+              url
+              previewUrl
+              provider
+              provider_metadata
+            }
+          }
+        }
+        name
+        skills {
+          data {
+            id
+            attributes {
+              name
+              isFavourite
+              experienceLevel {
+                id
+                level
+                numericLevel
+              }
+              icon {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    meta {
+      pagination {
+        total
+        page
+        pageSize
+        pageCount
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useSkillCategoriesQuery__
+ *
+ * To run a query within a React component, call `useSkillCategoriesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSkillCategoriesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSkillCategoriesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSkillCategoriesQuery(baseOptions?: Apollo.QueryHookOptions<SkillCategoriesQuery, SkillCategoriesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SkillCategoriesQuery, SkillCategoriesQueryVariables>(SkillCategoriesDocument, options);
+      }
+export function useSkillCategoriesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SkillCategoriesQuery, SkillCategoriesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SkillCategoriesQuery, SkillCategoriesQueryVariables>(SkillCategoriesDocument, options);
+        }
+export function useSkillCategoriesSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<SkillCategoriesQuery, SkillCategoriesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SkillCategoriesQuery, SkillCategoriesQueryVariables>(SkillCategoriesDocument, options);
+        }
+export type SkillCategoriesQueryHookResult = ReturnType<typeof useSkillCategoriesQuery>;
+export type SkillCategoriesLazyQueryHookResult = ReturnType<typeof useSkillCategoriesLazyQuery>;
+export type SkillCategoriesSuspenseQueryHookResult = ReturnType<typeof useSkillCategoriesSuspenseQuery>;
+export type SkillCategoriesQueryResult = Apollo.QueryResult<SkillCategoriesQuery, SkillCategoriesQueryVariables>;
+export const SelfProjectsDocument = gql`
+    query SelfProjects {
+  selfProjects(pagination: {pageSize: 10}) {
+    data {
+      id
+      attributes {
+        name
+        description
+        githubUrl
+        websiteUrl
+        image {
+          data {
+            id
+            attributes {
+              name
+              alternativeText
+              caption
+              width
+              height
+              formats
+              hash
+              ext
+              mime
+              size
+              url
+              previewUrl
+              provider
+              provider_metadata
+            }
+          }
+        }
+      }
+    }
+    meta {
+      pagination {
+        total
+        page
+        pageSize
+        pageCount
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useSelfProjectsQuery__
+ *
+ * To run a query within a React component, call `useSelfProjectsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSelfProjectsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSelfProjectsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSelfProjectsQuery(baseOptions?: Apollo.QueryHookOptions<SelfProjectsQuery, SelfProjectsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SelfProjectsQuery, SelfProjectsQueryVariables>(SelfProjectsDocument, options);
+      }
+export function useSelfProjectsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SelfProjectsQuery, SelfProjectsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SelfProjectsQuery, SelfProjectsQueryVariables>(SelfProjectsDocument, options);
+        }
+export function useSelfProjectsSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<SelfProjectsQuery, SelfProjectsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SelfProjectsQuery, SelfProjectsQueryVariables>(SelfProjectsDocument, options);
+        }
+export type SelfProjectsQueryHookResult = ReturnType<typeof useSelfProjectsQuery>;
+export type SelfProjectsLazyQueryHookResult = ReturnType<typeof useSelfProjectsLazyQuery>;
+export type SelfProjectsSuspenseQueryHookResult = ReturnType<typeof useSelfProjectsSuspenseQuery>;
+export type SelfProjectsQueryResult = Apollo.QueryResult<SelfProjectsQuery, SelfProjectsQueryVariables>;
 export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type SeoQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePageEntityResponse', data?: { __typename?: 'HomePageEntity', attributes?: { __typename?: 'HomePage', seo: { __typename?: 'ComponentSharedSeo', id: string, metaTitle: string, metaDescription: string, keywords?: string | null, metaRobots?: string | null, structuredData?: any | null, metaViewport?: string | null, canonicalURL?: string | null, metaImage?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null } | null } | null, metaSocial?: Array<{ __typename?: 'ComponentSharedMetaSocial', id: string, socialNetwork: Enum_Componentsharedmetasocial_Socialnetwork, title: string, description: string, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null } | null } | null } | null> | null } } | null } | null } | null };
 
+export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomePageQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePageEntityResponse', data?: { __typename?: 'HomePageEntity', attributes?: { __typename?: 'HomePage', introduction: string, about: string, contact: { __typename?: 'ComponentCommonContact', id: string, email: string, githubUrl: string, linkedinUrl: string }, profilePicture: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null } | null }, profilePictures: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null }> } } | null } | null } | null };
+
+export type JobsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type JobsQuery = { __typename?: 'Query', jobs?: { __typename?: 'JobEntityResponseCollection', data: Array<{ __typename?: 'JobEntity', id?: string | null, attributes?: { __typename?: 'Job', companyName: string, startDate: Date, endDate?: Date | null, content: string, projects?: { __typename?: 'ProjectRelationResponseCollection', data: Array<{ __typename?: 'ProjectEntity', id?: string | null, attributes?: { __typename?: 'Project', name: string, startDate: Date, endDate?: Date | null, content: string } | null }> } | null } | null }> } | null };
+
+export type SkillCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SkillCategoriesQuery = { __typename?: 'Query', skillCategories?: { __typename?: 'SkillCategoryEntityResponseCollection', data: Array<{ __typename?: 'SkillCategoryEntity', id?: string | null, attributes?: { __typename?: 'SkillCategory', name: string, icon: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null }> }, skills?: { __typename?: 'SkillRelationResponseCollection', data: Array<{ __typename?: 'SkillEntity', id?: string | null, attributes?: { __typename?: 'Skill', name: string, isFavourite: boolean, experienceLevel: { __typename?: 'ComponentCommonExperienceLevel', id: string, level: Enum_Componentcommonexperiencelevel_Level, numericLevel: number }, icon: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null } | null } } | null }> } | null } | null }>, meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number, page: number, pageSize: number, pageCount: number } } } | null };
+
+export type SelfProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SelfProjectsQuery = { __typename?: 'Query', selfProjects?: { __typename?: 'SelfProjectEntityResponseCollection', data: Array<{ __typename?: 'SelfProjectEntity', id?: string | null, attributes?: { __typename?: 'SelfProject', name: string, description: string, githubUrl?: string | null, websiteUrl?: string | null, image: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', id?: string | null, attributes?: { __typename?: 'UploadFile', name: string, alternativeText?: string | null, caption?: string | null, width?: number | null, height?: number | null, formats?: any | null, hash: string, ext?: string | null, mime: string, size: number, url: string, previewUrl?: string | null, provider: string, provider_metadata?: any | null } | null } | null } } | null }>, meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number, page: number, pageSize: number, pageCount: number } } } | null };
+
 export const namedOperations = {
   Query: {
-    SEO: 'SEO'
+    SEO: 'SEO',
+    HomePage: 'HomePage',
+    Jobs: 'Jobs',
+    skillCategories: 'skillCategories',
+    SelfProjects: 'SelfProjects'
   }
 }
 

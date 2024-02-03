@@ -5,32 +5,36 @@ import Image from 'next/image'
 import { useState } from 'react'
 import useMedia from 'react-use/lib/useMedia'
 
-import { SkillCategoriesGETSchema } from '@/api/skill-categories/schema'
+import { SkillCategoriesQuery, SkillEntity } from '@/graphql/generated'
+import EMPTY_IMAGE from '@/utils/EMPTY_IMAGE'
 
-/**
- * Skill type. It's a single skill with id.
- */
-export type Skill = SkillCategoriesGETSchema['data']['0']['attributes']['skills']['data']
+export type Skill = SkillCategoriesQuery['skillCategories']
 
 export interface SkillGridProps {
   /**
    * Skill categories.
    */
-  skillCategories: SkillCategoriesGETSchema
+  skillCategories: SkillCategoriesQuery['skillCategories']
 }
 
 /**
  * SkillGrid component. Displays skill categories and skills.
  */
 export function SkillGrid({ skillCategories }: SkillGridProps) {
-  const md = useMedia('(min-width: 768px)')
-  const categories = skillCategories.data
-  const skillMapper = categories.reduce((acc: Record<string, Skill>, category) => {
-    const categoryName = category.attributes.name
-    acc[categoryName] = category.attributes.skills.data.map((skill) => skill)
-    return acc
-  }, {})
-  const [categoryName, setCategoryName] = useState(categories[0].attributes.name)
+  const md = useMedia('(min-width: 768px)', true)
+  const categories = skillCategories?.data || []
+  const skillMapper = categories.reduce(
+    (acc, category) => {
+      const categoryName = category.attributes?.name
+
+      if (!categoryName) return acc
+
+      acc[categoryName] = category.attributes?.skills?.data.map((skill) => skill) || []
+      return acc
+    },
+    {} as Record<string, SkillEntity[]>,
+  )
+  const [categoryName, setCategoryName] = useState(categories?.[0]?.attributes?.name || '')
 
   return (
     <>
@@ -38,11 +42,11 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
         <div className="no-scrollbar flex w-full justify-between gap-8 overflow-x-auto px-6">
           {categories.map((category) => (
             <div key={category.id} className="flex flex-col items-center">
-              <label htmlFor={category.attributes.name} className="cursor-pointer">
+              <label htmlFor={category.attributes?.name} className="cursor-pointer">
                 <Image
-                  src={category.attributes.icon.data[0].attributes.url}
+                  src={category.attributes?.icon.data?.[0].attributes?.url || EMPTY_IMAGE}
                   alt={
-                    category.attributes.icon.data[0].attributes.alternativeText ||
+                    category.attributes?.icon.data?.[0].attributes?.alternativeText ||
                     'Skill category icon'
                   }
                   width={32}
@@ -53,26 +57,26 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
               <p
                 className={clsx(
                   'mb-2 font-hermeneus text-base',
-                  category.attributes.name === categoryName && 'text-blueprint-500',
+                  category.attributes?.name === categoryName && 'text-blueprint-500',
                 )}
               >
-                {category.attributes.name}
+                {category.attributes?.name}
               </p>
               <div className="flex w-[20px] min-w-[20px] flex-col items-center">
                 <div className="flex h-[20px] w-[20px] items-center justify-center">
                   <button
-                    id={category.attributes.name}
-                    onClick={() => setCategoryName(category.attributes.name)}
-                    aria-label={`Select ${category.attributes.name} category`}
+                    id={category.attributes?.name}
+                    onClick={() => setCategoryName(category.attributes?.name || '')}
+                    aria-label={`Select ${category.attributes?.name} category`}
                     className={clsx(
                       'rounded-full bg-blueprint-500',
-                      category.attributes.name === categoryName
+                      category.attributes?.name === categoryName
                         ? 'pulsar h-[20px] min-w-[20px]'
                         : 'h-[12px] min-w-[12px]',
                     )}
                   />
                 </div>
-                {category.attributes.name === categoryName && (
+                {category.attributes?.name === categoryName && (
                   <div className="h-16 w-[2px] border-l-2 border-dashed border-black" />
                 )}
               </div>
@@ -86,23 +90,23 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
             key={skill.id}
             className={clsx(
               'flex h-[118px] flex-col bg-white p-4',
-              !md && Math.floor(index / 2) % 2 == 0 && 'bg-gray-50',
-              md && index % 2 == 0 && 'bg-gray-50',
+              !md && Math.floor(index / 2) % 2 === 0 && 'bg-gray-50',
+              md && index % 2 === 0 && 'bg-gray-50',
             )}
           >
             <div className="flex items-start gap-2 md:gap-4">
               <Image
-                src={skill.attributes.icon.data.attributes.url}
-                alt={skill.attributes.icon.data.attributes.alternativeText || 'Skill icon'}
+                src={skill.attributes?.icon.data?.attributes?.url || EMPTY_IMAGE}
+                alt={skill.attributes?.icon.data?.attributes?.alternativeText || 'Skill icon'}
                 width={32}
                 height={32}
                 className="object-contain"
               />
-              <p className="font-hermeneus text-base">{skill.attributes.name}</p>
+              <p className="font-hermeneus text-base">{skill.attributes?.name}</p>
               <div className="grow" />
               <Image
                 src={
-                  skill.attributes.isFavourite ? '/icons/crown/gold.svg' : '/icons/crown/black.svg'
+                  skill.attributes?.isFavourite ? '/icons/crown/gold.svg' : '/icons/crown/black.svg'
                 }
                 alt="crown icon"
                 width={16}
@@ -114,15 +118,15 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
             <div
               className={clsx(
                 'flex items-center justify-end gap-2',
-                skill.attributes.experienceLevel.numericLevel === 1 && 'level-beginner',
-                skill.attributes.experienceLevel.numericLevel === 2 && 'level-elementary',
-                skill.attributes.experienceLevel.numericLevel === 3 && 'level-intermediate',
-                skill.attributes.experienceLevel.numericLevel === 4 && 'level-advanced',
-                skill.attributes.experienceLevel.numericLevel === 5 && 'level-expert',
+                skill.attributes?.experienceLevel.numericLevel === 1 && 'level-beginner',
+                skill.attributes?.experienceLevel.numericLevel === 2 && 'level-elementary',
+                skill.attributes?.experienceLevel.numericLevel === 3 && 'level-intermediate',
+                skill.attributes?.experienceLevel.numericLevel === 4 && 'level-advanced',
+                skill.attributes?.experienceLevel.numericLevel === 5 && 'level-expert',
               )}
             >
               <p className="hidden font-hermeneus text-sm sm:block">
-                {skill.attributes.experienceLevel.level}
+                {skill.attributes?.experienceLevel.level}
               </p>
               <div className="level-block h-[12px] w-[12px] bg-blueprint-200 md:h-[16px] md:w-[16px]" />
               <div className="level-block h-[12px] w-[12px] bg-blueprint-300 md:h-[16px] md:w-[16px]" />

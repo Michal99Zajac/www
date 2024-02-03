@@ -3,17 +3,28 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import jobsAPI from '@/api/jobs'
-import preambulaAPI from '@/api/preambula'
-import resumeAPI from '@/api/resume'
-import selfProjectsAPI from '@/api/self-projects'
-import skillCategoriesAPI from '@/api/skill-categories'
 import Article from '@/components/Article'
-import { SeoDocument, SeoQuery } from '@/graphql/generated'
+import {
+  HomePageDocument,
+  HomePageQuery,
+  JobsDocument,
+  JobsQuery,
+  SelfProjectsDocument,
+  SelfProjectsQuery,
+  SeoDocument,
+  SeoQuery,
+  SkillCategoriesDocument,
+  SkillCategoriesQuery,
+} from '@/graphql/generated'
 import getClient from '@/graphql/server'
 import ExperienceTimeline from '@/homepage/components/ExperienceTimeline'
 import ResumeImageGrid from '@/homepage/components/ResumeImageGrid'
 import SkillGrid from '@/homepage/components/SkillGrid'
+import EMPTY_IMAGE, {
+  EMPTY_IMAGE_ALT,
+  EMPTY_IMAGE_HEIGHT,
+  EMPTY_IMAGE_WIDTH,
+} from '@/utils/EMPTY_IMAGE'
 import isMobileDevice from '@/utils/isMobileDevice'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -34,11 +45,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const isMobile = isMobileDevice()
-  const preambula = await preambulaAPI.get()
-  const resume = await resumeAPI.get()
-  const jobs = await jobsAPI.get()
-  const skillCategories = await skillCategoriesAPI.get()
-  const selfProjects = await selfProjectsAPI.get()
+  const client = getClient()
+  const homePageQuery = await client.query<HomePageQuery>({
+    query: HomePageDocument,
+  })
+  const {
+    data: { jobs },
+  } = await client.query<JobsQuery>({
+    query: JobsDocument,
+  })
+  const {
+    data: { skillCategories },
+  } = await client.query<SkillCategoriesQuery>({
+    query: SkillCategoriesDocument,
+  })
+  const {
+    data: { selfProjects },
+  } = await client.query<SelfProjectsQuery>({
+    query: SelfProjectsDocument,
+  })
+  const homepageData = homePageQuery.data.homePage?.data?.attributes
 
   return (
     <>
@@ -47,11 +73,11 @@ export default async function Home() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[1fr_340px_auto] lg:grid-cols-[1fr_480px_auto] 2xl:grid-cols-[1fr_640px_auto]">
               <div>
-                <Article content={preambula.data.attributes.intro} />
+                <Article content={homepageData?.introduction || ''} />
                 <div className="inline-flex border-2 border-dashed">
                   <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
                     <a
-                      href={preambula.data.attributes.contact.githubUrl}
+                      href={homepageData?.contact.githubUrl}
                       aria-label="github profile"
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
@@ -66,7 +92,7 @@ export default async function Home() {
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
                     <a
-                      href={preambula.data.attributes.contact.linkedinUrl}
+                      href={homepageData?.contact.linkedinUrl}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
                       <Image
@@ -80,7 +106,7 @@ export default async function Home() {
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center">
                     <a
-                      href={`mailto:${preambula.data.attributes.contact.email}`}
+                      href={`mailto:${homepageData?.contact.email}`}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
                     >
                       <Image
@@ -96,10 +122,12 @@ export default async function Home() {
               </div>
               <Image
                 priority
-                src={preambula.data.attributes.image.data.attributes.url}
-                alt={preambula.data.attributes.image.data.attributes.alternativeText || 'me'}
-                width={preambula.data.attributes.image.data.attributes.width}
-                height={preambula.data.attributes.image.data.attributes.height}
+                src={homepageData?.profilePicture.data?.attributes?.url || EMPTY_IMAGE}
+                alt={
+                  homepageData?.profilePicture.data?.attributes?.alternativeText || EMPTY_IMAGE_ALT
+                }
+                width={homepageData?.profilePicture.data?.attributes?.width || EMPTY_IMAGE_WIDTH}
+                height={homepageData?.profilePicture.data?.attributes?.height || EMPTY_IMAGE_WIDTH}
                 className="crossbox -mb-5 w-full object-cover md:-my-5 md:h-[calc(100%+2.5rem)]"
               />
               <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
@@ -148,14 +176,14 @@ export default async function Home() {
               RESUME
             </h1>
             <div className="grid items-start gap-8 px-5 lg:grid-cols-[1fr_auto]">
-              <Article content={resume.data.attributes.about} />
+              <Article content={homepageData?.about || ''} />
               <ResumeImageGrid
-                images={resume.data.attributes.images.data.map((image) => ({
-                  id: image.id,
-                  url: image.attributes.url,
-                  alternativeText: image.attributes.alternativeText,
-                  width: image.attributes.width,
-                  height: image.attributes.height,
+                images={(homepageData?.profilePictures.data || []).map((image, index) => ({
+                  alternativeText: image.attributes?.alternativeText || EMPTY_IMAGE_ALT,
+                  url: image.attributes?.url || EMPTY_IMAGE,
+                  width: image.attributes?.width || EMPTY_IMAGE_WIDTH,
+                  height: image.attributes?.height || EMPTY_IMAGE_WIDTH,
+                  id: image.id || index,
                 }))}
               />
             </div>
@@ -183,7 +211,7 @@ export default async function Home() {
               PROJECTS
             </h1>
             <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">
-              {selfProjects.data.map((selfProject, index) => (
+              {selfProjects?.data.map((selfProject, index) => (
                 <div
                   key={selfProject.id}
                   className={clsx(
@@ -193,11 +221,13 @@ export default async function Home() {
                 >
                   <div className="flex gap-4 p-4">
                     <div className="grow">
-                      <h2 className="mb-4 font-hermeneus text-lg">{selfProject.attributes.name}</h2>
-                      <p>{selfProject.attributes.description}</p>
+                      <h2 className="mb-4 font-hermeneus text-lg">
+                        {selfProject.attributes?.name}
+                      </h2>
+                      <p>{selfProject.attributes?.description}</p>
                     </div>
                     <div className="flex flex-col gap-3">
-                      {selfProject.attributes.githubUrl && (
+                      {selfProject.attributes?.githubUrl && (
                         <a
                           href={selfProject.attributes.githubUrl}
                           aria-label="github profile"
@@ -212,7 +242,7 @@ export default async function Home() {
                           />
                         </a>
                       )}
-                      {selfProject.attributes.websiteUrl && (
+                      {selfProject.attributes?.websiteUrl && (
                         <a
                           href={selfProject.attributes.websiteUrl}
                           aria-label="website url"
@@ -230,13 +260,17 @@ export default async function Home() {
                     </div>
                   </div>
                   <Image
-                    src={selfProject.attributes.image.data.attributes.url}
+                    src={selfProject.attributes?.image.data?.attributes?.url || EMPTY_IMAGE}
                     alt={
-                      selfProject.attributes.image.data.attributes.alternativeText ||
+                      selfProject.attributes?.image.data?.attributes?.alternativeText ||
                       'Self project image'
                     }
-                    width={selfProject.attributes.image.data.attributes.width}
-                    height={selfProject.attributes.image.data.attributes.height}
+                    width={
+                      selfProject.attributes?.image.data?.attributes?.width || EMPTY_IMAGE_WIDTH
+                    }
+                    height={
+                      selfProject.attributes?.image.data?.attributes?.width || EMPTY_IMAGE_HEIGHT
+                    }
                     className="aspect-[21/9] w-full object-cover"
                   />
                 </div>
@@ -276,7 +310,7 @@ export default async function Home() {
           <div className="inline-flex border-2 border-dashed">
             <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
               <a
-                href={preambula.data.attributes.contact.githubUrl}
+                href={homepageData?.contact.githubUrl}
                 aria-label="github profile"
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
@@ -291,7 +325,7 @@ export default async function Home() {
             </div>
             <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
               <a
-                href={preambula.data.attributes.contact.linkedinUrl}
+                href={homepageData?.contact.linkedinUrl}
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
                 <Image
@@ -305,7 +339,7 @@ export default async function Home() {
             </div>
             <div className="flex h-12 w-12 items-center justify-center">
               <a
-                href={`mailto:${preambula.data.attributes.contact.email}`}
+                href={`mailto:${homepageData?.contact.email}`}
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
                 <Image
