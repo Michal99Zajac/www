@@ -9,20 +9,25 @@ import resumeAPI from '@/api/resume'
 import selfProjectsAPI from '@/api/self-projects'
 import skillCategoriesAPI from '@/api/skill-categories'
 import Article from '@/components/Article'
+import { SeoDocument, SeoQuery } from '@/graphql/generated'
+import getClient from '@/graphql/server'
 import ExperienceTimeline from '@/landing/components/ExperienceTimeline'
 import ResumeImageGrid from '@/landing/components/ResumeImageGrid'
 import SkillGrid from '@/landing/components/SkillGrid'
 import isMobileDevice from '@/utils/isMobileDevice'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const preambula = await preambulaAPI.get()
+  const client = getClient()
+  const { data } = await client.query<SeoQuery>({
+    query: SeoDocument,
+  })
 
   return {
-    title: preambula.data.attributes.seo.metaTitle,
-    description: preambula.data.attributes.seo.metaDescription,
+    title: data.homePage?.data?.attributes?.seo.metaTitle,
+    description: data.homePage?.data?.attributes?.seo.metaDescription,
     openGraph: {
-      title: preambula.data.attributes.seo.metaTitle,
-      description: preambula.data.attributes.seo.metaDescription,
+      title: data.homePage?.data?.attributes?.seo.metaTitle,
+      description: data.homePage?.data?.attributes?.seo.metaDescription,
     },
   }
 }
