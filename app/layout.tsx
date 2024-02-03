@@ -1,6 +1,5 @@
 import './globals.css'
 
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,10 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <SpeedInsights />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
