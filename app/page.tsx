@@ -33,12 +33,47 @@ export async function generateMetadata(): Promise<Metadata> {
     query: SeoDocument,
   })
 
+  const seo = data.homePage?.data?.attributes?.seo
+  const metaImage = seo?.metaImage?.data?.attributes
+
   return {
-    title: data.homePage?.data?.attributes?.seo.metaTitle,
-    description: data.homePage?.data?.attributes?.seo.metaDescription,
+    title: seo?.metaTitle,
+    description: seo?.metaDescription,
+    keywords: seo?.keywords,
     openGraph: {
-      title: data.homePage?.data?.attributes?.seo.metaTitle,
-      description: data.homePage?.data?.attributes?.seo.metaDescription,
+      url: seo?.canonicalURL || undefined,
+      siteName: seo?.metaTitle,
+      title: seo?.metaTitle,
+      description: seo?.metaDescription,
+      images: metaImage
+        ? [
+            {
+              url: metaImage.url,
+              width: metaImage.width || 800,
+              height: metaImage.height || 600,
+              alt: metaImage.alternativeText || seo.metaTitle,
+              type: 'image/png',
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      site: '@site',
+      creator: '@creator',
+      title: seo?.metaTitle,
+      description: seo?.metaDescription,
+      images: metaImage
+        ? [
+            {
+              url: metaImage.url,
+              width: metaImage.width || 800,
+              height: metaImage.height || 600,
+              alt: metaImage.alternativeText || seo.metaTitle,
+              type: 'image/png',
+            },
+          ]
+        : [],
+      card: 'summary_large_image',
     },
   }
 }
