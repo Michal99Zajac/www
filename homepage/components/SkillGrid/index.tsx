@@ -89,9 +89,9 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
           <div
             key={skill.id}
             className={clsx(
-              'flex h-[118px] flex-col bg-white p-4',
-              !md && Math.floor(index / 2) % 2 === 0 && 'bg-gray-50',
-              md && index % 2 === 0 && 'bg-gray-50',
+              'flex h-[118px] flex-col bg-gray-50 p-4',
+              !md && Math.floor(index / 2) % 2 !== 0 && 'bg-white',
+              md && index % 2 !== 0 && 'bg-white',
             )}
           >
             <div className="flex items-start gap-2 md:gap-4">
