@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useState } from 'react'
+import useMedia from 'react-use/lib/useMedia'
 
 import { SkillCategoriesGETSchema } from '@/api/skill-categories/schema'
 
@@ -22,6 +23,7 @@ export interface SkillGridProps {
  * SkillGrid component. Displays skill categories and skills.
  */
 export function SkillGrid({ skillCategories }: SkillGridProps) {
+  const md = useMedia('(min-width: 768px)')
   const categories = skillCategories.data
   const skillMapper = categories.reduce((acc: Record<string, Skill>, category) => {
     const categoryName = category.attributes.name
@@ -79,8 +81,15 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
         </div>
       </div>
       <div className="grid grid-cols-2 border-2 border-dashed border-black md:grid-cols-3">
-        {skillMapper[categoryName].map((skill) => (
-          <div key={skill.id} className="skill-box flex h-[118px] flex-col p-4">
+        {skillMapper[categoryName].map((skill, index) => (
+          <div
+            key={skill.id}
+            className={clsx(
+              'flex h-[118px] flex-col bg-white p-4',
+              !md && Math.floor(index / 2) % 2 == 0 && 'bg-gray-50',
+              md && index % 2 == 0 && 'bg-gray-50',
+            )}
+          >
             <div className="flex items-start gap-2 md:gap-4">
               <Image
                 src={skill.attributes.icon.data.attributes.url}
@@ -123,11 +132,6 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
             </div>
           </div>
         ))}
-        {Array((3 - (skillMapper[categoryName].length % 3)) % 3)
-          .fill(0)
-          .map((_, i) => (
-            <div key={i} className="skill-box empty-skill-box" />
-          ))}
       </div>
     </>
   )

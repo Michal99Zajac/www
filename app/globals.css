@@ -44,22 +44,6 @@
     animation: pulse 2s infinite ease-in-out;
   }
 
-  .skill-box {
-    @apply border-dashed border-black border-t-2 border-r-2;
-  }
-
-  .skill-box:nth-child(2n) {
-    @apply border-r-0;
-  }
-
-  .skill-box:nth-child(-n + 2) {
-    @apply border-t-0;
-  }
-
-  .empty-skill-box:nth-child(n + 1) {
-    @apply hidden;
-  }
-
   .resume-img-box {
     @apply border-dashed border-black border-b-2 border-r-2;
   }
@@ -93,24 +77,6 @@
   }
 
   /* ------------------------------ Media Queries ----------------------------- */
-
-  @media screen(md) {
-    .skill-box:nth-child(2n) {
-      @apply border-r-2;
-    }
-
-    .empty-skill-box:nth-child(n + 1) {
-      @apply block;
-    }
-
-    .skill-box:nth-child(-n + 3) {
-      @apply border-t-0;
-    }
-
-    .skill-box:nth-child(3n) {
-      @apply border-r-0;
-    }
-  }
 
   @media screen(lg) {
     .resume-img-box:nth-child(4n) {
