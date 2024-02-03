@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['michalzajac-dev.s3.eu-central-1.amazonaws.com'],
+    remotePatterns: [
+      {
+        hostname: 'michalzajac-dev.s3.eu-central-1.amazonaws.com',
+      },
+    ],
   },
 }
 
