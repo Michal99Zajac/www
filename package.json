@@ -18,6 +18,8 @@
     "release:patch": "release-it patch"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.2",
+    "@apollo/experimental-nextjs-app-support": "^0.8.0",
     "@types/node": "^20.10.3",
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18.2.17",
