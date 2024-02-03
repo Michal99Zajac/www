@@ -11,7 +11,7 @@ export interface ResumeImageGridProps {
    * array of images
    */
   images: {
-    id: number
+    id: number | string
     url: string
     alternativeText: string | null
     width: number
@@ -49,7 +49,7 @@ export function ResumeImageGrid({ images }: ResumeImageGridProps) {
           alt={image.alternativeText || 'resume image'}
           width={image.width}
           height={image.height}
-          className="resume-img-box aspect-square w-full object-cover lg:w-28"
+          className="resume-img-box aspect-square w-full object-cover lg:w-32"
         />
       ))}
     </div>
