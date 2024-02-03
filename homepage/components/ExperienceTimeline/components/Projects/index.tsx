@@ -36,8 +36,8 @@ export function Projects({ jobIndex, jobs }: ProjectsProps) {
                 : `from ${dayjs(project.attributes?.startDate).format('YYYY')}`}
             </p>
           </div>
-          <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-            <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
+          <div className="mt-5 flex size-[20px] min-w-[20px] items-center justify-center">
+            <div className="size-[12px] rounded-full bg-blueprint-500" />
           </div>
           <div className="grow">
             <h2 className="mb-1 font-hermeneus text-xl">{project.attributes?.name}</h2>
@@ -51,7 +51,7 @@ export function Projects({ jobIndex, jobs }: ProjectsProps) {
           </div>
         </div>
       ))}
-      <div className="absolute bottom-0 left-0 h-[2px] w-screen border-b-2 border-dashed border-black after:absolute after:left-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
+      <div className="absolute bottom-0 left-0 h-[2px] w-screen border-b-2 border-dashed border-black after:absolute after:left-[-2px] after:top-[-5px] after:size-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
     </div>
   )
 }

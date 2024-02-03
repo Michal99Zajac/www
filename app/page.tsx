@@ -75,7 +75,7 @@ export default async function Home() {
               <div>
                 <Article content={homepageData?.introduction || ''} />
                 <div className="inline-flex border-2 border-dashed">
-                  <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+                  <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
                     <a
                       href={homepageData?.contact.githubUrl}
                       aria-label="github profile"
@@ -90,7 +90,7 @@ export default async function Home() {
                       />
                     </a>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+                  <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
                     <a
                       href={homepageData?.contact.linkedinUrl}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
@@ -104,7 +104,7 @@ export default async function Home() {
                       />
                     </a>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center">
+                  <div className="flex size-12 items-center justify-center">
                     <a
                       href={`mailto:${homepageData?.contact.email}`}
                       className="border-b-2 border-solid py-1 hover:border-dashed"
@@ -158,7 +158,7 @@ export default async function Home() {
               </nav>
             </div>
             <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
-              <div className="pulsar absolute bottom-0 left-1/2 h-[20px] w-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
+              <div className="pulsar absolute bottom-0 left-1/2 size-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
               <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
                 <Image
                   src="/components/resume-wire.svg"
@@ -308,7 +308,7 @@ export default async function Home() {
             </Link>
           </nav>
           <div className="inline-flex border-2 border-dashed">
-            <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+            <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
               <a
                 href={homepageData?.contact.githubUrl}
                 aria-label="github profile"
@@ -323,7 +323,7 @@ export default async function Home() {
                 />
               </a>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center border-r-2 border-dashed">
+            <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
               <a
                 href={homepageData?.contact.linkedinUrl}
                 className="border-b-2 border-solid py-1 hover:border-dashed"
@@ -337,7 +337,7 @@ export default async function Home() {
                 />
               </a>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center">
+            <div className="flex size-12 items-center justify-center">
               <a
                 href={`mailto:${homepageData?.contact.email}`}
                 className="border-b-2 border-solid py-1 hover:border-dashed"

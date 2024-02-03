@@ -53,15 +53,15 @@ export function ProjectsDrawer({ jobIndex, jobs, onClose }: ProjectsDrawerProps)
       )}
     >
       <div className="sticky left-0 top-0 z-10 border-b-2 border-dashed border-black bg-white px-5 py-3 text-right">
-        <button className="h-10 w-10 border-2 border-dashed border-black" onClick={innerOnClose}>
+        <button className="size-10 border-2 border-dashed border-black" onClick={innerOnClose}>
           X
         </button>
       </div>
       <div className="relative p-5 after:absolute after:left-[calc(1.25rem+9px)] after:top-0 after:z-[-1] after:h-full after:w-[2px] after:border-l-2 after:border-dashed after:border-black after:content-['']">
         {jobs?.data?.[jobIndex]?.attributes?.projects?.data.map((project) => (
           <div key={project.id} className="mb-10 flex items-start gap-4">
-            <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
-              <div className="h-[12px] w-[12px] rounded-full bg-blueprint-500" />
+            <div className="mt-5 flex size-[20px]  min-w-[20px] items-center justify-center">
+              <div className="size-[12px] rounded-full bg-blueprint-500" />
             </div>
             <div className="grow">
               <h2 className="mb-1 font-hermeneus text-xl">{project.attributes?.name}</h2>

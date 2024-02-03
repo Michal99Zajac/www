@@ -46,14 +46,14 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
                   : `from ${dayjs(job.attributes?.startDate).format('YYYY')}`}
               </p>
             </div>
-            <div className="mt-5 flex h-[20px] w-[20px] min-w-[20px] items-center justify-center">
+            <div className="mt-5 flex size-[20px] min-w-[20px] items-center justify-center">
               <button
                 id={job.attributes?.companyName}
                 onClick={() => setJobIndex(index)}
                 aria-label="Check Tango Agency projects"
                 className={clsx(
                   'rounded-full bg-blueprint-500 transition-all',
-                  jobIndex === index ? 'pulsar h-[20px] w-[20px]' : 'h-[12px] w-[12px]',
+                  jobIndex === index ? 'pulsar size-[20px]' : 'size-[12px]',
                 )}
               />
             </div>
@@ -71,7 +71,7 @@ export function ExperienceTimeline({ jobs, isMobile }: ExperienceTimelineProps) 
             </div>
           </div>
         ))}
-        <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:h-3 after:w-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
+        <div className="absolute bottom-0 left-0 h-[2px] w-screen translate-x-[calc(-100%+300px)] border-b-2 border-dashed border-black after:absolute after:right-[-2px] after:top-[-5px] after:size-3 after:rounded-full after:bg-blueprint-500 after:content-['']" />
       </div>
       {isMobile ? (
         <ProjectsDrawer jobIndex={jobIndex} jobs={jobs} onClose={() => setJobIndex(null)} />

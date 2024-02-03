@@ -63,7 +63,7 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
                 {category.attributes?.name}
               </p>
               <div className="flex w-[20px] min-w-[20px] flex-col items-center">
-                <div className="flex h-[20px] w-[20px] items-center justify-center">
+                <div className="flex size-[20px] items-center justify-center">
                   <button
                     id={category.attributes?.name}
                     onClick={() => setCategoryName(category.attributes?.name || '')}
@@ -128,11 +128,11 @@ export function SkillGrid({ skillCategories }: SkillGridProps) {
               <p className="hidden font-hermeneus text-sm sm:block">
                 {skill.attributes?.experienceLevel.level}
               </p>
-              <div className="level-block h-[12px] w-[12px] bg-blueprint-200 md:h-[16px] md:w-[16px]" />
-              <div className="level-block h-[12px] w-[12px] bg-blueprint-300 md:h-[16px] md:w-[16px]" />
-              <div className="level-block h-[12px] w-[12px] bg-blueprint-400 md:h-[16px] md:w-[16px]" />
-              <div className="level-block h-[12px] w-[12px] bg-blueprint-500 md:h-[16px] md:w-[16px]" />
-              <div className="level-block h-[12px] w-[12px] bg-blueprint-600 md:h-[16px] md:w-[16px]" />
+              <div className="level-block size-[12px] bg-blueprint-200 md:size-[16px]" />
+              <div className="level-block size-[12px] bg-blueprint-300 md:size-[16px]" />
+              <div className="level-block size-[12px] bg-blueprint-400 md:size-[16px]" />
+              <div className="level-block size-[12px] bg-blueprint-500 md:size-[16px]" />
+              <div className="level-block size-[12px] bg-blueprint-600 md:size-[16px]" />
             </div>
           </div>
         ))}

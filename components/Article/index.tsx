@@ -80,18 +80,7 @@ export function Article({ content, className }: ArticleProps) {
               {children}
             </p>
           ),
-          img: ({
-            node,
-            children,
-            className,
-            src,
-            alt,
-            width,
-            height,
-            placeholder,
-            ref,
-            ...props
-          }) => (
+          img: ({ node, children, className, src, alt, width, height, ref, ...props }) => (
             <Image
               src={src || '/img/transparent.png'}
               alt={alt || 'markdown image'}
