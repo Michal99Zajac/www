@@ -201,7 +201,7 @@ export default async function Home() {
               RESUME
             </h1>
             <Article
-              className="mx-auto mb-32 w-[640px] border-2 border-dashed border-black bg-white px-6 py-8"
+              className="mx-auto mb-32 w-[640px] max-w-full border-2 border-dashed border-black bg-white px-6 py-8"
               content={homepageData?.about || ''}
             />
             <ResumeFloatingImages
