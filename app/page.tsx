@@ -18,7 +18,7 @@ import {
 } from '@/graphql/generated'
 import getClient from '@/graphql/server'
 import ExperienceTimeline from '@/homepage/components/ExperienceTimeline'
-import ResumeImageGrid from '@/homepage/components/ResumeImageGrid'
+import ResumeFloatingImages from '@/homepage/components/ResumeFloatingImages'
 import SkillGrid from '@/homepage/components/SkillGrid'
 import EMPTY_IMAGE, {
   EMPTY_IMAGE_ALT,
@@ -195,39 +195,29 @@ export default async function Home() {
             </nav>
           </div>
         </section>
-        <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
-          <div className="pulsar absolute bottom-0 left-1/2 size-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
-          <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
-            <Image
-              src="/components/resume-wire.svg"
-              alt="wires"
-              fill
-              className="absolute bottom-0 left-0 hidden object-contain lg:block"
-            />
-          </div>
-        </div>
-        <section id="resume" className="relative">
-          <div className="container mx-auto">
-            <h1 className="my-16 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+        <section id="resume">
+          <div className="container relative mx-auto">
+            <h1 className="mb-8 mt-32 text-center font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
               RESUME
             </h1>
-            <div className="grid items-start gap-8 px-5 lg:grid-cols-[1fr_auto]">
-              <Article content={homepageData?.about || ''} />
-              <ResumeImageGrid
-                images={(homepageData?.profilePictures.data || []).map((image, index) => ({
-                  alternativeText: image.attributes?.alternativeText || EMPTY_IMAGE_ALT,
-                  url: image.attributes?.url || EMPTY_IMAGE,
-                  width: image.attributes?.width || EMPTY_IMAGE_WIDTH,
-                  height: image.attributes?.height || EMPTY_IMAGE_WIDTH,
-                  id: image.id || index,
-                }))}
-              />
-            </div>
+            <Article
+              className="mx-auto mb-32 w-[640px] border-2 border-dashed border-black bg-white px-6 py-8"
+              content={homepageData?.about || ''}
+            />
+            <ResumeFloatingImages
+              images={(homepageData?.profilePictures.data || []).map((image, index) => ({
+                alternativeText: image.attributes?.alternativeText || EMPTY_IMAGE_ALT,
+                url: image.attributes?.url || EMPTY_IMAGE,
+                width: image.attributes?.width || EMPTY_IMAGE_WIDTH,
+                height: image.attributes?.height || EMPTY_IMAGE_WIDTH,
+                id: image.id || index,
+              }))}
+            />
           </div>
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="my-16 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-64 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
               EXPERIENCE
             </h1>
             <ExperienceTimeline jobs={jobs} isMobile={isMobile} />
@@ -235,7 +225,7 @@ export default async function Home() {
         </section>
         <section id="skills">
           <div className="container mx-auto">
-            <h1 className="my-16 text-right font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-32 text-right font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
               <span className="border-2 border-dashed border-black px-6">SKILLS</span>
             </h1>
             <SkillGrid skillCategories={skillCategories} />
@@ -243,7 +233,7 @@ export default async function Home() {
         </section>
         <section id="projects">
           <div className="container mx-auto">
-            <h1 className="my-16 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-32 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
               PROJECTS
             </h1>
             <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">
@@ -315,7 +305,7 @@ export default async function Home() {
           </div>
         </section>
       </main>
-      <footer className="mt-16 border-t-2 border-dashed border-white bg-blueprint-500 text-white">
+      <footer className="mt-32 border-t-2 border-dashed border-white bg-blueprint-500 text-white">
         <div className="container mx-auto flex flex-wrap items-start justify-between gap-8 p-5">
           <nav className="flex gap-2">
             <Link
