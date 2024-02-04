@@ -44,22 +44,6 @@
     animation: pulse 2s infinite ease-in-out;
   }
 
-  .resume-img-box {
-    @apply border-dashed border-black border-b-2 border-r-2;
-  }
-
-  .resume-img-box:nth-child(4n) {
-    @apply border-r-0;
-  }
-
-  .resume-img-box:nth-child(n + 13) {
-    @apply border-b-0;
-  }
-
-  .resume-img-box:nth-child(n + 17) {
-    display: none;
-  }
-
   .level-beginner > .level-block:nth-last-child(-n + 4) {
     @apply bg-gray-200;
   }
@@ -77,28 +61,6 @@
   }
 
   /* ------------------------------ Media Queries ----------------------------- */
-
-  @media screen(lg) {
-    .resume-img-box:nth-child(4n) {
-      @apply border-r-2;
-    }
-
-    .resume-img-box:nth-child(5n) {
-      @apply border-r-0;
-    }
-
-    .resume-img-box:nth-child(n + 17) {
-      display: block;
-    }
-
-    .resume-img-box:nth-child(n + 13) {
-      @apply border-b-2;
-    }
-
-    .resume-img-box:nth-child(n + 21) {
-      @apply border-b-0;
-    }
-  }
 
   /*                                 Animations                                 */
 
