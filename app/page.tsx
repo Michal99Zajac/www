@@ -217,7 +217,7 @@ export default async function Home() {
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="mb-16 mt-64 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-32 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:mt-64 sm:text-[160px] lg:text-[200px]">
               EXPERIENCE
             </h1>
             <ExperienceTimeline jobs={jobs} isMobile={isMobile} />
