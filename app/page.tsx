@@ -104,107 +104,108 @@ export default async function Home() {
   return (
     <>
       <main className="overflow-x-hidden">
-        <section id="preambula">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 gap-4 border-2 border-dashed border-white bg-blueprint-500 p-5 text-white md:mt-16 md:grid-cols-[1fr_340px_auto] lg:grid-cols-[1fr_480px_auto] 2xl:grid-cols-[1fr_640px_auto]">
-              <div>
-                <Article content={homepageData?.introduction || ''} />
-                <div className="inline-flex border-2 border-dashed">
-                  <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
-                    <a
-                      href={homepageData?.contact.githubUrl}
-                      aria-label="github profile"
-                      className="border-b-2 border-solid py-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/github/white.svg"
-                        alt="github logo"
-                        width={16}
-                        height={16}
-                        style={{ objectFit: 'contain' }}
-                      />
-                    </a>
-                  </div>
-                  <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
-                    <a
-                      href={homepageData?.contact.linkedinUrl}
-                      className="border-b-2 border-solid py-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/linkedin/white.svg"
-                        alt="linkedin logo"
-                        width={16}
-                        height={16}
-                        style={{ objectFit: 'contain' }}
-                      />
-                    </a>
-                  </div>
-                  <div className="flex size-12 items-center justify-center">
-                    <a
-                      href={`mailto:${homepageData?.contact.email}`}
-                      className="border-b-2 border-solid py-1 hover:border-dashed"
-                    >
-                      <Image
-                        src="/icons/email/white.svg"
-                        alt="@"
-                        width={16}
-                        height={16}
-                        style={{ objectFit: 'contain' }}
-                      />
-                    </a>
-                  </div>
+        <section
+          id="preambula"
+          className="box-content border-b-2 border-dashed border-white bg-blueprint-500"
+        >
+          <div className="container mx-auto flex flex-col text-white md:h-screen md:min-h-screen md:flex-row">
+            <div className="order-1 m-8 grow md:ml-0">
+              <Article content={homepageData?.introduction || ''} />
+              <div className="inline-flex border-2 border-dashed">
+                <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
+                  <a
+                    href={homepageData?.contact.githubUrl}
+                    aria-label="github profile"
+                    className="border-b-2 border-solid py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/github/white.svg"
+                      alt="github logo"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
+                <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
+                  <a
+                    href={homepageData?.contact.linkedinUrl}
+                    className="border-b-2 border-solid py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/linkedin/white.svg"
+                      alt="linkedin logo"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
+                </div>
+                <div className="flex size-12 items-center justify-center">
+                  <a
+                    href={`mailto:${homepageData?.contact.email}`}
+                    className="border-b-2 border-solid py-1 hover:border-dashed"
+                  >
+                    <Image
+                      src="/icons/email/white.svg"
+                      alt="@"
+                      width={16}
+                      height={16}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </a>
                 </div>
               </div>
-              <Image
-                priority
-                src={homepageData?.profilePicture.data?.attributes?.url || EMPTY_IMAGE}
-                alt={
-                  homepageData?.profilePicture.data?.attributes?.alternativeText || EMPTY_IMAGE_ALT
-                }
-                width={homepageData?.profilePicture.data?.attributes?.width || EMPTY_IMAGE_WIDTH}
-                height={homepageData?.profilePicture.data?.attributes?.height || EMPTY_IMAGE_WIDTH}
-                className="crossbox -mb-5 w-full object-cover md:-my-5 md:h-[calc(100%+2.5rem)]"
-              />
-              <nav className="row-start-2 flex h-max flex-col gap-2 border-2 border-dashed border-white py-2 text-right text-white md:row-start-auto">
-                <Link
-                  href="#resume"
-                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
-                >
-                  Resume
-                </Link>
-                <Link
-                  href="#experience"
-                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
-                >
-                  Experience
-                </Link>
-                <Link
-                  href="#skills"
-                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
-                >
-                  Skills
-                </Link>
-                <Link
-                  href="#projects"
-                  className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
-                >
-                  Projects
-                </Link>
-              </nav>
             </div>
-            <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
-              <div className="pulsar absolute bottom-0 left-1/2 size-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
-              <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
-                <Image
-                  src="/components/resume-wire.svg"
-                  alt="wires"
-                  fill
-                  className="absolute bottom-0 left-0 hidden object-contain lg:block"
-                />
-              </div>
-            </div>
+            <Image
+              priority
+              src={homepageData?.profilePicture.data?.attributes?.url || EMPTY_IMAGE}
+              alt={
+                homepageData?.profilePicture.data?.attributes?.alternativeText || EMPTY_IMAGE_ALT
+              }
+              width={homepageData?.profilePicture.data?.attributes?.width || EMPTY_IMAGE_WIDTH}
+              height={homepageData?.profilePicture.data?.attributes?.height || EMPTY_IMAGE_WIDTH}
+              className="crossbox order-3 w-full border-2 border-b-0 border-dashed border-white object-cover md:order-2 md:h-full md:w-1/2 md:min-w-[50%]"
+            />
+            <nav className="order-2 m-8 mb-16 flex flex-col gap-2 text-white md:order-3 md:mb-8 md:mr-0 md:text-right">
+              <Link
+                href="#resume"
+                className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+              >
+                Resume
+              </Link>
+              <Link
+                href="#experience"
+                className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+              >
+                Experience
+              </Link>
+              <Link
+                href="#skills"
+                className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+              >
+                Skills
+              </Link>
+              <Link
+                href="#projects"
+                className="mx-2 font-hermeneus text-base underline underline-offset-4 hover:decoration-dashed"
+              >
+                Projects
+              </Link>
+            </nav>
           </div>
         </section>
+        <div className="relative mx-auto h-[200px] w-[2px] border-l-2 border-dashed border-black md:col-start-2 md:row-start-6">
+          <div className="pulsar absolute bottom-0 left-1/2 size-[20px] -translate-x-1/2 rounded-full bg-blueprint-500" />
+          <div className="absolute left-[calc(50%-2px)] top-full h-[440px] w-[540px] overflow-visible">
+            <Image
+              src="/components/resume-wire.svg"
+              alt="wires"
+              fill
+              className="absolute bottom-0 left-0 hidden object-contain lg:block"
+            />
+          </div>
+        </div>
         <section id="resume" className="relative">
           <div className="container mx-auto">
             <h1 className="my-16 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
@@ -314,8 +315,8 @@ export default async function Home() {
           </div>
         </section>
       </main>
-      <footer className="container mx-auto mt-16">
-        <div className="flex flex-wrap items-start justify-between gap-8 border-2 border-b-0 border-dashed border-white bg-blueprint-500 p-5 text-white">
+      <footer className="mt-16 border-t-2 border-dashed border-white bg-blueprint-500 text-white">
+        <div className="container mx-auto flex flex-wrap items-start justify-between gap-8 p-5">
           <nav className="flex gap-2">
             <Link
               href="#resume"
