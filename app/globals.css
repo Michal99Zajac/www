@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: HermeneusOne;
+  src: url('/fonts/hermeneusOne-regular.ttf');
+  font-display: swap;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .crossbox {
+    @apply relative;
+
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgb(0 0 0 / 20%),
+      white 2px,
+      transparent 2px,
+      transparent 10px /* Długość przerwy */
+    );
+  }
+
+  .drawer {
+    animation: moonwalk-in 600ms ease;
+  }
+
+  .closing-drawer {
+    animation: moonwalk-out 600ms ease;
+  }
+
+  .pulsar {
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  .level-beginner > .level-block:nth-last-child(-n + 4) {
+    @apply bg-gray-200;
+  }
+
+  .level-elementary > .level-block:nth-last-child(-n + 3) {
+    @apply bg-gray-200;
+  }
+
+  .level-intermediate > .level-block:nth-last-child(-n + 2) {
+    @apply bg-gray-200;
+  }
+
+  .level-advanced > .level-block:nth-last-child(-n + 1) {
+    @apply bg-gray-200;
+  }
+
+  /* ------------------------------ Media Queries ----------------------------- */
+
+  /*                                 Animations                                 */
+
+  @keyframes pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 4px rgb(0 78 152 / 25%);
+    }
+
+    50% {
+      box-shadow: 0 0 0 6px rgb(0 78 152 / 25%);
+    }
+  }
+
+  @keyframes moonwalk-in {
+    from {
+      transform: translateX(110%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes moonwalk-out {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(110%);
+    }
+  }
+}
