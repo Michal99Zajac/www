@@ -114,6 +114,7 @@ export default async function Home() {
               <div className="inline-flex border-2 border-dashed">
                 <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
                   <a
+                    target="_blank"
                     href={homepageData?.contact.githubUrl}
                     aria-label="github profile"
                     className="border-b-2 border-solid py-1 hover:border-dashed"
@@ -129,6 +130,8 @@ export default async function Home() {
                 </div>
                 <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
                   <a
+                    target="_blank"
+                    aria-label="linked in profile"
                     href={homepageData?.contact.linkedinUrl}
                     className="border-b-2 border-solid py-1 hover:border-dashed"
                   >
@@ -143,6 +146,7 @@ export default async function Home() {
                 </div>
                 <div className="flex size-12 items-center justify-center">
                   <a
+                    aria-label="email address"
                     href={`mailto:${homepageData?.contact.email}`}
                     className="border-b-2 border-solid py-1 hover:border-dashed"
                   >
@@ -256,6 +260,7 @@ export default async function Home() {
                       {selfProject.attributes?.githubUrl && (
                         <a
                           href={selfProject.attributes.githubUrl}
+                          target="_blank"
                           aria-label="github profile"
                           className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
                         >
@@ -271,6 +276,7 @@ export default async function Home() {
                       {selfProject.attributes?.websiteUrl && (
                         <a
                           href={selfProject.attributes.websiteUrl}
+                          target="_blank"
                           aria-label="website url"
                           className="block w-[20px] border-b-2 border-solid border-black pb-1 hover:border-dashed"
                         >
@@ -337,6 +343,7 @@ export default async function Home() {
             <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
               <a
                 href={homepageData?.contact.githubUrl}
+                target="_blank"
                 aria-label="github profile"
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
@@ -351,7 +358,9 @@ export default async function Home() {
             </div>
             <div className="flex size-12 items-center justify-center border-r-2 border-dashed">
               <a
+                target="_blank"
                 href={homepageData?.contact.linkedinUrl}
+                aria-label="linked in profile"
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
                 <Image
@@ -366,6 +375,7 @@ export default async function Home() {
             <div className="flex size-12 items-center justify-center">
               <a
                 href={`mailto:${homepageData?.contact.email}`}
+                aria-label="email address"
                 className="border-b-2 border-solid py-1 hover:border-dashed"
               >
                 <Image
