@@ -18,7 +18,7 @@ import {
 } from '@/graphql/generated'
 import getClient from '@/graphql/server'
 import ExperienceTimeline from '@/homepage/components/ExperienceTimeline'
-import ResumeFloatingImages from '@/homepage/components/ResumeFloatingImages'
+import ResumeArticleContainer from '@/homepage/components/ResumeArticleContainer'
 import SkillGrid from '@/homepage/components/SkillGrid'
 import EMPTY_IMAGE, {
   EMPTY_IMAGE_ALT,
@@ -200,15 +200,11 @@ export default async function Home() {
           </div>
         </section>
         <section id="resume">
-          <div className="container relative mx-auto">
+          <div className="container mx-auto">
             <h1 className="mb-8 mt-32 text-center font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
               RESUME
             </h1>
-            <Article
-              className="mx-auto mb-32 w-[640px] max-w-full border-2 border-dashed border-black bg-white px-6 py-8"
-              content={homepageData?.about || ''}
-            />
-            <ResumeFloatingImages
+            <ResumeArticleContainer
               images={(homepageData?.profilePictures.data || []).map((image, index) => ({
                 alternativeText: image.attributes?.alternativeText || EMPTY_IMAGE_ALT,
                 url: image.attributes?.url || EMPTY_IMAGE,
@@ -216,7 +212,9 @@ export default async function Home() {
                 height: image.attributes?.height || EMPTY_IMAGE_WIDTH,
                 id: image.id || index,
               }))}
-            />
+            >
+              <Article content={homepageData?.about || ''} />
+            </ResumeArticleContainer>
           </div>
         </section>
         <section id="experience">
