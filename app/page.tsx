@@ -201,7 +201,7 @@ export default async function Home() {
         </section>
         <section id="resume">
           <div className="container mx-auto">
-            <h1 className="mb-8 mt-32 text-center font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-8 mt-32 text-center font-hermeneus text-6xl leading-normal text-blueprint-500 sm:text-[140px] lg:text-[200px]">
               RESUME
             </h1>
             <ResumeArticleContainer
@@ -219,15 +219,15 @@ export default async function Home() {
         </section>
         <section id="experience">
           <div className="container mx-auto">
-            <h1 className="mb-16 mt-32 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:mt-64 sm:text-[160px] lg:text-[200px]">
-              EXPERIENCE
+            <h1 className="mb-16 mt-32 text-center font-hermeneus text-6xl leading-normal text-blueprint-500 sm:text-[140px] lg:text-[200px]">
+              EXP. EXP. EXP.
             </h1>
             <ExperienceTimeline jobs={jobs} isMobile={isMobile} />
           </div>
         </section>
         <section id="skills">
           <div className="container mx-auto">
-            <h1 className="mb-16 mt-32 text-right font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-32 text-right font-hermeneus text-6xl leading-normal text-blueprint-500 sm:text-[140px] lg:text-[200px]">
               <span className="border-2 border-dashed border-black px-6">SKILLS</span>
             </h1>
             <SkillGrid skillCategories={skillCategories} />
@@ -235,7 +235,7 @@ export default async function Home() {
         </section>
         <section id="projects">
           <div className="container mx-auto">
-            <h1 className="mb-16 mt-32 font-hermeneus text-8xl leading-normal text-blueprint-500 sm:text-[160px] lg:text-[200px]">
+            <h1 className="mb-16 mt-32 font-hermeneus text-6xl leading-normal text-blueprint-500 sm:text-[140px] lg:text-[200px]">
               PROJECTS
             </h1>
             <div className="relative px-5 after:absolute after:left-1/2 after:top-0 after:z-[-1] after:h-full after:w-[2px] after:-translate-x-1/2 after:border-r-2 after:border-dashed after:border-black after:content-[''] sm:px-0 sm:after:content-none">

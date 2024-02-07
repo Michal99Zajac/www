@@ -59,7 +59,7 @@ export function ResumeArticleContainer({ images, children, className }: ResumeFl
   }, [])
 
   return (
-    <div className={clsx('relative mx-auto w-[640px] max-w-full px-6 py-8', className)}>
+    <div className={clsx('relative mx-auto w-[640px] max-w-full px-6', className)}>
       {shuffledImages.map((image, index) => (
         <Image
           key={`${image.id}-${index}`}
