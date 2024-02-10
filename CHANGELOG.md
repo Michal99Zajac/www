@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/Michal99Zajac/www/compare/v2.1.0...v2.2.0) (2024-02-10)
+
+
+### Features
+
+* install new GoogleTagManager component ([cc8c09d](https://github.com/Michal99Zajac/www/commit/cc8c09d8d106bc62934a9bc9a96ab5e1d741d656))
+
 ## [2.1.0](https://github.com/Michal99Zajac/www/compare/v2.0.0...v2.1.0) (2024-02-10)
 
 ## [2.0.0](https://github.com/Michal99Zajac/www/compare/v1.0.0...v2.0.0) (2024-02-07)
