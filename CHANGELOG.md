@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.1.0](https://github.com/Michal99Zajac/www/compare/v2.0.0...v2.1.0) (2024-02-10)
+
 ## [2.0.0](https://github.com/Michal99Zajac/www/compare/v1.0.0...v2.0.0) (2024-02-07)
 
 
