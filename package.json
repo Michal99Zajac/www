@@ -1,7 +1,17 @@
 {
   "name": "www",
   "version": "2.0.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "email": "dev.michal.99.zajac@gmail.com",
+    "name": "Michal Zajac",
+    "url": "https://michalzajac.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Michal99Zajac/www.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
