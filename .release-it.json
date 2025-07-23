@@ -3,7 +3,8 @@
     "commitMessage": "chore: release v${version}"
   },
   "npm": {
-    "publish": false
+    "publish": false,
+    "workspaceRoot": true
   },
   "github": {
     "release": true
