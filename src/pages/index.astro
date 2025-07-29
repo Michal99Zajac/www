@@ -1,8 +1,174 @@
 ---
-import Welcome from '@/components/Welcome.astro'
+import cloudOneImage from '@/assets/cloud-1.png'
+import cloudThreeImage from '@/assets/cloud-3.png'
+import rainbowCircleImage from '@/assets/rainbow-circle.svg'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
-  <Welcome />
+  <header class="mb-32">
+    <nav class="container mx-auto flex items-center justify-center gap-x-4 px-6 py-4">
+      <a class="text-base" href="#hero">Hero</a>
+      <a class="text-base" href="#hero">Hero</a>
+      <a class="text-base" href="#hero">Hero</a>
+      <a class="text-base" href="#hero">Hero</a>
+    </nav>
+  </header>
+  <main>
+    <section class="container mx-auto px-6">
+      <p class="mb-4 text-center text-lg">Hi! I’m Michal</p>
+      <h1 class="font-libre mb-12 text-center text-6xl">
+        <span id="hero-profession">Frontend Engineer</span><br />I'm always here for you
+      </h1>
+      <div class="relative mb-32">
+        <div class="aspect-2/1 overflow-hidden">
+          <img
+            src={rainbowCircleImage.src}
+            alt="RainbowCircle"
+            class="animate-duration-[30000ms] w-full animate-spin"
+          />
+        </div>
+        <img
+          src={cloudOneImage.src}
+          alt="CloudOne"
+          class="animate-shake animate-infinite animate-duration-[10000ms] animate-ease-linear absolute -bottom-[80px] left-[45%] w-4/5 -translate-x-1/2"
+        />
+        <img
+          src={cloudThreeImage.src}
+          alt="CloudOne"
+          class="animate-shake animate-infinite animate-delay-1000 animate-duration-[20000ms] animate-ease-linear absolute -bottom-[100px] -left-[120px] w-4/10"
+        />
+        <img
+          src={cloudThreeImage.src}
+          alt="CloudOne"
+          class="animate-shake animate-infinite animate-delay-2000 animate-duration-[20000ms] animate-ease-linear absolute -right-[100px] -bottom-[100px] w-2/5"
+        />
+      </div>
+      <p class="mx-auto w-1/2 text-center text-lg">
+        Simplicity is my superpower. I turn complex ideas into experiences users love and investors
+        trust. I help SaaS, AI, and Dev founders craft story-driven brands and products.
+      </p>
+      <hr class="mx-auto my-12 h-2 w-2/5 border-dashed" />
+    </section>
+    <section class="py-12">
+      <h2 class="font-libre mb-8 text-center text-3xl">A wide range of possibilities!</h2>
+      <div class="carousel-container flex gap-8">
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+        <div
+          class="font-libre flex w-max items-center justify-center gap-x-4 rounded-lg border-1 border-dashed border-gray-300 px-12 py-10"
+        >
+          <div class="size-8 bg-blue-700"></div>
+          <span>TypeScript</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="h-[320px]"></footer>
 </Layout>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(
+        -33.33%
+      ); /* Move by 1/3 of the container since we triplicated the items */
+    }
+  }
+
+  .carousel-container {
+    animation: scroll 30s linear infinite;
+  }
+</style>

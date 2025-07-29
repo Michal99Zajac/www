@@ -9,9 +9,11 @@
     "test": "echo 'test' && exit 0"
   },
   "dependencies": {
-    "astro": "^5.12.2",
+    "@fontsource/libre-baskerville": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
-    "tailwindcss": "^4.1.11"
+    "astro": "^5.12.2",
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-animated": "^2.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

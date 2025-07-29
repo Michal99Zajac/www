@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
+
+body {
+    background: #FAF9F6;
+}
+
+@theme {
+    --font-libre: 'Libre Baskerville', 'serif';
+}
