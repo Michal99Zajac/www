@@ -1,5 +1,9 @@
 ---
+import { Image } from 'astro:assets'
+
 import cloudOneImage from '@/assets/cloud-1.png'
+import cloudThree from '@/assets/cloud-3.png'
+import CurtainSvg from '@/assets/curtain.svg'
 import rainbowCircleImage from '@/assets/rainbow-circle.svg'
 import Layout from '@/layouts/Layout.astro'
 
@@ -144,30 +148,91 @@ const row3 = shuffle([...items]).slice(0, 20)
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 py-16">
+    <section class="container mx-auto px-32 py-16">
       <h2 class="font-libre mb-4 text-4xl">Not just theory!</h2>
       <p class="mb-8">Projects into which I have poured my heart and soul!</p>
-      <div class="grid grid-cols-4 gap-8">
-        <div class="col-span-3 row-span-2 h-full w-full rounded-lg bg-gray-200"></div>
-        <div class="h-[240px] w-full rounded-lg bg-blue-200"></div>
-        <div class="h-[240px] w-full rounded-lg bg-pink-200"></div>
-        <div class="col-span-2 h-[240px] w-full rounded-lg bg-gray-200"></div>
-        <div class="col-span-2 h-[240px] w-full rounded-lg bg-gray-200"></div>
+      <div class="grid auto-rows-[240px] grid-cols-4 grid-rows-[240px_240px_240px_auto] gap-8">
         <div
-          class="font-libre col-span-4 w-full rounded-full border-1 border-dashed border-gray-300 p-4 text-center text-xl transition-all hover:bg-black hover:text-white"
+          class="curtain-wrapper relative col-span-3 row-span-2 overflow-hidden rounded-lg bg-gray-100"
+        >
+          <Image
+            src={cloudThree}
+            alt="CLoudf"
+            class="h-full w-full rounded-xl border-8 border-gray-300 bg-white object-cover"
+          />
+          <div class="curtain absolute top-0 left-0 z-1 h-full w-full">
+            <div class="relative z-1 p-6">
+              <h3 class="font-libre mb-4 text-xl">Dscout Private Panels</h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                unknown printer took a galley of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+            <CurtainSvg
+              preserveAspectRatio="none"
+              class="absolute top-0 left-0 h-full w-full fill-red-300"
+            />
+          </div>
+        </div>
+        <div
+          class="rounded-lg bg-blue-200 transition-all duration-500 hover:rotate-y-180 hover:bg-green-200"
+        >
+        </div>
+        <div
+          class="rounded-lg bg-pink-200 transition-all duration-500 hover:rotate-y-180 hover:bg-yellow-200"
+        >
+        </div>
+        <div class="curtain-wrapper relative col-span-2 overflow-hidden rounded-lg bg-gray-200 p-8">
+          <div class="h-full">SkyCentrics</div>
+          <div class="curtain absolute top-0 left-0 z-1 h-full w-full">
+            <CurtainSvg
+              preserveAspectRatio="none"
+              class="absolute top-0 left-0 h-full w-full fill-lime-300"
+            />
+          </div>
+        </div>
+        <div class="curtain-wrapper relative col-span-2 overflow-hidden rounded-lg bg-gray-200 p-8">
+          <div class="h-full">Beans</div>
+          <div class="curtain absolute top-0 left-0 z-1 h-full w-full">
+            <CurtainSvg
+              preserveAspectRatio="none"
+              class="absolute top-0 left-0 h-full w-full fill-blue-300"
+            />
+          </div>
+        </div>
+        <div
+          class="font-libre col-span-4 h-max rounded-full border-1 border-dashed border-gray-300 p-4 text-center text-xl transition-all hover:bg-black hover:text-white"
         >
           Always on the move to get things done. Introducing side projects!
         </div>
-        <div class="col-start-1 h-[240px] w-full rounded-lg bg-blue-200"></div>
-        <div class="col-start-1 h-[240px] w-full rounded-lg bg-pink-200"></div>
+        <div class="col-start-1 row-span-2 rounded-lg bg-blue-200"></div>
         <div
-          class="col-span-3 col-start-2 row-span-2 row-start-5 h-full w-full rounded-lg bg-gray-200"
+          class="curtain-wrapper relative col-span-3 col-start-2 row-span-2 row-start-5 h-full overflow-hidden rounded-lg bg-gray-200 p-8"
         >
+          <div class="h-full">Dscout Private Panels</div>
+          <div class="curtain absolute top-0 left-0 z-1 h-full w-full">
+            <CurtainSvg
+              preserveAspectRatio="none"
+              class="absolute top-0 left-0 h-full w-full fill-red-300"
+            />
+          </div>
         </div>
-        <div class="col-span-2 h-[240px] w-full rounded-lg bg-gray-200"></div>
-        <div class="col-span-2 h-[240px] w-full rounded-lg bg-gray-200"></div>
+        <div class="col-span-2 rounded-lg bg-gray-200"></div>
+        <div class="col-span-2 rounded-lg bg-gray-200"></div>
       </div>
     </section>
   </main>
   <footer class="h-[320px]"></footer>
 </Layout>
+
+<style>
+  .curtain {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .curtain-wrapper:hover .curtain {
+    transform: translateY(0);
+  }
+</style>
