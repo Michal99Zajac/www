@@ -1,16 +1,50 @@
 ---
 import { Image } from 'astro:assets'
 
-const { company, description, src, alt } = Astro.props
+import ExternalLink from '@/assets/external-link.svg'
+import GithubLogo from '@/assets/github-mark.svg'
+
+const { src, alt, curtainColor, title, description, githubUrl, url } = Astro.props
 ---
 
 <div class="curtain-wrapper relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
   <Image src={src} alt={alt} class="h-full w-full object-cover" />
-  <div class="curtain absolute top-0 left-0 z-1 h-full bg-purple-200 p-6">
-    <h3 class="font-libre mb-4 text-xl">{company}</h3>
+  <div
+    class="curtain absolute top-0 left-0 z-1 h-full p-6"
+    style={{ backgroundColor: curtainColor }}
+  >
+    <h3 class="font-libre mb-4 text-xl">{title}</h3>
     <p>
       {description}
     </p>
+  </div>
+  <div class="absolute right-0 bottom-0 z-2 flex gap-x-2 p-6">
+    {
+      githubUrl && (
+        <a href={githubUrl}>
+          <GithubLogo
+            role="img"
+            width="24"
+            height="24"
+            class="inline-block"
+            aria-label="Enter GitHub project"
+          />
+        </a>
+      )
+    }
+    {
+      url && (
+        <a href={url}>
+          <ExternalLink
+            role="img"
+            width="24"
+            height="24"
+            class="inline-block"
+            aria-label="Check project webiste"
+          />
+        </a>
+      )
+    }
   </div>
 </div>
 

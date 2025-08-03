@@ -5,14 +5,17 @@ import badge1 from '@/assets/aws-certified-solutions-architect-associate.png'
 import badge2 from '@/assets/aws-cloud-quest-solutions-architect.png'
 import badge3 from '@/assets/aws-partner-technical-accredited.png'
 import cloudOneImage from '@/assets/cloud-1.png'
-import dscoutLogoTile from '@/assets/dscout-logo-tile.png'
+import privatePanelsTile from '@/assets/dscout-logo-tile.png'
 import GithubLogo from '@/assets/github-mark.svg'
 import LinkedInLogo from '@/assets/linkedin-mark.svg'
 import profile1 from '@/assets/profile-1.png'
 import profile2 from '@/assets/profile-2.png'
 import rainbowCircleImage from '@/assets/rainbow-circle.svg'
+import shutTile from '@/assets/shut.png'
 import badge4 from '@/assets/well-architected-proficient.png'
 import badge5 from '@/assets/well-architected-proficient.png'
+import workcodeTile from '@/assets/workcode.png'
+import zegraTile from '@/assets/zegra.png'
 import Project from '@/components/project.astro'
 import Layout from '@/layouts/Layout.astro'
 
@@ -53,11 +56,58 @@ const items = [
 const row1 = shuffle([...items]).slice(0, 20)
 const row2 = shuffle([...items]).slice(0, 20)
 const row3 = shuffle([...items]).slice(0, 20)
+
+const projects = [
+  {
+    cover: {
+      src: shutTile,
+      alt: 'Shut logo',
+    },
+    title: 'Shut',
+    description:
+      'This tool facilitates the synchronization of bookmarks across multiple systems, enhancing operational efficiency and convenience. The objective of the project was to gain a more profound understanding of the recently introduced Next.js framework.',
+    curtainColor: '#96ded3',
+    githubUrl: 'https://github.com/Michal99Zajac/shut',
+  },
+  {
+    cover: {
+      src: workcodeTile,
+      alt: 'Workcode logo',
+    },
+    title: 'Workcode',
+    description:
+      "This project is part of an engineering thesis. This application facilitates pair programming by providing a simultaneous text editor that allows users to view each other's movements. Additionally, the editor is equipped with a built-in chat feature that facilitates communication among users.",
+    curtainColor: '#a5cce3',
+    githubUrl: 'https://github.com/Michal99Zajac/workcode',
+  },
+  {
+    cover: {
+      src: zegraTile,
+      alt: 'Zegra logo',
+    },
+    title: 'Zegra',
+    description:
+      'This is the project on which I am currently working in my personal time. This application aims to create a system for intelligent calendar management. The system architecture is based on microservices, facilitating the seamless integration of innovations in areas such as cybersecurity, machine learning, backend, and frontend technologies.',
+    curtainColor: '#FAD4C0',
+    githubUrl: 'https://github.com/Michal99Zajac/zegra',
+  },
+  {
+    cover: {
+      src: privatePanelsTile,
+      alt: 'Dscout logo',
+    },
+    title: 'Dscout Private Panels',
+    description:
+      'All-in-one software platform designed to streamline research recruitment and panel management for market research and user research teams. It helps researchers find, screen, schedule, and manage participants for studies, automating tasks like personalized recruitment emails and incentive payments.',
+    curtainColor: '#41ffa1',
+    url: 'https://www.dscout.com/lp/dscout-private-panels',
+  },
+]
 ---
 
 <Layout>
   <header class="mb-32">
-    <nav class="container mx-auto flex h-20 items-center justify-center gap-x-4 px-6 py-4">
+    <nav class="container mx-auto flex h-20 items-center justify-center gap-x-6 px-6 py-4">
       <a class="text-base" href="#competence">Competence</a>
       <a class="text-base" href="#certifications">Certifications</a>
       <a class="text-base" href="#experience">Experience</a>
@@ -178,69 +228,19 @@ const row3 = shuffle([...items]).slice(0, 20)
       <h2 class="font-libre mb-4 text-4xl">Not just theory!</h2>
       <p class="mb-8">Projects into which I have poured my heart and soul!</p>
       <div class="grid grid-cols-2 gap-6">
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="blue"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="red"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="green"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="green"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-      </div>
-      <div
-        class="font-libre col-span-4 my-8 h-max rounded-full border-1 border-dashed border-gray-300 p-4 text-center text-xl transition-all hover:bg-black hover:text-white"
-      >
-        Always on the move to get things done. Introducing side projects!
-      </div>
-      <div class="grid grid-cols-2 gap-6">
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="pink"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="yellow"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="pruple"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
-        <Project
-          src={dscoutLogoTile}
-          alt="CLoudf"
-          color="pruple"
-          company="Dscout Private Panels"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        />
+        {
+          projects.map(({ cover, url, githubUrl, curtainColor, description, title }) => (
+            <Project
+              src={cover.src}
+              alt={cover.alt}
+              url={url}
+              githubUrl={githubUrl}
+              curtainColor={curtainColor}
+              title={title}
+              description={description}
+            />
+          ))
+        }
       </div>
     </section>
   </main>
