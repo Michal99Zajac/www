@@ -12,8 +12,7 @@
     "@fontsource/libre-baskerville": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.2",
-    "tailwindcss": "^4.1.11",
-    "tailwindcss-animated": "^2.0.0"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

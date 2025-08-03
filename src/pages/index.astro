@@ -6,6 +6,8 @@ import badge2 from '@/assets/aws-cloud-quest-solutions-architect.png'
 import badge3 from '@/assets/aws-partner-technical-accredited.png'
 import cloudOneImage from '@/assets/cloud-1.png'
 import dscoutLogoTile from '@/assets/dscout-logo-tile.png'
+import GithubLogo from '@/assets/github-mark.svg'
+import LinkedInLogo from '@/assets/linkedin-mark.svg'
 import rainbowCircleImage from '@/assets/rainbow-circle.svg'
 import badge4 from '@/assets/well-architected-proficient.png'
 import badge5 from '@/assets/well-architected-proficient.png'
@@ -71,7 +73,7 @@ const row3 = shuffle([...items]).slice(0, 20)
           <img
             src={rainbowCircleImage.src}
             alt="RainbowCircle"
-            class="animate-duration-[30000ms] w-full animate-spin"
+            class="animate-duration-2m w-full animate-spin"
           />
         </div>
         <img
@@ -236,19 +238,23 @@ const row3 = shuffle([...items]).slice(0, 20)
       </div>
     </section>
   </main>
-  <footer class="bulge-grid grid grid-cols-32 gap-2">
-    {
-      Array.from({ length: 32 * 7 }).map((_, index) => (
-        <div
-          class={`grid-tile aspect-square rounded-sm ${index === 48 ? 'bg-black' : 'bg-pink-200'} transition-all ${index === 48 ? 'hover:scale-200' : ''}`}
-          data-index={index}
-        />
-      ))
-    }
+  <footer class="container mx-auto px-4 py-64 text-center">
+    <h2 class="font-libre mb-4 text-4xl">I'm online, let's connect!</h2>
+    <div class="flex items-center justify-center gap-4">
+      <a class="btn hover:!bg-pink-100" href="mailto:<EMAIL>">@</a>
+      <a class="btn btn-icon hover:!bg-blue-100" href="https://github.com">
+        <GithubLogo width="16" height="16" />
+      </a>
+      <a class="btn btn-icon hover:!bg-green-100" href="https://linkedin.com">
+        <LinkedInLogo width="16" height="16" />
+      </a>
+    </div>
   </footer>
 </Layout>
 
 <style>
+  @reference "tailwindcss";
+
   .medal {
     transition: all 0.5s ease-in-out;
   }
@@ -256,5 +262,17 @@ const row3 = shuffle([...items]).slice(0, 20)
   .medals-wrapper:hover > .medal {
     translate: 0;
     scale: 100%;
+  }
+
+  .animate-duration-2m {
+    animation-duration: 120s;
+  }
+
+  .btn {
+    @apply aspect-square h-11 rounded-lg border-1 border-dashed border-gray-300 p-2 text-center hover:bg-gray-300;
+  }
+
+  .btn-icon > svg {
+    @apply inline-block;
   }
 </style>
