@@ -8,6 +8,8 @@ import cloudOneImage from '@/assets/cloud-1.png'
 import dscoutLogoTile from '@/assets/dscout-logo-tile.png'
 import GithubLogo from '@/assets/github-mark.svg'
 import LinkedInLogo from '@/assets/linkedin-mark.svg'
+import profile1 from '@/assets/profile-1.png'
+import profile2 from '@/assets/profile-2.png'
 import rainbowCircleImage from '@/assets/rainbow-circle.svg'
 import badge4 from '@/assets/well-architected-proficient.png'
 import badge5 from '@/assets/well-architected-proficient.png'
@@ -69,12 +71,16 @@ const row3 = shuffle([...items]).slice(0, 20)
         <span id="hero-profession">Frontend Engineer</span><br />I'm always here for you
       </h1>
       <div class="relative mb-32">
-        <div class="aspect-2/1 overflow-hidden">
-          <img
-            src={rainbowCircleImage.src}
+        <div class="rainbow-circle-wrapper relative aspect-2/1 overflow-hidden">
+          <Image
+            src={rainbowCircleImage}
             alt="RainbowCircle"
             class="animate-duration-2m w-full animate-spin"
           />
+          <div class="profile-box">
+            <Image src={profile2} alt="Profile2" class="medieval-profile" />
+            <Image src={profile1} alt="Profile1" class="normal-profile" />
+          </div>
         </div>
         <img
           src={cloudOneImage.src}
@@ -266,6 +272,18 @@ const row3 = shuffle([...items]).slice(0, 20)
 
   .animate-duration-2m {
     animation-duration: 120s;
+  }
+
+  .rainbow-circle-wrapper:hover > .profile-box {
+    @apply rotate-180;
+  }
+
+  .profile-box {
+    @apply absolute bottom-0 left-1/2 w-[480px] -translate-x-1/2 translate-y-1/2 transition-transform duration-700 ease-in-out;
+  }
+
+  .normal-profile {
+    @apply rotate-180;
   }
 
   .btn {
