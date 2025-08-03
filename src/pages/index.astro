@@ -135,17 +135,17 @@ const projects = [
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="animate-shake animate-infinite animate-duration-[10000ms] animate-ease-linear absolute -bottom-[80px] left-[45%] w-3/5 -translate-x-1/2"
+          class="cloud absolute -bottom-[80px] left-[45%] w-3/5 -translate-x-1/2"
         />
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="animate-shake animate-infinite animate-delay-1000 animate-duration-[20000ms] animate-ease-linear absolute -bottom-[100px] -left-[120px] w-1/2"
+          class="cloud animate-duration-30s absolute -bottom-[100px] -left-[120px] w-1/2"
         />
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="animate-shake animate-infinite animate-delay-2000 animate-duration-[20000ms] animate-ease-linear absolute -right-[100px] -bottom-[80px] w-1/2"
+          class="cloud animate-duration-15s absolute -right-[100px] -bottom-[80px] w-1/2"
         />
       </div>
       <p class="mx-auto w-1/2 text-center text-lg">
@@ -260,6 +260,40 @@ const projects = [
 
 <style>
   @reference "tailwindcss";
+
+  @keyframes cloud-wind {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+
+    25% {
+      transform: translateX(16px) translateY(16px);
+    }
+
+    50% {
+      transform: translateX(32px) translateY(0);
+    }
+
+    75% {
+      transform: translateX(16px) translateY(-16px);
+    }
+
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  .cloud {
+    animation: cloud-wind 20s ease-in-out infinite;
+  }
+
+  .animate-duration-30s {
+    animation-duration: 30s;
+  }
+
+  .animate-duration-15s {
+    animation-duration: 15s;
+  }
 
   .medal {
     transition: all 0.5s ease-in-out;
