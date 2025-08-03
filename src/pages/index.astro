@@ -120,11 +120,17 @@ const projects = [
     <section id="hero" class="container mx-auto my-24 px-6 md:my-40">
       <p class="mb-4 text-center md:text-lg">Hi! I’m Michal</p>
       <h1 class="font-libre mb-12 text-center text-3xl md:text-6xl">
-        <span id="hero-profession" class="block h-9 overflow-hidden md:h-20 md:leading-20">
-          <span class="block">Frontend Developer</span>
-          <span class="block">Backend Developer</span>
-          <span class="block">Data Scientist</span>
-          <span class="block">DevOps Engineer</span>
+        <span
+          id="hero-profession"
+          class="block h-10 overflow-hidden leading-10 md:h-20 md:leading-20"
+        >
+          <span class="profession-wrapper">
+            <span class="block">Frontend Developer</span>
+            <span class="block">Backend Developer</span>
+            <span class="block">Data Scientist</span>
+            <span class="block">DevOps Engineer</span>
+            <span class="block">Frontend Developer</span>
+          </span>
         </span>
         <span class="block text-xl md:text-6xl">I'm always here for you</span>
       </h1>
@@ -303,6 +309,37 @@ const projects = [
     100% {
       transform: translateX(0) translateY(0);
     }
+  }
+
+  @keyframes cylinder {
+    0%,
+    22% {
+      transform: translateY(0);
+    }
+
+    24.5%,
+    46.5% {
+      transform: translateY(-20%);
+    }
+
+    49%,
+    71% {
+      transform: translateY(-40%);
+    }
+
+    73.5%,
+    97.5% {
+      transform: translateY(-60%);
+    }
+
+    100% {
+      transform: translateY(-80%);
+    }
+  }
+
+  .profession-wrapper {
+    display: inline-block;
+    animation: cylinder 22s linear infinite;
   }
 
   .cloud {
