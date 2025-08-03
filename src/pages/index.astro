@@ -27,30 +27,40 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 const items = [
+  'JavaScript',
   'TypeScript',
   'React',
   'Tailwind',
   'Angular',
   'Python',
-  'Vue',
-  'Svelte',
-  'Solid',
-  'SvelteKit',
-  'Next.js',
-  'Svelte',
-  'Solid',
-  'SvelteKit',
-  'Django',
-  'Express',
-  'Fastify',
-  'Jira',
+  'PHP',
+  'Laravel',
+  'Symfony',
+  'Firebase',
+  'DigitalOcean',
+  'AWS',
+  'GCloud',
   'Slack',
+  'Jira',
   'Postgres',
   'MySql',
+  'Fastify',
+  'ExpressJs',
   'MongoDB',
-  'AWS',
-  'Azure',
-  'Firebase',
+  'React Query',
+  'Next.js',
+  'Astro',
+  'C',
+  'Cypress',
+  'Tap',
+  'Jest',
+  'Nginx',
+  'Docker',
+  'FastAPI',
+  'Circle CI',
+  'Vercel',
+  'GitHib Actions',
+  'Git',
 ]
 
 const row1 = shuffle([...items]).slice(0, 20)
@@ -138,33 +148,41 @@ const projects = [
         <div class="rainbow-circle-wrapper relative -mx-20 aspect-2/1 overflow-hidden md:mx-0">
           <Image
             src={rainbowCircleImage}
-            alt="RainbowCircle"
+            alt=""
+            role="presentation"
             class="animate-duration-2m w-full animate-spin"
           />
           <div class="profile-box">
-            <Image src={profile2} alt="Profile2" class="medieval-profile" />
-            <Image src={profile1} alt="Profile1" class="normal-profile" />
+            <Image
+              src={profile2}
+              alt="Michal in medieval style illustration"
+              class="medieval-profile"
+            />
+            <Image src={profile1} alt="Michal's professional headshot" class="normal-profile" />
           </div>
         </div>
         <Image
           src={cloudOneImage}
-          alt="CloudOne"
+          alt="a"
+          role="presentation"
           class="cloud absolute -bottom-[20px] left-[45%] w-[400px] -translate-x-1/2 md:-bottom-[80px] md:w-3/5"
         />
         <Image
           src={cloudOneImage}
-          alt="CloudOne"
+          alt="a"
+          role="presentation"
           class="cloud animate-duration-30s absolute -bottom-[10px] -left-[80px] w-[220px] md:-bottom-[60px] md:-left-[120px] md:w-1/2"
         />
         <Image
           src={cloudOneImage}
-          alt="CloudOne"
+          alt="a"
+          role="presentation"
           class="cloud animate-duration-15s absolute -right-[100px] -bottom-[15px] w-[220px] md:-bottom-[60px] md:w-1/2"
         />
       </div>
       <p class="mx-auto text-center text-lg md:w-1/2">
-        Simplicity is my superpower. I turn complex ideas into experiences users love and investors
-        trust. I help SaaS, AI, and Dev founders craft story-driven brands and products.
+        Simplicity is me! I love transforming complex ideas into simple mechanics, and I do
+        everything in my power to make sure everyone on my professional path is satisfied.
       </p>
       <hr class="mx-auto my-12 h-2 w-3/4 border-dashed md:w-2/5" />
     </section>
@@ -237,19 +255,31 @@ const projects = [
       <div
         class="medals-wrapper mx-auto grid auto-cols-[80px] grid-cols-5 md:w-full md:auto-cols-[240px] md:gap-4"
       >
-        <Image src={badge5} alt="badge5" class="medal scale-160 md:translate-x-80 md:scale-80" />
+        <Image
+          src={badge5}
+          alt="AWS Well-Architected Proficient badge"
+          class="medal scale-160 md:translate-x-80 md:scale-80"
+        />
         <Image
           src={badge2}
-          alt="badge2"
+          alt="AWS Cloud Quest Solutions Architect completion badge"
           class="medal z-1 scale-180 md:translate-x-40 md:scale-90"
         />
-        <Image src={badge1} alt="badge1" class="medal z-2 scale-200 md:scale-100" />
+        <Image
+          src={badge1}
+          alt="AWS Certified Solutions Architect Associate certification badge"
+          class="medal z-2 scale-200 md:scale-100"
+        />
         <Image
           src={badge3}
-          alt="badge3"
+          alt="AWS Partner Technical Accredited certification badge"
           class="medal z-1 scale-180 md:-translate-x-40 md:scale-90"
         />
-        <Image src={badge4} alt="badge4" class="medal scale-160 md:-translate-x-80 md:scale-80" />
+        <Image
+          src={badge4}
+          alt="AWS Well-Architected Proficient badge"
+          class="medal scale-160 md:-translate-x-80 md:scale-80"
+        />
       </div>
     </section>
     <section id="experience" class="container mx-auto my-24 px-6 md:my-40 md:px-64">
@@ -275,12 +305,19 @@ const projects = [
   <footer id="contact" class="container mx-auto my-24 px-6 text-center md:my-40">
     <h2 class="font-libre mb-4 text-2xl md:text-3xl">I'm online, let's connect!</h2>
     <div class="flex items-center justify-center gap-4">
-      <a class="btn hover:!bg-pink-100" href="mailto:<EMAIL>">@</a>
-      <a class="btn btn-icon hover:!bg-blue-100" href="https://github.com">
-        <GithubLogo width="16" height="16" />
+      <a
+        class="btn hover:!bg-pink-100"
+        href="mailto:michal.99.zajac@gmail.com"
+        aria-label="Email me">@</a
+      >
+      <a class="btn btn-icon hover:!bg-blue-100" href="https://github.com/Michal99Zajac">
+        <GithubLogo width="16" height="16" role="img" aria-label="Check my github profile" />
       </a>
-      <a class="btn btn-icon hover:!bg-green-100" href="https://linkedin.com">
-        <LinkedInLogo width="16" height="16" />
+      <a
+        class="btn btn-icon hover:!bg-green-100"
+        href="https://www.linkedin.com/in/michal-99-zajac/"
+      >
+        <LinkedInLogo width="16" height="16" role="img" aria-label="Check my linkedin profile" />
       </a>
     </div>
   </footer>
