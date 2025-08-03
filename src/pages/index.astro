@@ -106,22 +106,25 @@ const projects = [
 ---
 
 <Layout>
-  <header class="mb-32">
-    <nav class="container mx-auto flex h-20 items-center justify-center gap-x-6 px-6 py-4">
-      <a class="text-base" href="#competence">Competence</a>
-      <a class="text-base" href="#certifications">Certifications</a>
-      <a class="text-base" href="#experience">Experience</a>
-      <a class="text-base" href="#contact">Contact</a>
+  <header class="mb-8">
+    <nav
+      class="container mx-auto flex h-20 items-center justify-center gap-x-4 px-6 text-sm md:text-base"
+    >
+      <a href="#competence">Competence</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
   <main>
-    <section id="hero" class="container mx-auto px-6">
-      <p class="mb-4 text-center text-lg">Hi! I’m Michal</p>
-      <h1 class="font-libre mb-12 text-center text-6xl">
-        <span id="hero-profession">Frontend Engineer</span><br />I'm always here for you
+    <section id="hero" class="container mx-auto my-24 px-6 md:my-40">
+      <p class="mb-4 text-center md:text-lg">Hi! I’m Michal</p>
+      <h1 class="font-libre mb-12 text-center text-3xl md:text-6xl">
+        <span id="hero-profession" class="block">Frontend Engineer</span>
+        <span class="block text-xl md:text-6xl">I'm always here for you</span>
       </h1>
-      <div class="relative mb-32">
-        <div class="rainbow-circle-wrapper relative aspect-2/1 overflow-hidden">
+      <div class="relative mb-16 md:mb-32">
+        <div class="rainbow-circle-wrapper relative -mx-20 aspect-2/1 overflow-hidden md:mx-0">
           <Image
             src={rainbowCircleImage}
             alt="RainbowCircle"
@@ -135,27 +138,29 @@ const projects = [
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="cloud absolute -bottom-[80px] left-[45%] w-3/5 -translate-x-1/2"
+          class="cloud absolute -bottom-[20px] left-[45%] w-[400px] -translate-x-1/2 md:-bottom-[80px] md:w-3/5"
         />
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="cloud animate-duration-30s absolute -bottom-[100px] -left-[120px] w-1/2"
+          class="cloud animate-duration-30s absolute -bottom-[10px] -left-[80px] w-[220px] md:-bottom-[60px] md:-left-[120px] md:w-1/2"
         />
         <Image
           src={cloudOneImage}
           alt="CloudOne"
-          class="cloud animate-duration-15s absolute -right-[100px] -bottom-[80px] w-1/2"
+          class="cloud animate-duration-15s absolute -right-[100px] -bottom-[15px] w-[220px] md:-bottom-[60px] md:w-1/2"
         />
       </div>
-      <p class="mx-auto w-1/2 text-center text-lg">
+      <p class="mx-auto text-center text-lg md:w-1/2">
         Simplicity is my superpower. I turn complex ideas into experiences users love and investors
         trust. I help SaaS, AI, and Dev founders craft story-driven brands and products.
       </p>
-      <hr class="mx-auto my-12 h-2 w-2/5 border-dashed" />
+      <hr class="mx-auto my-12 h-2 w-3/4 border-dashed md:w-2/5" />
     </section>
-    <section id="competence" class="py-16">
-      <h2 class="font-libre mb-8 text-center text-3xl">A wide range of possibilities!</h2>
+    <section id="competence" class="my-24 md:my-40">
+      <h2 class="font-libre mb-8 text-center text-2xl md:text-3xl">
+        A wide range of possibilities!
+      </h2>
       <div class="overflow-x-hidden whitespace-nowrap">
         <div
           class="animate-marquee-left animate-duration-[140s] mb-4 flex w-max items-center gap-x-4"
@@ -211,23 +216,35 @@ const projects = [
         </div>
       </div>
     </section>
-    <section id="certifications" class="container mx-auto px-32 py-16">
-      <h2 class="font-libre mb-4 text-center text-4xl">Tried and tested, ready for more!</h2>
+    <section id="certifications" class="container mx-auto my-24 px-6 md:my-40">
+      <h2 class="font-libre mb-4 text-center text-3xl md:text-2xl">
+        Tried and tested, ready for more!
+      </h2>
       <p class="mb-12 text-center">
         I love learning more after work, and I'm always eager to deliver the best I can!
       </p>
-      <div class="medals-wrapper flex items-center gap-4">
-        <Image src={badge5} alt="badge5" class="medal translate-x-80 scale-80" />
-        <Image src={badge2} alt="badge2" class="medal z-1 translate-x-40 scale-90" />
-        <Image src={badge1} alt="badge1" class="medal z-2" />
-        <Image src={badge3} alt="badge3" class="medal z-1 -translate-x-40 scale-90" />
-        <Image src={badge4} alt="badge4" class="medal -translate-x-80 scale-80" />
+      <div
+        class="medals-wrapper mx-auto grid auto-cols-[80px] grid-cols-5 md:w-full md:auto-cols-[240px] md:gap-4"
+      >
+        <Image src={badge5} alt="badge5" class="medal scale-160 md:translate-x-80 md:scale-80" />
+        <Image
+          src={badge2}
+          alt="badge2"
+          class="medal z-1 scale-180 md:translate-x-40 md:scale-90"
+        />
+        <Image src={badge1} alt="badge1" class="medal z-2 scale-200 md:scale-100" />
+        <Image
+          src={badge3}
+          alt="badge3"
+          class="medal z-1 scale-180 md:-translate-x-40 md:scale-90"
+        />
+        <Image src={badge4} alt="badge4" class="medal scale-160 md:-translate-x-80 md:scale-80" />
       </div>
     </section>
-    <section id="experience" class="container mx-auto px-64 py-32">
-      <h2 class="font-libre mb-4 text-4xl">Not just theory!</h2>
+    <section id="experience" class="container mx-auto my-24 px-6 md:my-40 md:px-64">
+      <h2 class="font-libre mb-4 text-2xl md:text-3xl">Not just theory!</h2>
       <p class="mb-8">Projects into which I have poured my heart and soul!</p>
-      <div class="grid grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         {
           projects.map(({ cover, url, githubUrl, curtainColor, description, title }) => (
             <Project
@@ -244,8 +261,8 @@ const projects = [
       </div>
     </section>
   </main>
-  <footer id="contact" class="container mx-auto px-4 py-64 text-center">
-    <h2 class="font-libre mb-4 text-4xl">I'm online, let's connect!</h2>
+  <footer id="contact" class="container mx-auto my-24 px-6 text-center md:my-40">
+    <h2 class="font-libre mb-4 text-2xl md:text-3xl">I'm online, let's connect!</h2>
     <div class="flex items-center justify-center gap-4">
       <a class="btn hover:!bg-pink-100" href="mailto:<EMAIL>">@</a>
       <a class="btn btn-icon hover:!bg-blue-100" href="https://github.com">
@@ -313,7 +330,7 @@ const projects = [
   }
 
   .profile-box {
-    @apply absolute bottom-0 left-1/2 w-[480px] -translate-x-1/2 translate-y-1/2 transition-transform duration-700 ease-in-out;
+    @apply absolute bottom-0 left-1/2 w-[200px] -translate-x-1/2 translate-y-1/2 transition-transform duration-700 ease-in-out md:w-[480px];
   }
 
   .normal-profile {
