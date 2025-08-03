@@ -57,15 +57,15 @@ const row3 = shuffle([...items]).slice(0, 20)
 
 <Layout>
   <header class="mb-32">
-    <nav class="container mx-auto flex items-center justify-center gap-x-4 px-6 py-4">
-      <a class="text-base" href="#hero">Hero</a>
-      <a class="text-base" href="#hero">Hero</a>
-      <a class="text-base" href="#hero">Hero</a>
-      <a class="text-base" href="#hero">Hero</a>
+    <nav class="container mx-auto flex h-20 items-center justify-center gap-x-4 px-6 py-4">
+      <a class="text-base" href="#competence">Competence</a>
+      <a class="text-base" href="#certifications">Certifications</a>
+      <a class="text-base" href="#experience">Experience</a>
+      <a class="text-base" href="#contact">Contact</a>
     </nav>
   </header>
   <main>
-    <section class="container mx-auto px-6">
+    <section id="hero" class="container mx-auto px-6">
       <p class="mb-4 text-center text-lg">Hi! I’m Michal</p>
       <h1 class="font-libre mb-12 text-center text-6xl">
         <span id="hero-profession">Frontend Engineer</span><br />I'm always here for you
@@ -104,7 +104,7 @@ const row3 = shuffle([...items]).slice(0, 20)
       </p>
       <hr class="mx-auto my-12 h-2 w-2/5 border-dashed" />
     </section>
-    <section class="py-16">
+    <section id="competence" class="py-16">
       <h2 class="font-libre mb-8 text-center text-3xl">A wide range of possibilities!</h2>
       <div class="overflow-x-hidden whitespace-nowrap">
         <div
@@ -161,7 +161,7 @@ const row3 = shuffle([...items]).slice(0, 20)
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-32 py-16">
+    <section id="certifications" class="container mx-auto px-32 py-16">
       <h2 class="font-libre mb-4 text-center text-4xl">Tried and tested, ready for more!</h2>
       <p class="mb-12 text-center">
         I love learning more after work, and I'm always eager to deliver the best I can!
@@ -174,7 +174,7 @@ const row3 = shuffle([...items]).slice(0, 20)
         <Image src={badge4} alt="badge4" class="medal -translate-x-80 scale-80" />
       </div>
     </section>
-    <section class="container mx-auto px-64 py-32">
+    <section id="experience" class="container mx-auto px-64 py-32">
       <h2 class="font-libre mb-4 text-4xl">Not just theory!</h2>
       <p class="mb-8">Projects into which I have poured my heart and soul!</p>
       <div class="grid grid-cols-2 gap-6">
@@ -244,7 +244,7 @@ const row3 = shuffle([...items]).slice(0, 20)
       </div>
     </section>
   </main>
-  <footer class="container mx-auto px-4 py-64 text-center">
+  <footer id="contact" class="container mx-auto px-4 py-64 text-center">
     <h2 class="font-libre mb-4 text-4xl">I'm online, let's connect!</h2>
     <div class="flex items-center justify-center gap-4">
       <a class="btn hover:!bg-pink-100" href="mailto:<EMAIL>">@</a>
