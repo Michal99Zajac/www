@@ -1,6 +1,33 @@
 ---
 import '../styles/global.css'
 import '@fontsource/libre-baskerville'
+
+const title = 'Michal Zajac - Full Stack Developer'
+const description =
+  'Experienced software engineer passionate about simplicity. Specializing in modern web development, cloud architecture, and innovative solutions.'
+const keywords =
+  'full stack developer, software engineer, AWS solutions architect, React developer, TypeScript, Python, DevOps, cloud architecture, web development, frontend developer, backend developer'
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogImage = new URL('/og-image.png', Astro.site)
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Michal Zajac',
+  url: canonicalURL.toString(),
+  jobTitle: 'Full Stack Developer',
+  description: description,
+  knowsAbout: [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'AWS',
+    'Python',
+    'DevOps',
+    'Cloud Architecture',
+  ],
+  sameAs: ['https://github.com/Michal99Zajac', 'https://www.linkedin.com/in/michal-99-zajac/'],
+}
 ---
 
 <!doctype html>
@@ -9,12 +36,39 @@ import '@fontsource/libre-baskerville'
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>Michal Zajac - Full Stack Developer</title>
-    <meta
-      name="description"
-      content="Experienced software engineer passionate about simplicity. Specializing in modern web development, cloud architecture, and innovative solutions."
-    />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Michal Zajac" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Michal Zajac Portfolio" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <slot />
