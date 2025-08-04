@@ -5,7 +5,7 @@ body {
 }
 
 @theme {
-    --font-libre: 'Libre Baskerville', 'serif';
+    --font-libre: 'Libre Baskerville', 'Georgia', 'serif';
     --animate-marquee-left: marquee-left 120s linear infinite;
     --animate-marquee-right: marquee-right 120s linear infinite;
 
