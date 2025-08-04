@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import '@fontsource/libre-baskerville/400.css'
 
 const title = 'Michal Zajac - Full Stack Developer'
 const description =
@@ -38,13 +39,8 @@ const structuredData = {
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Optimized font loading with font-display: swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap"
-      rel="stylesheet"
-    />
+    <!-- DNS prefetch for external resources if any -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
