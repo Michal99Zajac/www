@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css'
+import stylesUrl from '../styles/global.css?url'
 
 const title = 'Michal Zajac - Full Stack Developer'
 const description =
@@ -37,6 +37,10 @@ const structuredData = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Preload css -->
+    <link rel="preload" href={stylesUrl} as="style" />
+    <link rel="stylesheet" href={stylesUrl} />
 
     <!-- Preload critical fonts (non-blocking) -->
     <link
@@ -96,8 +100,7 @@ const structuredData = {
     margin: 0;
     width: 100%;
     height: 100%;
-
-    @apply overflow-x-hidden;
+    overflow-x: hidden;
   }
 
   @font-face {

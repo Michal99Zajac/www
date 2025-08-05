@@ -7,6 +7,9 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   site: 'https://michalzajac.dev',
   vite: {
+    build: {
+      assetsInlineLimit: 1024,
+    },
     plugins: [tailwindcss()],
   },
   integrations: [sitemap()],
