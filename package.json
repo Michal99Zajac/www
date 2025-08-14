@@ -13,7 +13,7 @@
     "@fontsource/libre-baskerville": "^5.2.6",
     "@playform/inline": "^0.1.2",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.2",
+    "astro": "^5.13.0",
     "astro-critters": "^2.2.1",
     "tailwindcss": "^4.1.11"
   },
