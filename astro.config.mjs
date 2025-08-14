@@ -1,5 +1,6 @@
 // @ts-check
 import sitemap from '@astrojs/sitemap'
+import beastInline from '@playform/inline'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
@@ -12,5 +13,5 @@ export default defineConfig({
     },
     plugins: [tailwindcss()],
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), beastInline()],
 })
